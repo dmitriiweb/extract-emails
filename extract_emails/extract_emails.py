@@ -18,7 +18,6 @@ class ExtractEmails:
         self.scanned = []
         self.for_scan = []
         self.emails = []
-        self.threads_number = 5
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.112 Safari/537.36 Vivaldi/1.91.867.48'}
         self.extract_emails(url)

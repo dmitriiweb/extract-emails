@@ -24,7 +24,7 @@ Usage
 
     from extract_emails import ExtractEmails
 
-    em = ExtractEmails(url, depth, print_log)
+    em = ExtractEmails(url, depth=None, print_log=False)
     emails = em.emails
 
 -  *url*: str, ex: http://example.com
