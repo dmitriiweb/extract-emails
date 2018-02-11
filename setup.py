@@ -5,7 +5,7 @@ with open('README.rst') as readme:
 
 setup(
     name='extract_emails',
-    version='1.0.3',
+    version='2.0.0',
     packages=['extract_emails'],
     url='https://github.com/dmitriiweb/extract-emails',
     license='MIT',
@@ -14,7 +14,8 @@ setup(
     description='Extract email addresses from given URL.',
     long_description=r,
     install_requires=[
-        'requests',
-        'beautifulsoup4',
+        'requests==2.18.4',
+        'lxml==4.1.1',
+        'fake-useragent==0.1.10'
     ],
 )
