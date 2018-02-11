@@ -37,6 +37,6 @@ emails = em.emails
 
 #### Version 2.0.0
 
-- Change BeautifulSoup to lxml
+- Replaced BeautifulSoup to lxml
 - Improved regex for emails
 - Added different user agents
