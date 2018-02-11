@@ -35,6 +35,9 @@ emails = em.emails
 
 ## Changelog
 
+#### Version 2.0.1
+- Improved readme and setup files
+
 #### Version 2.0.0
 
 - Replaced BeautifulSoup to lxml
