@@ -24,8 +24,13 @@ class ExtractEmails:
         self.scanned = []
         self.for_scan = []
         self.emails = []
-        self.headers = {
-            'User-Agent': self.agents[user_agent]}
+        try:
+            self.headers = {
+                'User-Agent': self.agents[user_agent]}
+        except:
+            self.headers = {
+                'User-Agent': user_agent
+            }
         self.extract_emails(url)
 
     def extract_emails(self, url):
