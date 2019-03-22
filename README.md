@@ -38,7 +38,7 @@ emails = em.emails
 ## Changelog
 
 
-#### Version 3.0.0
+#### Version 3.0.1
 - Minimum Python version: 3.6
 - Remove fake_useragent library
 - Improve email extraction
