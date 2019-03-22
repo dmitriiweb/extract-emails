@@ -2,10 +2,9 @@
 Extract emails from a given website
 
 ## Requirements
-- Python3
+- Minimum Python3.6
 - requests
 - lxml
-- fake-useragent
 
 ## Installation
 ```
@@ -40,6 +39,7 @@ emails = em.emails
 
 
 #### Version 3.0.0
+- Minimum Python version: 3.6
 - Remove fake_useragent library
 - Improve email extraction
 - Add time delay between requests
