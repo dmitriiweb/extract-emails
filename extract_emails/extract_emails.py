@@ -1,19 +1,22 @@
+import pickle
+import os
+import time
+
 import re
 import requests
 from lxml import html
-from fake_useragent import UserAgent
+
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
+DOMAINS_FAIL = os.path.join(BASEDIR, 'top_level_domains.pkl')
 
 
 class ExtractEmails:
     """
     Extract emails from a given website
     """
-    ua = UserAgent()
-    agents = {'ie': ua.ie, 'msie': ua.msie, 'opera': ua.opera,
-              'chrome': ua.chrome, 'google': ua.google, 'firefox': ua.firefox,
-              'safari': ua.safari, 'random': ua.random}
 
-    def __init__(self, url, depth=None, print_log=False, ssl_verify=True, user_agent='random'):
+    def __init__(self, url: str, depth: int=None, print_log: bool=False, ssl_verify: bool=True, user_agent: str=None, request_delay: float=0):
+        self.delay = request_delay
         self.verify = ssl_verify
         if url.endswith('/'):
             self.url = url[:-1]
@@ -24,13 +27,7 @@ class ExtractEmails:
         self.scanned = []
         self.for_scan = []
         self.emails = []
-        try:
-            self.headers = {
-                'User-Agent': self.agents[user_agent]}
-        except:
-            self.headers = {
-                'User-Agent': user_agent
-            }
+        self.headers = {'User-Agent': user_agent}
         self.extract_emails(url)
 
     def extract_emails(self, url):
@@ -43,6 +40,7 @@ class ExtractEmails:
             self.print_logs()
         for new_url in self.for_scan[:self.depth]:
             if new_url not in self.scanned:
+                time.sleep(self.delay)
                 self.extract_emails(new_url)
 
     def print_logs(self):
@@ -51,10 +49,18 @@ class ExtractEmails:
 
     def get_emails(self, page):
         emails = re.findall(r'\b[\w.-]+?@\w+?\.(?!jpg|png|jpeg)\w+?\b', page)
+        emails = [x.lower() for x in emails]
+        domains = self.get_domains()
+        emails = [x for x in emails if '.' + x.split('.')[-1] in domains]
         if emails:
             for email in emails:
                 if email not in self.emails:
                     self.emails.append(email)
+
+    def get_domains(self):
+        with open(DOMAINS_FAIL, 'rb') as f:
+            domains = pickle.load(f)
+        return domains
 
     def get_all_links(self, page):
         tree = html.fromstring(page)
@@ -72,5 +78,6 @@ class ExtractEmails:
 
 
 if __name__ == '__main__':
-    em = ExtractEmails('http://www.cumberlandhomes.org', print_log=True, depth=20, ssl_verify=False, user_agent='random')
+    em = ExtractEmails('http://www.ThreeVillagePodiatry.com', print_log=True, user_agent='Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0',
+                       depth=10)
     print(em.emails)

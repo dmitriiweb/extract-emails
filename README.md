@@ -16,7 +16,7 @@ pip install extract_emails
 ```
 from extract_emails import ExtractEmails
 
-em = ExtractEmails(url, depth=None, print_log=False, ssl_verify=True, user_agent='random')
+em = ExtractEmails(url, depth=None, print_log=False, ssl_verify=True, user_agent=None, request_delay=0.0)
 emails = em.emails
 ```
 - *url*: str, ex: http://example.com
@@ -24,16 +24,25 @@ emails = em.emails
 - *print_log*: boolean, print log or not
 - *ssl_verify*: boolean
 - *user_agent*: str
+- *request_delay*: float
 
 **ssl_verify** - use to avoid errors like this: *exceeded with url: /api/v1/pods?watch=False (Caused by SSLError(SSLError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:777)'),))*
 
-**user_agent** - you can choose from several user agents: *ie*, *msie*, *opera*, *chrome*, *google*, *firefox*, *safari*, or *random*
+**user_agent** - e.g. "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0"
+
+**request_delay** - time delay between requests in seconds
 
 **Return** list of emails.
 
 
 
 ## Changelog
+
+
+#### Version 3.0.0
+- Remove fake_useragent library
+- Improve email extraction
+- Add time delay between requests
 
 #### Version 2.0.1
 - Improved readme and setup files
