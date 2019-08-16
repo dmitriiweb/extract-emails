@@ -5,7 +5,7 @@ with open('README.rst') as readme:
 
 setup(
     name='extract_emails',
-    version='3.0.1',
+    version='3.0.2',
     packages=['extract_emails'],
     url='https://github.com/dmitriiweb/extract-emails',
     license='MIT',
