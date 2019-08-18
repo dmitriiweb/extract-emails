@@ -37,8 +37,11 @@ emails = em.emails
 
 ## Changelog
 
-#### Version 3.0.3
-- Improve parser
+#### version 3.0.3
+- bug fixing 
+
+#### version 3.0.3
+- improve parser
 
 #### Version 3.0.1
 - Minimum Python version: 3.6

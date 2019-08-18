@@ -48,6 +48,10 @@ CERTIFICATE\_VERIFY\_FAILED] certificate verify failed
 
 Changelog
 ---------
+Version 3.0.4
+^^^^^^^^^^^^^
+- Buf fixing
+
 Version 3.0.3
 ^^^^^^^^^^^^^
 - Improve parser

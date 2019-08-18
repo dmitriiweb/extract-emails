@@ -56,18 +56,22 @@ class ExtractEmails:
                     self.emails.append(email)
 
     def get_all_links(self, page):
-        tree = html.fromstring(page)
-        all_links = tree.findall('.//a')
-        for link in all_links:
-            try:
-                link_href = link.attrib['href']
-                if link_href.startswith(self.url) or link_href.startswith('/'):
-                    if link_href.startswith('/'):
-                        link_href = self.url + link_href
-                    if link_href not in self.for_scan:
-                        self.for_scan.append(link_href)
-            except KeyError:
-                pass
+        try:
+            tree = html.fromstring(page)
+        except ValueError:
+            tree = None
+        if tree is not None:
+            all_links = tree.findall('.//a')
+            for link in all_links:
+                try:
+                    link_href = link.attrib['href']
+                    if link_href.startswith(self.url) or link_href.startswith('/'):
+                        if link_href.startswith('/'):
+                            link_href = self.url + link_href
+                        if link_href not in self.for_scan:
+                            self.for_scan.append(link_href)
+                except KeyError:
+                    pass
 
 
 if __name__ == '__main__':
