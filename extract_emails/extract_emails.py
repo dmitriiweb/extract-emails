@@ -33,7 +33,7 @@ class ExtractEmails:
         r = requests.get(url, headers=self.headers, verify=self.verify)
         self.scanned.append(url)
         if r.status_code == 200:
-            self.get_all_links(r.text)
+            self.get_all_links(r.content)
             self.get_emails(r.text)
         if self.print_log:
             self.print_logs()

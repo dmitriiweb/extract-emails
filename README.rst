@@ -48,6 +48,10 @@ CERTIFICATE\_VERIFY\_FAILED] certificate verify failed
 
 Changelog
 ---------
+Version 3.0.3
+^^^^^^^^^^^^^
+- Improve parser
+
 Version 3.0.1
 ^^^^^^^^^^^^^
 - Minimum Python version: 3.6
@@ -57,7 +61,6 @@ Version 3.0.1
 
 Version 2.0.0
 ^^^^^^^^^^^^^
-
 -  Replaced BeautifulSoup to lxml
 -  Improved regex for emails
 -  Added different user agents
