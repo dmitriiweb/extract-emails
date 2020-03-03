@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+# -*- coding: utf-8
 import pickle
 import os
 import time
@@ -65,10 +67,12 @@ class ExtractEmails:
             for link in all_links:
                 try:
                     link_href = link.attrib['href']
-                    if link_href.startswith(self.url) or link_href.startswith('/'):
-                        if link_href.startswith('/'):
+                    check_href_url = re.sub(r'https?://', '', link_href)
+                    check_self_url = re.sub(r'https?://', '', self.url)
+                    if check_href_url.startswith(check_self_url) or check_href_url.startswith('/'):
+                        if check_href_url.startswith('/'):
                             link_href = self.url + link_href
-                        if link_href not in self.for_scan:
+                        if check_href_url not in self.for_scan:
                             self.for_scan.append(link_href)
                 except KeyError:
                     pass
