@@ -39,12 +39,6 @@ Or simply:
 
     pytest
 
-Before pushing your code, make sure that linting passes, otherwise Travis
-build would fail:
-
-    make lint
-
-
 ### Building docs
 
     make docs
