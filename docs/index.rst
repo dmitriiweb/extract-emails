@@ -22,3 +22,9 @@ Interface
 .. autoclass:: extract_emails.browsers.BrowserInterface
    :members:
 
+RequestsBrowser
+---------------
+.. autoclass:: extract_emails.browsers.RequestsBrowser
+   :members:
+
+

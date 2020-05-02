@@ -5,18 +5,15 @@ from setuptools import setup, find_packages
 
 from extract_emails import __version__ as version
 
-INSTALL_REQUIRES = []
+INSTALL_REQUIRES = [
+    'requests>=2.23.0',
+]
 
 EXTRAS_DEV_TESTFILES_COMMON = [
-    "contextlib2; python_version<'3.0'",
     "mock",
-    "six",
 ]
 
-EXTRAS_DEV_LINT = [
-    "flake8>=3.6.0,<3.7.0",
-    "isort>=4.3.4,<4.4.0",
-]
+EXTRAS_DEV_LINT = []
 
 EXTRAS_DEV_TEST = [
     "coverage",

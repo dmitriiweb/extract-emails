@@ -2,7 +2,11 @@ from abc import ABC, abstractmethod
 
 
 class BrowserInterface(ABC):
-    """Interface for browsers"""
+    """
+    BrowserInterface
+    -----------------
+    Interface for browsers
+    """
 
     def __enter__(self):
         self.open()
