@@ -7,6 +7,7 @@ from extract_emails import __version__ as version
 
 INSTALL_REQUIRES = [
     'requests>=2.23.0',
+    'selenium>=3.141.0',
 ]
 
 EXTRAS_DEV_TESTFILES_COMMON = [

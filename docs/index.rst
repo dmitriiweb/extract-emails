@@ -27,4 +27,9 @@ RequestsBrowser
 .. autoclass:: extract_emails.browsers.RequestsBrowser
    :members:
 
+ChromeBrowser
+---------------
+.. autoclass:: extract_emails.browsers.ChromeBrowser
+   :members:
+
 
