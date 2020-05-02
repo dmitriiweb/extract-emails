@@ -32,4 +32,11 @@ ChromeBrowser
 .. autoclass:: extract_emails.browsers.ChromeBrowser
    :members:
 
+HTML Handlers
+~~~~~~~~~~~~~~
+Interface
+---------
+.. autoclass:: extract_emails.html_handlers.HTMLHandlerInterface
+   :members:
+
 
