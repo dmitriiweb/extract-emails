@@ -15,6 +15,11 @@ Installation
 
    pip install extract_emails
 
+EmailExtractor
+~~~~~~~~~
+.. autoclass:: extract_emails.EmailExtractor
+   :members:
+
 Browsers
 ~~~~~~~~~
 Interface
