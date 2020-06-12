@@ -25,7 +25,7 @@ format:
 
 .PHONY: test
 test:
-	coverage run -m py.test
+	coverage run -m --source='extract_emails' py.test
 	coverage report
 
 .PHONY: readme_check
