@@ -62,3 +62,8 @@ Interface
 ---------
 .. autoclass:: extract_emails.link_filters.LinkFilterInterface
    :members:
+
+DefaultLinkFilter
+---------
+.. autoclass:: extract_emails.link_filters.DefaultLinkFilter
+   :members:
