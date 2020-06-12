@@ -39,4 +39,9 @@ Interface
 .. autoclass:: extract_emails.html_handlers.HTMLHandlerInterface
    :members:
 
+DefaultHTMLHandler
+--------------------
+.. autoclass:: extract_emails.html_handlers.DefaultHTMLHandler
+   :members:
+
 
