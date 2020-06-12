@@ -44,4 +44,10 @@ DefaultHTMLHandler
 .. autoclass:: extract_emails.html_handlers.DefaultHTMLHandler
    :members:
 
+Emails Filters
+~~~~~~~~~
+Interface
+---------
+.. autoclass:: extract_emails.email_filters.EmailFilterInterface
+   :members:
 

@@ -19,6 +19,11 @@ class DefaultHTMLHandler(HTMLHandlerInterface):
         return self.email_pattern.findall(self.page_source)
 
     def get_links(self) -> List[str]:
+        """
+        Extract all URLs corresponding to current website
+
+        :return: List of URLs
+        """
         links = self.link_pattern.findall(self.page_source)
         links = [x[1] for x in links]
         return links
