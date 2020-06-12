@@ -1,5 +1,5 @@
 from typing import List
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 from extract_emails.link_filters import LinkFilterInterface
 
@@ -21,3 +21,18 @@ class DefaultLinkFilter(LinkFilterInterface):
                 self.checked_links.append(url)
                 filtered_urls.append(url)
         return filtered_urls
+
+    @staticmethod
+    def get_website_address(url: str) -> str:
+        """
+        Get website address from an URL
+
+        Example:
+            >>> DefaultLinkFilter.get_website_address('https://example.com/page.html?param=123')
+            ... 'https://example.com/'
+
+        :param str url: some URL
+        :return: website address
+        """
+        parsed_url = urlparse(url)
+        return f'{parsed_url.scheme}://{parsed_url.netloc}/'
