@@ -29,4 +29,3 @@ class HTMLHandlerInterface(ABC):
         :return: list(str)
         """
         pass
-
