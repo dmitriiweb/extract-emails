@@ -1,0 +1,1 @@
+from .link_filter_interface import LinkFilterInterface
