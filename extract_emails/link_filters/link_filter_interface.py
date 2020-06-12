@@ -6,17 +6,18 @@ class LinkFilterInterface(ABC):
     """
     Interface for link filters
 
-    :param list(str) links: List of URLs
+    :param str website_address: website's address, e.g. https://example.com
     """
 
-    def __init__(self, links: List[str]):
-        self.links = links
+    def __init__(self, website_address: str):
+        self.website = website_address
 
     @abstractmethod
-    def filter(self) -> List[str]:
+    def filter(self, links: List[str]) -> List[str]:
         """
         Links filter
 
+        :param list(str) links: List of URLs
         :return: Filtered list of URls
         """
         pass

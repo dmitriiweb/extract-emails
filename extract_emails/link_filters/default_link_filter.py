@@ -10,5 +10,6 @@ class DefaultLinkFilter(LinkFilterInterface):
     :param list(str) links: List of URLs
     """
 
-    def filter(self) -> List[str]:
+    def filter(self, links: List[str]) -> List[str]:
         pass
+
