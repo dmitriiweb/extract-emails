@@ -41,4 +41,6 @@ class EmailExtractor:
     def get_emails(self):
         """Extract emails from webpages
         """
-        pass
+        self.browser.open()
+        for url in self.websites:
+            page_source = self.browser.get_page_source(url)
