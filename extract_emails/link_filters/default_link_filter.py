@@ -11,7 +11,7 @@ class DefaultLinkFilter(LinkFilterInterface):
     :param list(str) links: List of URLs
     """
 
-    checked_links = []
+    checked_links: List[str] = []
 
     def filter(self, links: List[str]) -> List[str]:
         filtered_urls = []
@@ -35,4 +35,4 @@ class DefaultLinkFilter(LinkFilterInterface):
         :return: website address
         """
         parsed_url = urlparse(url)
-        return f'{parsed_url.scheme}://{parsed_url.netloc}/'
+        return f"{parsed_url.scheme}://{parsed_url.netloc}/"
