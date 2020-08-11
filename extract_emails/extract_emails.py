@@ -20,10 +20,11 @@ class EmailExtractor:
     :param browser: browser to get page source by URL
     :param int depth: scan's depth, default 10
     :param int max_links_from_page: how many links a script shall get from each page, default -1 (all)
-    :param html_handler: handler to get emails and links from a page
-    :param emails_filter: handler to remove duplicated emails, and etc.
-    :param links_filter: handler to filter links from
     """
+
+    html_handler: Type[HTMLHandlerInterface] = DefaultHTMLHandler
+    emails_filter: Type[EmailFilterInterface] = DefaultEmailFilter
+    links_filter: Type[LinkFilterInterface] = DefaultLinkFilter
 
     def __init__(
         self,
@@ -31,14 +32,13 @@ class EmailExtractor:
         browser: Type[BrowserInterface],
         depth: int = 10,
         max_links_from_page: int = -1,
-        html_handler: Type[HTMLHandlerInterface] = DefaultHTMLHandler,
-        emails_filter: Type[EmailFilterInterface] = EmailFilterInterface,
-        links_filter: Type[LinkFilterInterface] = DefaultLinkFilter,
     ):
         self.websites = websites
         self.browser = browser
         self.depth = depth
         self.max_links_from_page = max_links_from_page
-        self.html_handler = html_handler
-        self.emails_filter = emails_filter
-        self.links_filter = links_filter
+
+    def get_emails(self):
+        """Extract emails from webpages
+        """
+        pass
