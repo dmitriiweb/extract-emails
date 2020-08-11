@@ -25,11 +25,16 @@ class EmailExtractor:
     :param links_filter: handler to filter links from
     """
 
-    def __init__(self, website: str, depth: int = 10, max_links_from_page: int = -1,
-                 browser: Type[BrowserInterface] = RequestsBrowser,
-                 html_handler: Type[HTMLHandlerInterface] = DefaultHTMLHandler,
-                 emails_filter: Type[EmailFilterInterface] = EmailFilterInterface,
-                 links_filter: Type[LinkFilterInterface] = DefaultLinkFilter):
+    def __init__(
+        self,
+        website: str,
+        depth: int = 10,
+        max_links_from_page: int = -1,
+        browser: Type[BrowserInterface] = RequestsBrowser,
+        html_handler: Type[HTMLHandlerInterface] = DefaultHTMLHandler,
+        emails_filter: Type[EmailFilterInterface] = EmailFilterInterface,
+        links_filter: Type[LinkFilterInterface] = DefaultLinkFilter,
+    ):
         self.website = DefaultLinkFilter.get_website_address(website)
         self.depth = depth
         self.max_links_from_page = max_links_from_page
