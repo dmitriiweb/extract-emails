@@ -24,23 +24,27 @@ class ChromeBrowser(BrowserInterface):
         browser.close()
     """
 
-    def __init__(self,
-                 headless: Optional[bool] = True,
-                 executable_path: Optional[str] = 'chromedriver'):
+    def __init__(
+        self,
+        headless: Optional[bool] = True,
+        executable_path: Optional[str] = "chromedriver",
+    ):
         self.executable_path = executable_path
         self._chrome_options = Options()
-        self._chrome_options.add_argument('--disable-gpu')
-        self._chrome_options.add_argument('--disable-software-rasterizer')
+        self._chrome_options.add_argument("--disable-gpu")
+        self._chrome_options.add_argument("--disable-software-rasterizer")
         if headless:
-            self._chrome_options.add_argument('--headless')
-        self._chrome_options.add_argument('--disable-dev-shm-usage')
+            self._chrome_options.add_argument("--headless")
+        self._chrome_options.add_argument("--disable-dev-shm-usage")
         self._chrome_options.add_argument("--window-size=1920x1080")
-        self._chrome_options.add_argument('--disable-setuid-sandbox')
-        self._chrome_options.add_argument('--no-sandbox')
+        self._chrome_options.add_argument("--disable-setuid-sandbox")
+        self._chrome_options.add_argument("--no-sandbox")
         self._driver = None
 
     def open(self):
-        self._driver = webdriver.Chrome(options=self._chrome_options, executable_path=self.executable_path)
+        self._driver = webdriver.Chrome(
+            options=self._chrome_options, executable_path=self.executable_path
+        )
 
     def close(self):
         self._driver.close()
@@ -68,4 +72,4 @@ class ChromeBrowser(BrowserInterface):
         is_get = self._get(url)
         if is_get:
             return self._driver.page_source
-        return ''
+        return ""

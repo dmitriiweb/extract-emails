@@ -35,4 +35,10 @@ class EmailExtractor:
         emails_filter: Type[EmailFilterInterface] = EmailFilterInterface,
         links_filter: Type[LinkFilterInterface] = DefaultLinkFilter,
     ):
-    pass
+        self.websites = websites
+        self.browser = browser
+        self.depth = depth
+        self.max_links_from_page = max_links_from_page
+        self.html_handler = html_handler
+        self.emails_filter = emails_filter
+        self.links_filter = links_filter
