@@ -34,7 +34,7 @@ class EmailExtractor:
         self.depth = depth
         self.max_links_from_page = max_links_from_page
 
-        self._links: List[str] = []
+        self._links: List[str] = [self.website]
         self._emails: List[str] = []
         self._current_depth: int = 0
 
@@ -45,19 +45,20 @@ class EmailExtractor:
     def get_emails(self):
         """Extract emails from webpages
         """
-        url = self._get_url()
-        page_source = self.browser.get_page_source(url)
+        urls = self._get_urls()
+        self._current_depth += 1
+        if not len(urls):
+            return self._emails
+        for url in urls:
+            page_source = self.browser.get_page_source(url)
 
-        links = self.html_handler.get_links(page_source)
-        emails = self.html_handler.get_emails(page_source)
+            links = self.html_handler.get_links(page_source)
+            emails = self.html_handler.get_emails(page_source)
 
-        filtered_links = self.links_filter.filter(links)
-        filtered_emails = self.emails_filter.filter(emails)
+            filtered_links = self.links_filter.filter(links)
+            filtered_emails = self.emails_filter.filter(emails)
 
-    def _get_url(self) -> Optional[str]:
-        if self._current_depth == 0:
-            return self.website
-        try:
-            return self._links.pop(0)
-        except IndexError:
-            return None
+    def _get_urls(self) -> List[str]:
+        links = self._links[:]
+        self._links = []
+        return links
