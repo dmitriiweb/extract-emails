@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8
-from typing import List, Type
+from typing import List, Type, Optional
 
 from extract_emails.browsers import RequestsBrowser, BrowserInterface
 from extract_emails.html_handlers import HTMLHandlerInterface, DefaultHTMLHandler
@@ -40,14 +40,24 @@ class EmailExtractor:
 
         self.html_handler = DefaultHTMLHandler()
         self.links_filter = DefaultLinkFilter(self.website)
-        self.femails_filter = DefaultEmailFilter()
+        self.emails_filter = DefaultEmailFilter()
 
-    def get_emails(self, website_url: str):
+    def get_emails(self):
         """Extract emails from webpages
         """
-        page_source = self.browser.get_page_source(website_url)
+        url = self._get_url()
+        page_source = self.browser.get_page_source(url)
 
         links = self.html_handler.get_links(page_source)
         emails = self.html_handler.get_emails(page_source)
 
         filtered_links = self.links_filter.filter(links)
+        filtered_emails = self.emails_filter.filter(emails)
+
+    def _get_url(self) -> Optional[str]:
+        if self._current_depth == 0:
+            return self.website
+        try:
+            return self._links.pop(0)
+        except IndexError:
+            return None
