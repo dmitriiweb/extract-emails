@@ -22,8 +22,6 @@ class EmailExtractor:
     :param int max_links_from_page: how many links a script shall get from each page, default -1 (all)
     """
 
-    emails_filter = DefaultEmailFilter
-
     def __init__(
         self,
         website_url: str,
@@ -42,6 +40,7 @@ class EmailExtractor:
 
         self.html_handler = DefaultHTMLHandler()
         self.links_filter = DefaultLinkFilter(self.website)
+        self.femails_filter = DefaultEmailFilter()
 
     def get_emails(self, website_url: str):
         """Extract emails from webpages
@@ -50,3 +49,5 @@ class EmailExtractor:
 
         links = self.html_handler.get_links(page_source)
         emails = self.html_handler.get_emails(page_source)
+
+        filtered_links = self.links_filter.filter(links)

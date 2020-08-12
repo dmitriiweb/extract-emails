@@ -5,17 +5,14 @@ from typing import List
 class EmailFilterInterface(ABC):
     """
     Interface for email filters
-
-    :param str emails_list: List of emails, example: [example.com, ]
     """
-    def __init__(self, emails_list: List[str]):
-        self.emails = emails_list
 
     @abstractmethod
-    def filter(self) -> List[str]:
+    def filter(self, emails: List[str]) -> List[str]:
         """
         Filter emails by params
 
+        :param: list(str) emails: list of emails for filtering
         :return: Filtered list of emails
         """
         pass
