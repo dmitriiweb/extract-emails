@@ -13,10 +13,9 @@ class EmailExtractor:
     Extract emails from a website
 
     Example:
-        >>> extractor = EmailExtractor(website=['https://example.com'], chrome, depth=10, max_links_from_page=-1)
+        >>> extractor = EmailExtractor(browser, depth=10, max_links_from_page=-1)
         >>> emails = extractor.get_emails()
 
-    :param List[str] websites: List of URLs for scan
     :param browser: browser to get page source by URL
     :param int depth: scan's depth, default 10
     :param int max_links_from_page: how many links a script shall get from each page, default -1 (all)
@@ -28,19 +27,23 @@ class EmailExtractor:
 
     def __init__(
         self,
-        websites: List[str],
         browser: Type[BrowserInterface],
         depth: int = 10,
         max_links_from_page: int = -1,
     ):
-        self.websites = websites
         self.browser = browser
         self.depth = depth
         self.max_links_from_page = max_links_from_page
 
-    def get_emails(self):
+        self._links: List[str] = []
+        self._emails: List[str] = []
+        self._current_depth: int = 0
+
+    def get_emails(self, website_url: str):
         """Extract emails from webpages
         """
-        self.browser.open()
-        for url in self.websites:
-            page_source = self.browser.get_page_source(url)
+        page_source = self.browser.get_page_source(website_url)
+
+        html_handler = self.html_handler()
+        links = html_handler.get_links(page_source)
+        emails = html_handler.get_emails(page_source)
