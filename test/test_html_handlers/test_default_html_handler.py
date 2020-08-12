@@ -2,7 +2,7 @@ import unittest
 
 from extract_emails.html_handlers import DefaultHTMLHandler
 
-HTML_EXAMPLE = '''
+HTML_EXAMPLE = """
 <!doctype html>
 <head>
 <title>blah</title>
@@ -13,9 +13,9 @@ HTML_EXAMPLE = '''
 <a href="example2.com">link</a>
 </body>
 </html>
-'''
+"""
 
-HTML_EXAMPLE_NO_LINKS_NO_EMAILS = '''
+HTML_EXAMPLE_NO_LINKS_NO_EMAILS = """
 <!doctype html>
 <head>
 <title>blah</title>
@@ -24,26 +24,34 @@ HTML_EXAMPLE_NO_LINKS_NO_EMAILS = '''
 <p> blah blah </p>
 </body>
 </html>
-'''
+"""
 
 
 class TestDefaultHTMLHandler(unittest.TestCase):
     def setUp(self) -> None:
-        self.html_handler = DefaultHTMLHandler(HTML_EXAMPLE)
-        self.html_handler_empty = DefaultHTMLHandler(HTML_EXAMPLE_NO_LINKS_NO_EMAILS)
+        self.html_handler = DefaultHTMLHandler()
+        self.html_handler_empty = DefaultHTMLHandler()
 
     def test_get_emails(self):
-        self.assertEqual(self.html_handler.get_emails(), ['example@example.com'])
-        
+        self.assertEqual(
+            self.html_handler.get_emails(HTML_EXAMPLE), ["example@example.com"]
+        )
+
     def test_get_links(self):
-        self.assertEqual(self.html_handler.get_links(), ['example.com', 'example2.com'])
+        self.assertEqual(
+            self.html_handler.get_links(HTML_EXAMPLE), ["example.com", "example2.com"]
+        )
 
     def test_get_emails_empty(self):
-        self.assertEqual(self.html_handler_empty.get_emails(), [])
+        self.assertEqual(
+            self.html_handler_empty.get_emails(HTML_EXAMPLE_NO_LINKS_NO_EMAILS), []
+        )
 
     def test_get_links_empty(self):
-        self.assertEqual(self.html_handler_empty.get_links(), [])
+        self.assertEqual(
+            self.html_handler_empty.get_links(HTML_EXAMPLE_NO_LINKS_NO_EMAILS), []
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
