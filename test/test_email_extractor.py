@@ -9,7 +9,8 @@ class TestEmailExtractor(unittest.TestCase):
         browser = ChromeBrowser()
         browser.open()
         url = "http://www.tomatinos.com/"
-        ee = EmailExtractor(url, browser)
+        ee = EmailExtractor(url, browser, depth=2)
         emails = ["bakedincloverdale@gmail.com", "freshlybakedincloverdale@gmail.com"]
-        self.assertEqual(ee.get_emails(), emails)
+        e = ee.get_emails()
+        self.assertEqual(e, emails)
         browser.close()
