@@ -47,16 +47,20 @@ class EmailExtractor:
         """
         urls = self._get_urls()
         self._current_depth += 1
-        if not len(urls):
+        if not len(urls) or self._current_depth >= self.depth:
             return self._emails
+
         for url in urls:
-            page_source = self.browser.get_page_source(url)
+            self._get_emails(url)
 
-            links = self.html_handler.get_links(page_source)
-            emails = self.html_handler.get_emails(page_source)
+    def _get_emails(self, url: str):
+        page_source = self.browser.get_page_source(url)
 
-            filtered_links = self.links_filter.filter(links)
-            filtered_emails = self.emails_filter.filter(emails)
+        links = self.html_handler.get_links(page_source)
+        emails = self.html_handler.get_emails(page_source)
+
+        filtered_links = self.links_filter.filter(links)
+        filtered_emails = self.emails_filter.filter(emails)
 
     def _get_urls(self) -> List[str]:
         links = self._links[:]
