@@ -2,6 +2,7 @@
 # -*- coding: utf-8
 from typing import List, Type, Optional
 
+from .email import Email
 from extract_emails.browsers import RequestsBrowser, BrowserInterface
 from extract_emails.html_handlers import HTMLHandlerInterface, DefaultHTMLHandler
 from extract_emails.email_filters import EmailFilterInterface, DefaultEmailFilter
@@ -36,14 +37,14 @@ class EmailExtractor:
 
         self._links: List[str] = [self.website]
         self._checked_links: List[str] = []
-        self._emails: List[str] = []
+        self._emails: List[Email] = []
         self._current_depth: int = 0
 
         self.html_handler = DefaultHTMLHandler()
         self.links_filter = DefaultLinkFilter(self.website)
         self.emails_filter = DefaultEmailFilter()
 
-    def get_emails(self):
+    def get_emails(self) -> List[Email]:
         """Extract emails from webpages
         """
         urls = self._get_urls()
@@ -60,7 +61,7 @@ class EmailExtractor:
 
         emails = self.html_handler.get_emails(page_source)
         filtered_emails = self.emails_filter.filter(emails)
-        self._emails.extend(filtered_emails)
+        self._emails.extend([Email(email, url) for email in filtered_emails])
 
         links = self.html_handler.get_links(page_source)
         filtered_links = self.links_filter.filter(links)

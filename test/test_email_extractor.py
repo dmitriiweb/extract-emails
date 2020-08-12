@@ -1,6 +1,6 @@
 import unittest
 
-from extract_emails import EmailExtractor
+from extract_emails import EmailExtractor, Email
 from extract_emails.browsers import ChromeBrowser
 
 
@@ -10,7 +10,9 @@ class TestEmailExtractor(unittest.TestCase):
         browser.open()
         url = "http://www.tomatinos.com/"
         ee = EmailExtractor(url, browser, depth=2)
-        emails = ["bakedincloverdale@gmail.com", "freshlybakedincloverdale@gmail.com"]
+        emails = [
+            Email("bakedincloverdale@gmail.com", url),
+            Email("freshlybakedincloverdale@gmail.com", url),
+        ]
         e = ee.get_emails()
-        self.assertEqual(e, emails)
-        browser.close()
+        self.assertEqual(e[0].as_dict(), emails[0].as_dict())
