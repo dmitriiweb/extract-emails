@@ -9,6 +9,7 @@ HTML_EXAMPLE = """
 </head>
 <body>
 <p> blah blah example@example.com</p>
+<p> blah blah example+example@example.co.uk</p>
 <a href="example.com">link</a>
 <a href="example2.com">link</a>
 </body>
@@ -33,9 +34,9 @@ class TestDefaultHTMLHandler(unittest.TestCase):
         self.html_handler_empty = DefaultHTMLHandler()
 
     def test_get_emails(self):
-        self.assertEqual(
-            self.html_handler.get_emails(HTML_EXAMPLE), ["example@example.com"]
-        )
+        emails = self.html_handler.get_emails(HTML_EXAMPLE)
+        self.assertEqual(emails[0], "example@example.com")
+        self.assertEqual(emails[1], "example+example@example.co.uk")
 
     def test_get_links(self):
         self.assertEqual(
