@@ -20,51 +20,86 @@ Installation
 Usage
 -----
 
+With default browsers
+~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
-    from extract_emails import ExtractEmails
+    from extract_emails import EmailExtractor
+    from extract_emails.browsers import ChromeBrowser
 
-    em = ExtractEmails(url, depth=None, print_log=False, ssl_verify=True, user_agent=None, request_delay=0.0)
-    emails = em.emails
 
--  *url*: str, ex: http://example.com
--  *depth*: int, depth of scan
--  *print\_log*: boolean, print log or not
--  *ssl\_verify*: boolean
--  *user\_agent*: str
--  *request\_delay*: float
+    with ChromeBrowser() as browser:
+        email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+        emails = email_extractor.get_emails()
 
-**ssl\_verify** - use to avoid errors like this: \*exceeded with url:
-/api/v1/pods?watch=False (Caused by SSLError(SSLError(1, '[SSL:
-CERTIFICATE\_VERIFY\_FAILED] certificate verify failed
-(\_ssl.c:777)'),))\*
 
-**user\_agent** - you can choose from several user agents: *ie*, *msie*,
-*opera*, *chrome*, *google*, *firefox*, *safari*, or *random*
+    for email in emails:
+        print(email)
+        print(email.as_dict())
 
-**request_delay** - time delay between requests in seconds
+    # Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+    # Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
 
-**Return** list of emails.
+::
 
-Changelog
----------
-Version 3.0.4
-^^^^^^^^^^^^^
-- Buf fixing
+    from extract_emails import EmailExtractor
+    from extract_emails.browsers import RequestsBrowser
 
-Version 3.0.3
-^^^^^^^^^^^^^
-- Improve parser
 
-Version 3.0.1
-^^^^^^^^^^^^^
-- Minimum Python version: 3.6
-- Remove fake_useragent library
-- Improve email extraction
-- Add time delay between requests
+    with RequestsBrowser() as browser:
+        email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+        emails = email_extractor.get_emails()
 
-Version 2.0.0
-^^^^^^^^^^^^^
--  Replaced BeautifulSoup to lxml
--  Improved regex for emails
--  Added different user agents
+
+    for email in emails:
+        print(email)
+        print(email.as_dict())
+
+    # Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+    # Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+
+With custom browser
+~~~~~~~~~~~~~~~~~~~
+
+::
+
+    from extract_emails import EmailExtractor
+    from extract_emails.browsers import BrowserInterface
+
+    from selenium import webdriver
+    from selenium.webdriver.firefox.options import Options
+
+
+    class FirefoxBrowser(BrowserInterface):
+        def __init__(self):
+            ff_options = Options()
+            self._driver = webdriver.Firefox(
+                options=ff_options, executable_path="/home/di/geckodriver",
+            )
+
+        def close(self):
+            self._driver.quit()
+
+        def get_page_source(self, url: str) -> str:
+            self._driver.get(url)
+            return self._driver.page_source
+
+
+    with FirefoxBrowser() as browser:
+        email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+        emails = email_extractor.get_emails()
+
+    for email in emails:
+        print(email)
+        print(email.as_dict())
+
+    # Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+    # Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+    # {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+

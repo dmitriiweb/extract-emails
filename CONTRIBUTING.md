@@ -1,22 +1,5 @@
 # Contributing to extract_emails
 
-## Submitting patches
-
-If you contribute code to extract_emails, you agree to license your code under the MIT.
-
-The new code should follow [PEP8](https://pep8.org/) coding style (except
-the line length limit, which is 90) and adhere to the style of 
-the surrounding code.
-
-You must document any functionality using Sphinx-compatible RST, and
-implement tests for any functionality in the `test` directory.
-
-In your Pull Requests there's no need to fill the changelog or AUTHORS,
-this is a maintainer's responsibility.
-
-If your PR remains unreviewed for a while, feel free to bug the maintainer.
-
-
 ### Setup
 
 1.  Create a virtualenv

@@ -12,48 +12,80 @@ pip install extract_emails
 ```
 
 ## Usage
+### With default browsers
 ```
-from extract_emails import ExtractEmails
+from extract_emails import EmailExtractor
+from extract_emails.browsers import ChromeBrowser
 
-em = ExtractEmails(url, depth=None, print_log=False, ssl_verify=True, user_agent=None, request_delay=0.0)
-emails = em.emails
+
+with ChromeBrowser() as browser:
+    email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+    emails = email_extractor.get_emails()
+
+
+for email in emails:
+    print(email)
+    print(email.as_dict())
+
+# Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+# Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
 ```
-- *url*: str, ex: http://example.com
-- *depth*: int, depth of scan
-- *print_log*: boolean, print log or not
-- *ssl_verify*: boolean
-- *user_agent*: str
-- *request_delay*: float
-
-**ssl_verify** - use to avoid errors like this: *exceeded with url: /api/v1/pods?watch=False (Caused by SSLError(SSLError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:777)'),))*
-
-**user_agent** - e.g. "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0"
-
-**request_delay** - time delay between requests in seconds
-
-**Return** list of emails.
+```
+from extract_emails import EmailExtractor
+from extract_emails.browsers import RequestsBrowser
 
 
+with RequestsBrowser() as browser:
+    email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+    emails = email_extractor.get_emails()
 
-## Changelog
 
-#### version 3.0.3
-- bug fixing 
+for email in emails:
+    print(email)
+    print(email.as_dict())
 
-#### version 3.0.3
-- improve parser
+# Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+# Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
 
-#### Version 3.0.1
-- Minimum Python version: 3.6
-- Remove fake_useragent library
-- Improve email extraction
-- Add time delay between requests
+```
+### With custom browser
+```
+from extract_emails import EmailExtractor
+from extract_emails.browsers import BrowserInterface
 
-#### Version 2.0.1
-- Improved readme and setup files
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
-#### Version 2.0.0
 
-- Replaced BeautifulSoup to lxml
-- Improved regex for emails
-- Added different user agents
+class FirefoxBrowser(BrowserInterface):
+    def __init__(self):
+        ff_options = Options()
+        self._driver = webdriver.Firefox(
+            options=ff_options, executable_path="/home/di/geckodriver",
+        )
+
+    def close(self):
+        self._driver.quit()
+
+    def get_page_source(self, url: str) -> str:
+        self._driver.get(url)
+        return self._driver.page_source
+
+
+with FirefoxBrowser() as browser:
+    email_extractor = EmailExtractor("http://www.tomatinos.com/", browser, depth=2)
+    emails = email_extractor.get_emails()
+
+for email in emails:
+    print(email)
+    print(email.as_dict())
+
+# Email(email="bakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+# Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
+# {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+```
