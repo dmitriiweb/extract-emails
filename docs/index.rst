@@ -10,7 +10,7 @@
    index
 
 Installation
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 ::
 
    pip install extract_emails
@@ -59,6 +59,7 @@ With default browsers
    # {'email': 'bakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
    # Email(email="freshlybakedincloverdale@gmail.com", source_page="http://www.tomatinos.com/")
    # {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
+
 With custom browser
 -------------------
 ::
@@ -99,7 +100,7 @@ With custom browser
    # {'email': 'freshlybakedincloverdale@gmail.com', 'source_page': 'http://www.tomatinos.com/'}
 
 EmailExtractor
-~~~~~~~~~
+~~~~~~~~~~~~~~~
 .. autoclass:: extract_emails.EmailExtractor
    :members:
 
@@ -138,26 +139,26 @@ DefaultHTMLHandler
    :members:
 
 Emails Filters
-~~~~~~~~~
+~~~~~~~~~~~~~~
 Interface
----------
+----------
 .. autoclass:: extract_emails.email_filters.EmailFilterInterface
    :members:
 
 DefaultEmailFilter
----------
+------------------
 .. autoclass:: extract_emails.email_filters.DefaultEmailFilter
    :members:
 
 Links Filters
-~~~~~~~~~
+~~~~~~~~~~~~~~
 Interface
 ---------
 .. autoclass:: extract_emails.link_filters.LinkFilterInterface
    :members:
 
 DefaultLinkFilter
----------
+------------------
 .. autoclass:: extract_emails.link_filters.DefaultLinkFilter
    :members:
 
