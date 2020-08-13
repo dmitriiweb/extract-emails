@@ -39,9 +39,6 @@ class ChromeBrowser(BrowserInterface):
         self._chrome_options.add_argument("--window-size=1920x1080")
         self._chrome_options.add_argument("--disable-setuid-sandbox")
         self._chrome_options.add_argument("--no-sandbox")
-        self._driver = None
-
-    def open(self):
         self._driver = webdriver.Chrome(
             options=self._chrome_options, executable_path=self.executable_path
         )

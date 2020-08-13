@@ -19,10 +19,6 @@ class RequestsBrowser(BrowserInterface):
     """
 
     def __init__(self):
-        self._session = None
-
-    def open(self):
-        """Create requests.Session() object"""
         self._session = requests.Session()
 
     def close(self):
@@ -32,10 +28,12 @@ class RequestsBrowser(BrowserInterface):
         try:
             r = self._session.get(url, headers=headers, timeout=1).text
         except:
-            r = ''
+            r = ""
         return r
 
-    def get_page_source(self, url: str, headers: Optional[Dict[str, str]] = None) -> str:
+    def get_page_source(
+        self, url: str, headers: Optional[Dict[str, str]] = None
+    ) -> str:
         """
         Return page source from url
 
