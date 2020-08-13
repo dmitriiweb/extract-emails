@@ -2,9 +2,9 @@
 Extract emails from a given website
 
 ## Requirements
-- Minimum Python3.6
+- Python >= 3.6
 - requests
-- lxml
+- selenium
 
 ## Installation
 ```
