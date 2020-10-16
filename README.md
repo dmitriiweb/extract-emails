@@ -1,6 +1,8 @@
 # Extract Emails
 Extract emails from a given website
 
+[Documentation](https://dmitriiweb.github.io/extract-emails/)
+
 ## Requirements
 - Python >= 3.6
 - requests

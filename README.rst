@@ -3,6 +3,10 @@ Extract Emails
 
 Extract emails from a given website
 
+Documentation_
+
+.. _Documentation: https://dmitriiweb.github.io/extract-emails/
+
 Requirements
 ------------
 
