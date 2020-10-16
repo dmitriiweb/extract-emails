@@ -6,7 +6,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = ../../extract-emails-docs
+BUILDDIR      = docs
 PDFBUILDER = /tmp
 PDF = ../manual.pdf
 

@@ -104,5 +104,3 @@ ENV/
 .pypirc
 .vscode
 
-doctrees/
-.buildinfo
