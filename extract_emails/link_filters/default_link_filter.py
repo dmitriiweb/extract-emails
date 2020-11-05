@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Set
 from urllib.parse import urljoin, urlparse
 
 from extract_emails.link_filters import LinkFilterInterface
@@ -11,14 +11,14 @@ class DefaultLinkFilter(LinkFilterInterface):
     :param list(str) links: List of URLs
     """
 
-    checked_links: List[str] = []
+    checked_links: Set[str] = set()
 
     def filter(self, links: List[str]) -> List[str]:
         filtered_urls = []
         for url in links:
             url = urljoin(self.website, url)
             if url.startswith(self.website) and url not in self.checked_links:
-                self.checked_links.append(url)
+                self.checked_links.add(url)
                 filtered_urls.append(url)
         return filtered_urls
 
