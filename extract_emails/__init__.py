@@ -1,3 +1,3 @@
-__version__ = "4.0.2"
+__version__ = "4.0.3"
 from .extract_emails import EmailExtractor
 from .email import Email
