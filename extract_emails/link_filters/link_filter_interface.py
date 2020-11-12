@@ -9,7 +9,7 @@ class LinkFilterInterface(ABC):
     :param str website_address: website's address, e.g. https://example.com
     """
 
-    def __init__(self, website_address: str):
+    def __init__(self, website_address: str, **kwargs):
         self.website = website_address
 
     @abstractmethod

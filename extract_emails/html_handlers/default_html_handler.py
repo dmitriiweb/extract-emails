@@ -19,7 +19,7 @@ class DefaultHTMLHandler(HTMLHandlerInterface):
         :param str page_source: HTML page source
         :return: List of emails
         """
-        return self.email_pattern.findall(page_source)
+        return list(set(self.email_pattern.findall(page_source)))
 
     def get_links(self, page_source: str) -> List[str]:
         """
