@@ -5,7 +5,7 @@ from extract_emails.browsers import ChromeBrowser
 
 class TestChromeBrowser(unittest.TestCase):
     def setUp(self) -> None:
-        self.browser = ChromeBrowser()
+        self.browser = ChromeBrowser(executable_path='D:\selenium_browser_driver\chromedriver-86.exe')
 
     def tearDown(self) -> None:
         self.browser.close()

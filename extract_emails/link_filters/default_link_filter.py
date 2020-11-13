@@ -58,7 +58,6 @@ class ContactInfoLinkFilter(LinkFilterInterface):
     def _contruct_candidates(self):
         self.candidates = ['about', 'about-us', 'aboutus', 'contact', 'contact-us', 'contactus']
         
-    
     def filter(self, links: List[str]) -> List[str]:
         filtered_urls = []
         for url in links:
