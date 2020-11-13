@@ -52,7 +52,6 @@ class ContactInfoLinkFilter(LinkFilterInterface):
         # where to use all the urls in the same domain or not, 
         # if there are not any urls after filtering by contactinfo candidates
         self.use_default = kwargs.get('use_default', False)
-
         self._contruct_candidates()
 
     def _contruct_candidates(self):
@@ -65,7 +64,6 @@ class ContactInfoLinkFilter(LinkFilterInterface):
             if url.startswith(self.website) and url not in self.checked_links:
                 self.checked_links.add(url)
                 filtered_urls.append(url)
-
 
         contactinfo_urls = []
         for url in filtered_urls:

@@ -16,7 +16,7 @@ class TestDefaultLinkFilter(unittest.TestCase):
         self.assertEqual(DefaultLinkFilter.get_website_address(url), 'https://example.com/')
 
 class TestContactInfoLinkFilter(unittest.TestCase):
-    def test_filter1(self):
+    def test_filter(self):
         urls = ['https://example.com', '/page1.html', 'page2.html', 'https://example2.com', 'page1.html',
             'https://example.com/about', 'https://example.com/contact']
         website = 'https://example.com'

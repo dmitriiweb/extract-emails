@@ -38,7 +38,6 @@ class EmailExtractor:
         **kwargs
     ):
         print('-------------------EmailExtractor-------------------')
-
         self.website = website_url
         self.browser = browser
         self.depth = depth

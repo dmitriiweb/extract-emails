@@ -12,7 +12,7 @@ class TestEmailExtractor(unittest.TestCase):
             Email("freshlybakedincloverdale@gmail.com", url),
         ]
 
-        with ChromeBrowser(executable_path='D:\selenium_browser_driver\chromedriver-86.exe') as browser:
+        with ChromeBrowser() as browser:
             ee = EmailExtractor(url, browser, depth=2)
             e = ee.get_emails()
         self.assertEqual(e[0].as_dict(), emails[0].as_dict())

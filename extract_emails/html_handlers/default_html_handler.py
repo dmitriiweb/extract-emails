@@ -12,7 +12,6 @@ class DefaultHTMLHandler(HTMLHandlerInterface):
         )
         self.link_pattern = re.compile(r'<a\s+(?:[^>]*?\s+)?href=(["\'])(.*?)\1')
         
-
     def get_emails(self, page_source: str) -> List[str]:
         """
         Extract all sequences similar to email
@@ -32,8 +31,3 @@ class DefaultHTMLHandler(HTMLHandlerInterface):
         links = self.link_pattern.findall(page_source)
         links = [x[1] for x in links]
         return links
-
-    
-
-
-## get link from facebook
