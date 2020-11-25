@@ -6,8 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Installation &#8212; extract_emails  documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -64,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#links-filters">Links Filters</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#defaultlinkfilter">DefaultLinkFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contactinfolinkfilter">ContactInfoLinkFilter</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +162,7 @@
 <h1>EmailExtractor<a class="headerlink" href="#emailextractor" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="extract_emails.EmailExtractor">
-<em class="property">class </em><code class="sig-prename descclassname">extract_emails.</code><code class="sig-name descname">EmailExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">browser</span><span class="p">:</span> <span class="n">Type<span class="p">[</span>extract_emails.browsers.browser_interface.BrowserInterface<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">depth</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">max_links_from_page</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.EmailExtractor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">extract_emails.</code><code class="sig-name descname">EmailExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">browser</span><span class="p">:</span> <span class="n">Type<span class="p">[</span>extract_emails.browsers.browser_interface.BrowserInterface<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">depth</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">max_links_from_page</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">link_filter</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.EmailExtractor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract emails from a website</p>
 <dl>
 <dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">extractor</span> <span class="o">=</span> <span class="n">EmailExtractor</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_links_from_page</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
@@ -177,6 +178,8 @@
 <li><p><strong>browser</strong> – browser to get page source by URL</p></li>
 <li><p><strong>depth</strong> (<em>int</em>) – scan’s depth, default 10</p></li>
 <li><p><strong>max_links_from_page</strong> (<em>int</em>) – how many links a script shall get from each page, default -1 (all)</p></li>
+<li><p><strong>link_filter</strong> (<em>int</em>) – which filter is used to extract url. default 0. 0 - DefaultLinkFilter,
+1 - ContactInfoLinkFilter</p></li>
 </ul>
 </dd>
 </dl>
@@ -483,7 +486,7 @@
 <h2>Interface<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="extract_emails.link_filters.LinkFilterInterface">
-<em class="property">class </em><code class="sig-prename descclassname">extract_emails.link_filters.</code><code class="sig-name descname">LinkFilterInterface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_address</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.link_filters.LinkFilterInterface" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">extract_emails.link_filters.</code><code class="sig-name descname">LinkFilterInterface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_address</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.link_filters.LinkFilterInterface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interface for link filters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -511,7 +514,7 @@
 <h2>DefaultLinkFilter<a class="headerlink" href="#defaultlinkfilter" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="extract_emails.link_filters.DefaultLinkFilter">
-<em class="property">class </em><code class="sig-prename descclassname">extract_emails.link_filters.</code><code class="sig-name descname">DefaultLinkFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_address</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.link_filters.DefaultLinkFilter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">extract_emails.link_filters.</code><code class="sig-name descname">DefaultLinkFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_address</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.link_filters.DefaultLinkFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default filter for links</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -535,6 +538,57 @@
 <dl class="py method">
 <dt id="extract_emails.link_filters.DefaultLinkFilter.get_website_address">
 <em class="property">static </em><code class="sig-name descname">get_website_address</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#extract_emails.link_filters.DefaultLinkFilter.get_website_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get website address from an URL</p>
+<dl>
+<dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">DefaultLinkFilter</span><span class="o">.</span><span class="n">get_website_address</span><span class="p">(</span><span class="s1">&#39;https://example.com/page.html?param=123&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s1">&#39;https://example.com/&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – some URL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>website address</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="contactinfolinkfilter">
+<h2>ContactInfoLinkFilter<a class="headerlink" href="#contactinfolinkfilter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="extract_emails.link_filters.ContactInfoLinkFilter">
+<em class="property">class </em><code class="sig-prename descclassname">extract_emails.link_filters.</code><code class="sig-name descname">ContactInfoLinkFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">website_address</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_emails.link_filters.ContactInfoLinkFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contact information filter for links.
+Filter out the links without [‘about’, ‘contact’, ‘about-us’, ‘contact-us’, … ].
+Only keep the links might contain the contact information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>links</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – List of URLs</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="extract_emails.link_filters.ContactInfoLinkFilter.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">links</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#extract_emails.link_filters.ContactInfoLinkFilter.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Links filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>links</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – List of URLs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Filtered list of URls</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="extract_emails.link_filters.ContactInfoLinkFilter.get_website_address">
+<em class="property">static </em><code class="sig-name descname">get_website_address</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#extract_emails.link_filters.ContactInfoLinkFilter.get_website_address" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get website address from an URL</p>
 <dl>
 <dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">DefaultLinkFilter</span><span class="o">.</span><span class="n">get_website_address</span><span class="p">(</span><span class="s1">&#39;https://example.com/page.html?param=123&#39;</span><span class="p">)</span>
@@ -594,6 +648,7 @@
 <li><a class="reference internal" href="#links-filters">Links Filters</a><ul>
 <li><a class="reference internal" href="#id3">Interface</a></li>
 <li><a class="reference internal" href="#defaultlinkfilter">DefaultLinkFilter</a></li>
+<li><a class="reference internal" href="#contactinfolinkfilter">ContactInfoLinkFilter</a></li>
 </ul>
 </li>
 </ul>
@@ -631,7 +686,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Dmitrii Kurlov.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.0.
     </div>
   </body>
 </html>
