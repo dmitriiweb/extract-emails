@@ -162,3 +162,8 @@ DefaultLinkFilter
 .. autoclass:: extract_emails.link_filters.DefaultLinkFilter
    :members:
 
+ContactInfoLinkFilter
+------------------
+.. autoclass:: extract_emails.link_filters.ContactInfoLinkFilter
+   :members:
+

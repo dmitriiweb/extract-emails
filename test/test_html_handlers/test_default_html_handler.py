@@ -35,6 +35,7 @@ class TestDefaultHTMLHandler(unittest.TestCase):
 
     def test_get_emails(self):
         emails = self.html_handler.get_emails(HTML_EXAMPLE)
+
         self.assertEqual(emails[0], "example@example.com")
         self.assertEqual(emails[1], "example+example@example.co.uk")
 

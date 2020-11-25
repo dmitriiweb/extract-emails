@@ -1,12 +1,14 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8
-from typing import List, Type, Optional
+from typing import List, Type
 
 from .email import Email
-from extract_emails.browsers import RequestsBrowser, BrowserInterface
-from extract_emails.html_handlers import HTMLHandlerInterface, DefaultHTMLHandler
-from extract_emails.email_filters import EmailFilterInterface, DefaultEmailFilter
-from extract_emails.link_filters import LinkFilterInterface, DefaultLinkFilter
+from extract_emails.browsers import BrowserInterface
+from extract_emails.html_handlers import DefaultHTMLHandler
+from extract_emails.email_filters import DefaultEmailFilter
+from extract_emails.link_filters import DefaultLinkFilter, ContactInfoLinkFilter
+
+FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
 
 
 class EmailExtractor:
@@ -21,14 +23,18 @@ class EmailExtractor:
     :param browser: browser to get page source by URL
     :param int depth: scan's depth, default 10
     :param int max_links_from_page: how many links a script shall get from each page, default -1 (all)
+    :param int link_filter: which filter is used to extract url. default 0. 0 - DefaultLinkFilter,
+        1 - ContactInfoLinkFilter
     """
 
     def __init__(
-        self,
-        website_url: str,
-        browser: Type[BrowserInterface],
-        depth: int = 10,
-        max_links_from_page: int = -1,
+            self,
+            website_url: str,
+            browser: Type[BrowserInterface],
+            depth: int = 10,
+            max_links_from_page: int = -1,
+            link_filter: int = 0,
+            **kwargs
     ):
         self.website = website_url
         self.browser = browser
@@ -41,7 +47,7 @@ class EmailExtractor:
         self._current_depth: int = 0
 
         self.html_handler = DefaultHTMLHandler()
-        self.links_filter = DefaultLinkFilter(self.website)
+        self.links_filter = FILTERS[link_filter](self.website, **kwargs)
         self.emails_filter = DefaultEmailFilter()
 
     def get_emails(self) -> List[Email]:
