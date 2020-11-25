@@ -8,10 +8,8 @@ from extract_emails.html_handlers import HTMLHandlerInterface, DefaultHTMLHandle
 from extract_emails.email_filters import EmailFilterInterface, DefaultEmailFilter
 from extract_emails.link_filters import LinkFilterInterface, DefaultLinkFilter, ContactInfoLinkFilter
 
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
-
 FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
+
 
 class EmailExtractor:
     """
@@ -29,15 +27,14 @@ class EmailExtractor:
     """
 
     def __init__(
-        self,
-        website_url: str,
-        browser: Type[BrowserInterface],
-        depth: int = 10,
-        max_links_from_page: int = -1,
-        link_filter: int = 0,
-        **kwargs
+            self,
+            website_url: str,
+            browser: Type[BrowserInterface],
+            depth: int = 10,
+            max_links_from_page: int = -1,
+            link_filter: int = 0,
+            **kwargs
     ):
-        print('-------------------EmailExtractor-------------------')
         self.website = website_url
         self.browser = browser
         self.depth = depth
@@ -84,4 +81,3 @@ class EmailExtractor:
         links = self._links[:]
         self._links = []
         return links
-
