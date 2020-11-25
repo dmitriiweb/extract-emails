@@ -1,4 +1,5 @@
 # Extract Emails
+
 [![PyPI version](https://badge.fury.io/py/extract-emails.svg)](https://badge.fury.io/py/extract-emails)
 
 Extract emails from a given website
