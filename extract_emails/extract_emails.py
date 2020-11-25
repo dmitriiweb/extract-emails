@@ -1,12 +1,12 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8
-from typing import List, Type, Optional
+from typing import List, Type
 
 from .email import Email
-from extract_emails.browsers import RequestsBrowser, BrowserInterface
-from extract_emails.html_handlers import HTMLHandlerInterface, DefaultHTMLHandler
-from extract_emails.email_filters import EmailFilterInterface, DefaultEmailFilter
-from extract_emails.link_filters import LinkFilterInterface, DefaultLinkFilter, ContactInfoLinkFilter
+from extract_emails.browsers import BrowserInterface
+from extract_emails.html_handlers import DefaultHTMLHandler
+from extract_emails.email_filters import DefaultEmailFilter
+from extract_emails.link_filters import DefaultLinkFilter, ContactInfoLinkFilter
 
 FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
 
