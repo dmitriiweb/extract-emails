@@ -23,7 +23,8 @@ class EmailExtractor:
     :param browser: browser to get page source by URL
     :param int depth: scan's depth, default 10
     :param int max_links_from_page: how many links a script shall get from each page, default -1 (all)
-    :param int link_filter: which filter is used to extract url. default 0
+    :param int link_filter: which filter is used to extract url. default 0. 0 - DefaultLinkFilter,
+        1 - ContactInfoLinkFilter
     """
 
     def __init__(
