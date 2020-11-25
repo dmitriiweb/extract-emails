@@ -104,3 +104,4 @@ ENV/
 .pypirc
 .vscode
 
+*.exe
