@@ -7,8 +7,18 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.9"
+requests = "^2.26.0"
+selenium = "^3.141.0"
+httpx = "^0.19.0"
+pydantic = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pytest-cov = "^2.12.1"
+pytest_async = "^0.1.1"
+tox = "^3.24.3"
+Sphinx = "^4.1.2"
+sphinx-rtd-theme = "^0.5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
