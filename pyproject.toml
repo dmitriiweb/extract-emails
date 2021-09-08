@@ -17,8 +17,7 @@ pytest = "^6.2.5"
 pytest-cov = "^2.12.1"
 pytest_async = "^0.1.1"
 tox = "^3.24.3"
-Sphinx = "^4.1.2"
-sphinx-rtd-theme = "^0.5.2"
+mkdocs-material = "^7.2.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
