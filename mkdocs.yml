@@ -1,0 +1,7 @@
+site_name: Extract Emails
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings
