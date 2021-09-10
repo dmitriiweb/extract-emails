@@ -5,3 +5,7 @@ theme:
 plugins:
   - search
   - mkdocstrings
+
+nav:
+  - Code References:
+      - code/browsers.md

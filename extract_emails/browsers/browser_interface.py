@@ -1,4 +1,18 @@
-from abc import ABC, abstractmethod
+from abc import ABC
+from abc import abstractmethod
+
+
+"""
+browser = ChromeBrowser()
+data_extractor1 = EmailExtractor()
+data_extractor2 = LinkedInExtractor()
+browser.run()
+
+data_getter = DataGetter(browser, [data_extractor1, data_extractor2], urls=[])
+data = data_getter.get_data()
+
+browser.close()
+"""
 
 
 class BrowserInterface(ABC):
