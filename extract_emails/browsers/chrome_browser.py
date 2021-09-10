@@ -1,55 +1,74 @@
+from os import PathLike
+from typing import Iterable
 from typing import Optional
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from extract_emails.browsers import PageSourceGetter
+
 from .browser_interface import BrowserInterface
 
 
-class ChromeBrowser(BrowserInterface):
-    """
-    Chrome Browser
-    ---------------
-    Make GET requests via selenium + Google Chrome Browser
+"""
+Chrome Browser
+---------------
+Make GET requests via selenium + Google Chrome Browser
 
-    :param bool headless: run browser in headless mode, default: True
-    :param str executable_path: path to the executable. If the default is used it assumes the executable is in the $PATH
+:param bool headless: run browser in headless mode, default: True
+:param str executable_path: path to the executable. If the default is used it assumes the executable is in the $PATH
 
-    **Example:**
-    ::
+**Example:**
+::
 
-        browser = ChromeBrowser()
-        browser.open()
-        page_source = browser.get_page_source('https://example.com')
-        browser.close()
-    """
+    browser = ChromeBrowser()
+    browser.open()
+    page_source = browser.get_page_source('https://example.com')
+    browser.close()
+"""
+
+
+class ChromeBrowser(PageSourceGetter):
+    default_options = {
+        "--disable-gpu",
+        "--disable-software-rasterizer",
+        "--disable-dev-shm-usage",
+        "--window-size=1920x1080",
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+    }
 
     def __init__(
         self,
-        headless: Optional[bool] = True,
-        executable_path: Optional[str] = "chromedriver",
+        executable_path: PathLike = "/usr/bin/chromedriver",
+        headless_mode: bool = True,
+        options: Iterable[str] = None,
     ):
         self.executable_path = executable_path
-        self._chrome_options = Options()
-        self._chrome_options.add_argument("--disable-gpu")
-        self._chrome_options.add_argument("--disable-software-rasterizer")
-        if headless:
-            self._chrome_options.add_argument("--headless")
-        self._chrome_options.add_argument("--disable-dev-shm-usage")
-        self._chrome_options.add_argument("--window-size=1920x1080")
-        self._chrome_options.add_argument("--disable-setuid-sandbox")
-        self._chrome_options.add_argument("--no-sandbox")
-        self._driver = webdriver.Chrome(
-            options=self._chrome_options, executable_path=self.executable_path
+        self.headless_mode = headless_mode
+        self.options = options if options is not None else self.default_options
+        self.driver = None
+
+    def open(self):
+        """Add arguments to chrome.Options() and run the browser"""
+        options = Options()
+        for option in self.options:
+            options.add_argument(option)
+
+        if self.headless_mode:
+            options.add_argument("--headless")
+
+        self.driver = webdriver.Chrome(
+            options=options, executable_path=self.executable_path
         )
 
     def close(self):
-        self._driver.close()
-        self._driver.quit()
+        self.driver.close()
+        self.driver.quit()
 
     def _get(self, url: str) -> bool:
         try:
-            self._driver.get(url)
+            self.driver.get(url)
             return True
         except:
             return False
@@ -66,7 +85,7 @@ class ChromeBrowser(BrowserInterface):
 
             page_source = browser.get_page_source('https://example.com')
         """
-        is_get = self._get(url)
+        is_get = self.get(url)
         if is_get:
-            return self._driver.page_source
+            return self.driver.page_source
         return ""
