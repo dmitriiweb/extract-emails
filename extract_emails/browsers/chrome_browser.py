@@ -88,5 +88,8 @@ class ChromeBrowser(PageSourceGetter):
         except Exception as e:
             logger.error(f"Could not get page source from {url}: {e}")
             return ""
-        else:
-            return page_source
+
+        if "<html><head></head><body></body></html>" == page_source:
+            logger.error(f"Could not get page source from {url}: Unknown reason")
+
+        return page_source
