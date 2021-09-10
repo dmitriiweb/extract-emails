@@ -21,6 +21,10 @@ class ChromeBrowser(PageSourceGetter):
         >>> page_source = browser.get_page_source('https://example.com')
         >>> browser.close()
 
+        >>> from extract_emails.browsers import ChromeBrowser
+        >>> with ChromeBrowser() as browser:
+        ...     page_source = browser.get_page_source('https://example.com')
+
     """
 
     default_options = {
@@ -53,6 +57,13 @@ class ChromeBrowser(PageSourceGetter):
         self.headless_mode = headless_mode
         self.options = options if options is not None else self.default_options
         self.driver: Optional[webdriver.Chrome] = None
+
+    def __enter__(self):
+        self.open()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
 
     def open(self):
         """Add arguments to chrome.Options() and run the browser"""
