@@ -1,6 +1,10 @@
 site_name: Extract Emails
 theme:
   name: "material"
+  palette:
+    scheme: slate
+    primary: pink
+    accent: pink
 
 plugins:
   - search
