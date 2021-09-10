@@ -1,3 +1,5 @@
+import time
+
 from os import PathLike
 from typing import Iterable
 from typing import Optional
@@ -16,7 +18,7 @@ class ChromeBrowser(PageSourceGetter):
         >>> from extract_emails.browsers import ChromeBrowser
         >>> browser = ChromeBrowser()
         >>> browser.open()
-        >>> # do something
+        >>> page_source = browser.get_page_source('https://example.com')
         >>> browser.close()
 
     """
@@ -29,6 +31,7 @@ class ChromeBrowser(PageSourceGetter):
         "--disable-setuid-sandbox",
         "--no-sandbox",
     }
+    wait_seconds_after_get = 0
 
     def __init__(
         self,
@@ -80,9 +83,10 @@ class ChromeBrowser(PageSourceGetter):
         """
         try:
             self.driver.get(url)
+            time.sleep(self.wait_seconds_after_get)
             page_source = self.driver.page_source
         except Exception as e:
-            logger.error(f"Could not get page source from {url}")
+            logger.error(f"Could not get page source from {url}: {e}")
             return ""
         else:
             return page_source
