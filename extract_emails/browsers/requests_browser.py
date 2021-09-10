@@ -1,52 +1,45 @@
-from typing import Optional, Dict
+from typing import Any
+from typing import Dict
+
 import requests
 
-from .browser_interface import BrowserInterface
+from loguru import logger
+
+from extract_emails.browsers.page_source_getter import PageSourceGetter
 
 
-class RequestsBrowser(BrowserInterface):
-    """
-    RequestsBrowser
-    ----------------
-    Make GET requests via requests library
+class RequestsBrowser(PageSourceGetter):
+    """Wrapper on requests library
 
-    **Example:**
-    ::
-
-        browser = RequestsBrowser()
-        browser.open()
-        page_source = browser.get_page_source('https://example.com')
+    Examples:
+        >>> from extract_emails.browsers import RequestsBrowser
+        >>> browser = RequestsBrowser()
+        >>> page_source = browser.get_page_source('https://example.com')
     """
 
-    def __init__(self):
-        self._session = requests.Session()
+    requests_timeout = 0.05
 
-    def close(self):
-        pass
+    def __init__(self, headers: Dict[str, Any] = None):
+        """
 
-    def _get(self, url: str, headers: Optional[Dict[str, str]]) -> str:
+        Args:
+            headers: headers for requests
+        """
+        self.headers = headers
+        self.session = requests.Session()
+
+    def get_page_source(self, url: str) -> str:
+        """Get page source text from URL
+
+        Args:
+            url: URL
+
+        Returns:
+            page source as text
+        """
         try:
-            r = self._session.get(url, headers=headers, timeout=1).text
-        except:
-            r = ""
-        return r
-
-    def get_page_source(
-        self, url: str, headers: Optional[Dict[str, str]] = None
-    ) -> str:
-        """
-        Return page source from url
-
-        :param str url: page url
-        :param dict headers: headers for GET request, default: None
-        :return: str, HTML from page
-
-        **Example**:
-        ::
-
-            url = 'https://example.com'
-            headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P)'}
-            page_source = browser.get_page_source(url, headers)
-        """
-        response = self._get(url, headers)
-        return response
+            response = requests.get(url, headers=self.headers)
+        except Exception as e:
+            logger.error(f"Could not get page source from {url}: {e}")
+            return ""
+        return response.text
