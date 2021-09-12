@@ -12,7 +12,7 @@ class LinkFilterBase(ABC):
         """
 
         Args:
-            website_address: website address (scheme and domain), e.g. https://example.com
+            website: website address (scheme and domain), e.g. https://example.com
             *args: additional non-keywords arguments
             **kwargs: additional keywords arguments
         """
