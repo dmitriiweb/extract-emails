@@ -1,14 +1,16 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8
-from typing import List, Type
+from typing import List
+from typing import Type
+
+from extract_emails.browsers import BrowserInterface
+from extract_emails.email_filters import DefaultEmailFilter
+from extract_emails.html_handlers import DefaultHTMLHandler
 
 from .email import Email
-from extract_emails.browsers import BrowserInterface
-from extract_emails.html_handlers import DefaultHTMLHandler
-from extract_emails.email_filters import DefaultEmailFilter
-from extract_emails.link_filters import DefaultLinkFilter, ContactInfoLinkFilter
 
-FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
+
+# FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
 
 
 class EmailExtractor:
@@ -28,13 +30,13 @@ class EmailExtractor:
     """
 
     def __init__(
-            self,
-            website_url: str,
-            browser: Type[BrowserInterface],
-            depth: int = 10,
-            max_links_from_page: int = -1,
-            link_filter: int = 0,
-            **kwargs
+        self,
+        website_url: str,
+        browser: Type[BrowserInterface],
+        depth: int = 10,
+        max_links_from_page: int = -1,
+        link_filter: int = 0,
+        **kwargs
     ):
         self.website = website_url
         self.browser = browser
@@ -51,8 +53,7 @@ class EmailExtractor:
         self.emails_filter = DefaultEmailFilter()
 
     def get_emails(self) -> List[Email]:
-        """Extract emails from webpages
-        """
+        """Extract emails from webpages"""
         urls = self._get_urls()
         self._current_depth += 1
         if not len(urls) or self._current_depth > self.depth:

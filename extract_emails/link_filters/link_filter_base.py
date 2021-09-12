@@ -1,8 +1,9 @@
+from abc import ABC
+from abc import abstractmethod
 from typing import List
-from abc import ABC, abstractmethod
 
 
-class LinkFilterInterface(ABC):
+class LinkFilterBase(ABC):
     """
     Interface for link filters
 

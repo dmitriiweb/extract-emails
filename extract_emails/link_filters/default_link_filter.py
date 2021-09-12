@@ -1,10 +1,12 @@
-from typing import List, Set
-from urllib.parse import urljoin, urlparse
+from typing import List
+from typing import Set
+from urllib.parse import urljoin
+from urllib.parse import urlparse
 
-from extract_emails.link_filters import LinkFilterInterface
+from extract_emails.link_filters import LinkFilterBase
 
 
-class DefaultLinkFilter(LinkFilterInterface):
+class DefaultLinkFilter(LinkFilterBase):
     """
     Default filter for links
 

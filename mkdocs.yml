@@ -13,3 +13,4 @@ plugins:
 nav:
   - Code References:
       - code/browsers.md
+      - code/link_filters.md
