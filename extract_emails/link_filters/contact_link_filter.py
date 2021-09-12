@@ -18,7 +18,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
     checked_links: Set[str] = set()
 
     def __init__(self, website_address: str, **kwargs):
-        super().__init__(website_address, **kwargs)
+        super().__init__(website_address,,
         # where to use all the urls in the same domain or not,
         # if there are not any urls after filtering by contactinfo candidates
         self.use_default = kwargs.get("use_default", False)
