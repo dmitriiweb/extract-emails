@@ -3,18 +3,40 @@ from typing import List
 from typing import Optional
 from typing import Set
 from urllib.parse import urljoin
-from urllib.parse import urlparse
 
 from extract_emails.link_filters.link_filter_base import LinkFilterBase
 
 
 class ContactInfoLinkFilter(LinkFilterBase):
-    """
-    Contact information filter for links.
-    Filter out the links without ['about', 'contact', 'about-us', 'contact-us', ... ].
+    """Contact information filter for links.
+
     Only keep the links might contain the contact information.
 
-    :param list(str) links: List of URLs
+    Examples:
+        >>> from extract_emails.link_filters import ContactInfoLinkFilter
+        >>> link_filter = ContactInfoLinkFilter("https://example.com")
+        >>> filtered_links = link_filter.filter(['/about-us', '/search'])
+        >>> filtered_links
+        ['https://example.com/about-us']
+
+
+        >>> from extract_emails.link_filters import ContactInfoLinkFilter
+        >>> link_filter = ContactInfoLinkFilter("https://example.com", use_default=True)
+        >>> filtered_links = link_filter.filter(['/blog', '/search'])
+        >>> filtered_links
+        ['https://example.com/blog', 'https://example.com/search']
+
+        >>> from extract_emails.link_filters import ContactInfoLinkFilter
+        >>> link_filter = ContactInfoLinkFilter("https://example.com", use_default=False)
+        >>> filtered_links = link_filter.filter(['/blog', '/search'])
+        >>> filtered_links
+        []
+
+        >>> from extract_emails.link_filters import ContactInfoLinkFilter
+        >>> link_filter = ContactInfoLinkFilter("https://example.com", contruct_candidates=['search'])
+        >>> filtered_links = link_filter.filter(['/blog', '/search'])
+        >>> filtered_links
+        ['https://example.com/search']
     """
 
     default_contruct_candidates = [
@@ -34,7 +56,15 @@ class ContactInfoLinkFilter(LinkFilterBase):
         contruct_candidates: Optional[List[str]] = None,
         use_default: bool = True,
     ):
-        # no contactinfo urls found and return filtered_urls
+        """
+
+        Args:
+            website: website address (scheme and domain), e.g. https://example.com
+            contruct_candidates: keywords for filtering the list of URLs,
+                default: see `self.default_contruct_candidates`
+            use_default:  if no contactinfo urls found and return filtered_urls,
+                default: True
+        """
         super().__init__(website)
         self.candidates = (
             contruct_candidates
@@ -43,11 +73,19 @@ class ContactInfoLinkFilter(LinkFilterBase):
         )
         self.use_default = use_default
 
-    def filter(self, links: Iterable[str]) -> Set[str]:
+    def filter(self, urls: Iterable[str]) -> Set[str]:
+        """Filter out the links without keywords
+
+        Args:
+            urls: List of URLs for filtering
+
+        Returns:
+            List of filtered URLs
+        """
         filtered_urls = set()
         contactinfo_urls = set()
 
-        for url in links:
+        for url in urls:
             url = urljoin(self.website, url)
 
             if not url.startswith(self.website):
