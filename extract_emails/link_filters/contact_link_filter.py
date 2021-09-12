@@ -1,9 +1,11 @@
+from typing import Iterable
 from typing import List
+from typing import Optional
 from typing import Set
 from urllib.parse import urljoin
 from urllib.parse import urlparse
 
-from extract_emails.link_filters import LinkFilterBase
+from extract_emails.link_filters.link_filter_base import LinkFilterBase
 
 
 class ContactInfoLinkFilter(LinkFilterBase):
@@ -15,56 +17,50 @@ class ContactInfoLinkFilter(LinkFilterBase):
     :param list(str) links: List of URLs
     """
 
+    default_contruct_candidates = [
+        "about",
+        "about-us",
+        "aboutus",
+        "contact",
+        "contact-us",
+        "contactus",
+    ]
+
     checked_links: Set[str] = set()
 
-    def __init__(self, website_address: str, **kwargs):
-        super().__init__(website_address,,
-        # where to use all the urls in the same domain or not,
-        # if there are not any urls after filtering by contactinfo candidates
-        self.use_default = kwargs.get("use_default", False)
-        self._contruct_candidates()
+    def __init__(
+        self,
+        website: str,
+        contruct_candidates: Optional[List[str]] = None,
+        use_default: bool = True,
+    ):
+        # no contactinfo urls found and return filtered_urls
+        super().__init__(website)
+        self.candidates = (
+            contruct_candidates
+            if contruct_candidates is not None
+            else self.default_contruct_candidates
+        )
+        self.use_default = use_default
 
-    def _contruct_candidates(self):
-        self.candidates = [
-            "about",
-            "about-us",
-            "aboutus",
-            "contact",
-            "contact-us",
-            "contactus",
-        ]
+    def filter(self, links: Iterable[str]) -> Set[str]:
+        filtered_urls = set()
+        contactinfo_urls = set()
 
-    def filter(self, links: List[str]) -> List[str]:
-        filtered_urls = []
         for url in links:
             url = urljoin(self.website, url)
-            if url.startswith(self.website) and url not in self.checked_links:
-                self.checked_links.add(url)
-                filtered_urls.append(url)
 
-        contactinfo_urls = []
-        for url in filtered_urls:
+            if not url.startswith(self.website):
+                continue
+            filtered_urls.add(url)
+
             for cand in self.candidates:
                 if cand in url.lower():
-                    contactinfo_urls.append(url)
+                    contactinfo_urls.add(url)
+                    break
 
-        if len(contactinfo_urls) == 0 and self.use_default:
-            # no contactinfo urls found and return filtered_urls
-            return filtered_urls
-        else:
-            return contactinfo_urls
-
-    @staticmethod
-    def get_website_address(url: str) -> str:
-        """
-        Get website address from an URL
-
-        Example:
-            >>> DefaultLinkFilter.get_website_address('https://example.com/page.html?param=123')
-            ... 'https://example.com/'
-
-        :param str url: some URL
-        :return: website address
-        """
-        parsed_url = urlparse(url)
-        return f"{parsed_url.scheme}://{parsed_url.netloc}/"
+        return (
+            filtered_urls
+            if len(contactinfo_urls) == 0 and self.use_default
+            else contactinfo_urls
+        )

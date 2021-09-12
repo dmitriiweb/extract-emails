@@ -8,13 +8,11 @@ from urllib.parse import urlparse
 class LinkFilterBase(ABC):
     """Base class for link filters"""
 
-    def __init__(self, website: str, *args, **kwargs):
+    def __init__(self, website: str):
         """
 
         Args:
             website: website address (scheme and domain), e.g. https://example.com
-            *args: additional non-keywords arguments
-            **kwargs: additional keywords arguments
         """
         self.website = website
 
