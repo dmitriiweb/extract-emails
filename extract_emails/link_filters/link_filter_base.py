@@ -1,8 +1,14 @@
+import re
+
 from abc import ABC
 from abc import abstractmethod
 from typing import Iterable
+from typing import List
 from typing import Set
 from urllib.parse import urlparse
+
+
+RE_LINKS = re.compile(r'<a\s+(?:[^>]*?\s+)?href=(["\'])(.*?)\1')
 
 
 class LinkFilterBase(ABC):
@@ -35,6 +41,29 @@ class LinkFilterBase(ABC):
         """
         parsed_url = urlparse(url)
         return f"{parsed_url.scheme}://{parsed_url.netloc}/"
+
+    @staticmethod
+    def get_links(page_source: str) -> List[str]:
+        """Extract all URLs corresponding to current website
+
+        Examples:
+            >>> from extract_emails.link_filters import LinkFilterBase
+            >>> links = LinkFilterBase.get_links(page_source)
+            >>> links
+            ["example.com", "/example.com", "https://example2.com"]
+
+        Args:
+            page_source: HTML page source
+
+        Returns:
+            List of URLs
+
+        :param str page_source: HTML page source
+        :return: List of URLs
+        """
+        links = RE_LINKS.findall(page_source)
+        links = [x[1] for x in links]
+        return links
 
     @abstractmethod
     def filter(self, urls: Iterable[str]) -> Set[str]:
