@@ -10,3 +10,9 @@ class PageData(BaseModel):
     website: str
     page_url: str
     data: Optional[Dict[str, List[str]]] = Field(default_factory=dict)
+
+    def append(self, label: str, vals: List[str]) -> None:
+        try:
+            self.data[label].extend(vals)
+        except KeyError:
+            self.data[label] = vals
