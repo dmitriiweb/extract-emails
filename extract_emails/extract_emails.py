@@ -4,8 +4,8 @@ from typing import List
 from typing import Type
 
 from extract_emails.browsers import BrowserInterface
+from extract_emails.data_extractors import DefaultHTMLHandler
 from extract_emails.email_filters import DefaultEmailFilter
-from extract_emails.html_handlers import DefaultHTMLHandler
 
 from .email import Email
 

@@ -15,3 +15,4 @@ nav:
       - code/browsers.md
       - code/link_filters.md
       - code/models.md
+      - code/data_extractors.md
