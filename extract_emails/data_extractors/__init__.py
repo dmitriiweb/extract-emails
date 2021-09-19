@@ -1,3 +1,2 @@
 from .data_extractor import DataExtractor
-from .default_html_handler import DefaultHTMLHandler
-from .html_handler_interface import HTMLHandlerInterface
+from .email_extractor import EmailExtractor

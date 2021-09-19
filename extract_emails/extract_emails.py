@@ -4,7 +4,6 @@ from typing import List
 from typing import Type
 
 from extract_emails.browsers import BrowserInterface
-from extract_emails.data_extractors import DefaultHTMLHandler
 from extract_emails.email_filters import DefaultEmailFilter
 
 from .email import Email
@@ -48,9 +47,9 @@ class EmailExtractor:
         self._emails: List[Email] = []
         self._current_depth: int = 0
 
-        self.html_handler = DefaultHTMLHandler()
-        self.links_filter = FILTERS[link_filter](self.website, **kwargs)
-        self.emails_filter = DefaultEmailFilter()
+        # self.html_handler = DefaultHTMLHandler()
+        # self.links_filter = FILTERS[link_filter](self.website, **kwargs)
+        # self.emails_filter = DefaultEmailFilter()
 
     def get_emails(self) -> List[Email]:
         """Extract emails from webpages"""
