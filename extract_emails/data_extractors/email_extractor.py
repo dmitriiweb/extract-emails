@@ -3,6 +3,7 @@ import re
 from typing import Set
 
 from extract_emails.data_extractors import DataExtractor
+from extract_emails.utils import email_filter
 
 
 class EmailExtractor(DataExtractor):
@@ -20,4 +21,5 @@ class EmailExtractor(DataExtractor):
         Returns:
             Set of emails, e.g. {'email@email.com', 'email2@email.com'}
         """
-        return set([i for i in self.regexp.findall(page_source)])
+        raw_emails = [i for i in self.regexp.findall(page_source)]
+        return email_filter(raw_emails)
