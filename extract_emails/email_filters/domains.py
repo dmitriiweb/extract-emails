@@ -1,4 +1,4 @@
-TOP_LEVEL_DOMAINS = [
+TOP_LEVEL_DOMAINS = {
     ".com",
     ".org",
     ".net",
@@ -1434,4 +1434,4 @@ TOP_LEVEL_DOMAINS = [
     ".localhost",
     ".onion",
     ".test",
-]
+}
