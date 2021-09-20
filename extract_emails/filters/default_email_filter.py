@@ -1,6 +1,8 @@
-from typing import List, Set
+from typing import List
+from typing import Set
 
-from extract_emails.email_filters import EmailFilterInterface
+from extract_emails.filters import EmailFilterInterface
+
 from .domains import TOP_LEVEL_DOMAINS
 
 
