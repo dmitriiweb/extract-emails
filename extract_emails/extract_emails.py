@@ -4,7 +4,6 @@ from typing import List
 from typing import Type
 
 from extract_emails.browsers import BrowserInterface
-from extract_emails.filters import DefaultEmailFilter
 
 from .email import Email
 
