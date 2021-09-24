@@ -66,6 +66,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
                 default: True
         """
         super().__init__(website)
+        self.checked_links = set()
         self.candidates = (
             contruct_candidates
             if contruct_candidates is not None
@@ -73,7 +74,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
         )
         self.use_default = use_default
 
-    def filter(self, urls: Iterable[str]) -> Set[str]:
+    def filter(self, urls: Iterable[str]) -> List[str]:
         """Filter out the links without keywords
 
         Args:
@@ -82,19 +83,22 @@ class ContactInfoLinkFilter(LinkFilterBase):
         Returns:
             List of filtered URLs
         """
-        filtered_urls = set()
-        contactinfo_urls = set()
+        filtered_urls = []
+        contactinfo_urls = []
 
         for url in urls:
             url = urljoin(self.website, url)
 
             if not url.startswith(self.website):
                 continue
-            filtered_urls.add(url)
+            if url in self.checked_links:
+                continue
+            filtered_urls.append(url)
+            self.checked_links.add(url)
 
             for cand in self.candidates:
                 if cand in url.lower():
-                    contactinfo_urls.add(url)
+                    contactinfo_urls.append(url)
                     break
 
         return (

@@ -10,7 +10,11 @@ from extract_emails.link_filters.link_filter_base import LinkFilterBase
 class DefaultLinkFilter(LinkFilterBase):
     """Default filter for links"""
 
-    def filter(self, links: Iterable[str]) -> Set[str]:
+    def __init__(self, website: str):
+        super().__init__(website)
+        self.checked_links = set()
+
+    def filter(self, links: Iterable[str]) -> List[str]:
         """Will exclude from a list URLs, which not starts with `self.website` and not starts with '/'
 
         Examples:
@@ -18,7 +22,7 @@ class DefaultLinkFilter(LinkFilterBase):
             >>> test_urls = ["https://example.com/page1.html","/page.html","/page.html", "https://google.com"]
             >>> link_filter = DefaultLinkFilter("https://example.com/")
             >>> filtered_urls = link_filter.filter(test_urls)
-            >>> list(filtered_urls)
+            >>> filtered_urls
             ["https://example.com/page1.html", "https://example.com/page.html"]
 
         Args:
@@ -27,10 +31,14 @@ class DefaultLinkFilter(LinkFilterBase):
         Returns:
             Set of filtered URLs
         """
-        filtered_urls = set()
+        filtered_urls = []
         for link in links:
-            if link.startswith(self.website):
-                filtered_urls.add(link)
-            elif not link.startswith("http"):
-                filtered_urls.add(urljoin(self.website, link))
+            url = urljoin(self.website, link)
+            if not url.startswith(self.website):
+                continue
+            if url in self.checked_links:
+                continue
+            filtered_urls.append(url)
+            self.checked_links.add(url)
+
         return filtered_urls

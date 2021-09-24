@@ -4,7 +4,6 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Iterable
 from typing import List
-from typing import Set
 from urllib.parse import urlparse
 
 
@@ -66,7 +65,7 @@ class LinkFilterBase(ABC):
         return links
 
     @abstractmethod
-    def filter(self, urls: Iterable[str]) -> Set[str]:
+    def filter(self, urls: Iterable[str]) -> List[str]:
         """Filter links by some parameters
 
         Args:
