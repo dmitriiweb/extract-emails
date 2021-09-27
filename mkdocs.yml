@@ -17,3 +17,4 @@ nav:
       - code/models.md
       - code/data_extractors.md
       - code/utils.md
+      - code/workers.md

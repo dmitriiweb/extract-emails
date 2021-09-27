@@ -11,6 +11,10 @@ class LinkedinExtractor(DataExtractor):
             r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
         )
 
+    @property
+    def name(self) -> str:
+        return "linkedin"
+
     def get_data(self, page_source: str) -> Set[str]:
         """Extract links to Linkedin profiles
 

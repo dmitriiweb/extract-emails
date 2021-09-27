@@ -3,7 +3,8 @@
 from typing import List
 from typing import Type
 
-from extract_emails.browsers import BrowserInterface
+
+# from extract_emails.browsers import BrowserInterface
 
 
 # FILTERS = {0: DefaultLinkFilter, 1: ContactInfoLinkFilter}
@@ -28,14 +29,14 @@ class EmailExtractor:
     def __init__(
         self,
         website_url: str,
-        browser: Type[BrowserInterface],
+        # browser: Type[BrowserInterface],
         depth: int = 10,
         max_links_from_page: int = -1,
         link_filter: int = 0,
         **kwargs
     ):
         self.website = website_url
-        self.browser = browser
+        # self.browser = browser
         self.depth = depth
         self.max_links_from_page = max_links_from_page
 
