@@ -1,6 +1,7 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import List
+from typing import Tuple
 from typing import Type
 
 from loguru import logger
@@ -54,30 +55,44 @@ class BaseExtractor(ABC):
         while len(self.links):
             if self.current_depth > self.depth:
                 break
-
             self.current_depth += 1
-            urls = self.links.pop(0)
-            new_urls: List[str] = []
 
-            for url in urls:
-                try:
-                    page_source = self.browser.get_page_source(url)
-                except Exception as e:
-                    logger.error("Cannot get data from {}: {}".format(url, e))
-                    continue
+            new_data = self._get_new_data()
+            data.extend(new_data)
 
-                new_links = self.link_filter.get_links(page_source)
-                filtered_links = self.link_filter.filter(new_links)
-                new_urls.extend(filtered_links)
+        return data
 
-                page_data = PageData(website=self.website_url, page_url=url)
+    def _get_new_data(self) -> List[PageData]:
 
-                for data_extractor in self.data_extractors:
-                    new_data = data_extractor.get_data(page_source)
-                    page_data.append(data_extractor.name, list(new_data))
+        data: List[PageData] = []
+        urls = self.links.pop(0)
 
-                data.append(page_data)
+        for url in urls:
+            try:
+                new_urls, page_data = self._get_page_data(url)
+            except Exception as e:
+                logger.error("Cannot get data from {}: {}".format(url, e))
+                continue
+
+            data.append(page_data)
+
+            if self.max_links_from_page > -1:
+                new_urls = new_urls[: self.max_links_from_page + 1]
 
             self.links.append(new_urls)
 
         return data
+
+    def _get_page_data(self, url: str) -> Tuple[List[str], PageData]:
+        page_source = self.browser.get_page_source(url)
+
+        new_links = self.link_filter.get_links(page_source)
+        filtered_links = self.link_filter.filter(new_links)
+
+        page_data = PageData(website=self.website_url, page_url=url)
+
+        for data_extractor in self.data_extractors:
+            new_data = data_extractor.get_data(page_source)
+            page_data.append(data_extractor.name, list(new_data))
+
+        return filtered_links, page_data
