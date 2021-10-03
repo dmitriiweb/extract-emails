@@ -15,7 +15,7 @@ class ContactFilterAndEmailFactory(BaseFactory):
         max_links_from_page (Optional[int]): how many links a script shall get from each page. Defaults to None
 
     Examples:
-        >>> from extract_emails import DefaultFilterAndEmailFactory as Factory
+        >>> from extract_emails import ContactFilterAndEmailFactory as Factory
         >>> from extract_emails import DefaultWorker
         >>> from extract_emails.browsers import RequestsBrowser as Browser
         >>>
@@ -42,7 +42,7 @@ class ContactFilterAndEmailFactory(BaseFactory):
 
     @property
     def link_filter(self) -> ContactInfoLinkFilter:
-        """Initialize `DefaultLinkFilter`"""
+        """Initialize `ContactInfoLinkFilter`"""
         return ContactInfoLinkFilter(self.website_url)
 
     @property
