@@ -8,6 +8,12 @@ from extract_emails.link_filters import DefaultLinkFilter
 class DefaultFilterAndEmailFactory(BaseFactory):
     """Will initialize `DefaultLinkFilter and EmailExtractor
 
+    Args:
+        website_url (str): website for scan, e.g. https://example.com
+        browser (PageSourceGetter): browser to get page source by URL
+        depth (Optional[int]): scan's depth, default 10. Defaults to None
+        max_links_from_page (Optional[int]): how many links a script shall get from each page. Defaults to None
+
     Examples:
         >>> from extract_emails import DefaultFilterAndEmailFactory as Factory
         >>> from extract_emails import DefaultWorker
@@ -31,6 +37,7 @@ class DefaultFilterAndEmailFactory(BaseFactory):
                     data={'email': ['"John.Doe2."@example.com', 'x2@example.com']}
                 ),
             ]
+
     """
 
     @property
