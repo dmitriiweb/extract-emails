@@ -12,7 +12,7 @@ from extract_emails.models import PageData
 
 
 class MainExtractor:
-    """All data extractions goes here"""
+    """All data extractions goes here."""
 
     def __init__(
         self,
@@ -27,8 +27,8 @@ class MainExtractor:
         Args:
             website_url: website for scan, e.g. https://example.com
             browser: browser to get page source by URL
-            link_filter: TODO add param description
-            data_extractors: TODO add param description
+            link_filter: LinkFilter to filter urls on the website
+            data_extractors: Which data extractors to use to extract data
             depth: scan's depth, default 10
             max_links_from_page: how many links a script shall get from each page, default None (all)
         """
