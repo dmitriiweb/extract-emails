@@ -1,3 +1,4 @@
+from typing import TYPE_CHECKING
 from typing import List
 from typing import Optional
 from typing import Tuple
@@ -5,40 +6,22 @@ from typing import Type
 
 from loguru import logger
 
-from extract_emails.browsers import PageSourceGetter
-from extract_emails.data_extractors import DataExtractor
-from extract_emails.link_filters import LinkFilterBase
-from extract_emails.models import PageData
+
+if TYPE_CHECKING:
+    from extract_emails.factories import BaseFactory
+    from extract_emails.models import PageData
 
 
 class MainExtractor:
     """All data extractions goes here."""
 
-    def __init__(
-        self,
-        website_url: str,
-        browser: PageSourceGetter,
-        link_filter: Type[LinkFilterBase],
-        data_extractors: List[Type[DataExtractor]],
-        depth: int = 10,
-        max_links_from_page: Optional[int] = None,
-    ):
-        """
-        Args:
-            website_url: website for scan, e.g. https://example.com
-            browser: browser to get page source by URL
-            link_filter: LinkFilter to filter urls on the website
-            data_extractors: Which data extractors to use to extract data
-            depth: scan's depth, default 10
-            max_links_from_page: how many links a script shall get from each page, default None (all)
-        """
-        self.website_url = website_url
-        self.browser = browser
-        self.depth = depth
-        self.max_links_from_page = max_links_from_page
-
-        self.link_filter = link_filter
-        self.data_extractors = data_extractors
+    def __init__(self, factory: Type[BaseFactory]):
+        self.website_url = factory.website_url
+        self.browser = factory.browser
+        self.depth = factory.depth
+        self.max_links_from_page = factory.max_links_from_page
+        self.link_filter = factory.link_filter
+        self.data_extractors = factory.data_extractors
 
         self.links = [[self.website_url]]
         self.current_depth = 0
@@ -48,7 +31,7 @@ class MainExtractor:
         data: List[PageData] = []
 
         while len(self.links):
-            if self.current_depth > self.depth:
+            if self.depth is not None and self.current_depth > self.depth:
                 break
             self.current_depth += 1
 
