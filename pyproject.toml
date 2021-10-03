@@ -21,6 +21,7 @@ tox = "^3.24.3"
 mkdocs-material = "^7.2.6"
 mkdocs = "^1.2.2"
 mkdocstrings = "^0.15.2"
+Pygments = "^2.10.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
