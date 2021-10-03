@@ -8,12 +8,14 @@ from extract_emails.link_filters import LinkFilterBase
 
 
 class IFactory(ABC):
+    """Interface for factories"""
+
     @property
     @abstractmethod
     def link_filter(self) -> Type[LinkFilterBase]:
-        pass
+        """Initialize link filter"""
 
     @property
     @abstractmethod
     def data_extractors(self) -> List[Type[DataExtractor]]:
-        pass
+        """Initialize data extractors"""
