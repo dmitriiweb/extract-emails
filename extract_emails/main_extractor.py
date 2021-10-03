@@ -1,6 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
 from typing import List
+from typing import Optional
 from typing import Tuple
 from typing import Type
 
@@ -12,41 +11,37 @@ from extract_emails.link_filters import LinkFilterBase
 from extract_emails.models import PageData
 
 
-class BaseExtractor(ABC):
-    """Base class for all workers"""
+class MainExtractor:
+    """All data extractions goes here"""
 
     def __init__(
         self,
         website_url: str,
         browser: PageSourceGetter,
+        link_filter: Type[LinkFilterBase],
+        data_extractors: List[Type[DataExtractor]],
         depth: int = 10,
-        max_links_from_page: int = -1,
+        max_links_from_page: Optional[int] = None,
     ):
         """
         Args:
             website_url: website for scan, e.g. https://example.com
             browser: browser to get page source by URL
+            link_filter: TODO add param description
+            data_extractors: TODO add param description
             depth: scan's depth, default 10
-            max_links_from_page: how many links a script shall get from each page, default -1 (all)
+            max_links_from_page: how many links a script shall get from each page, default None (all)
         """
         self.website_url = website_url
         self.browser = browser
         self.depth = depth
         self.max_links_from_page = max_links_from_page
 
-        self.link_filter = self.get_link_filter()
-        self.data_extractors = self.get_data_extractors()
+        self.link_filter = link_filter
+        self.data_extractors = data_extractors
 
         self.links = [[self.website_url]]
         self.current_depth = 0
-
-    @abstractmethod
-    def get_link_filter(self) -> Type[LinkFilterBase]:
-        pass
-
-    @abstractmethod
-    def get_data_extractors(self) -> List[Type[DataExtractor]]:
-        pass
 
     def get_data(self) -> List[PageData]:
         """Extract data from a given website"""
@@ -76,8 +71,8 @@ class BaseExtractor(ABC):
 
             data.append(page_data)
 
-            if self.max_links_from_page > -1:
-                new_urls = new_urls[: self.max_links_from_page + 1]
+            if self.max_links_from_page:
+                new_urls = new_urls[: self.max_links_from_page]
 
             self.links.append(new_urls)
 
