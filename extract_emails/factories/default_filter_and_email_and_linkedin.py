@@ -1,12 +1,14 @@
 from typing import List
+from typing import Union
 
 from extract_emails.data_extractors import EmailExtractor
+from extract_emails.data_extractors import LinkedinExtractor
 from extract_emails.factories.base_factory import BaseFactory
 from extract_emails.link_filters import DefaultLinkFilter
 
 
-class DefaultFilterAndEmailFactory(BaseFactory):
-    """Will initialize `DefaultLinkFilter` and `EmailExtractor`
+class DefaultFilterAndEmailAndLinkedinFactory(BaseFactory):
+    """Will initialize `DefaultLinkFilter` and `EmailExtractor` and `LinkedinExtractor`
 
     Args:
         website_url (str): website for scan, e.g. https://example.com
@@ -15,7 +17,7 @@ class DefaultFilterAndEmailFactory(BaseFactory):
         max_links_from_page (Optional[int]): how many links a script shall get from each page. Defaults to None
 
     Examples:
-        >>> from extract_emails import DefaultFilterAndEmailFactory as Factory
+        >>> from extract_emails import DefaultFilterAndEmailAndLinkedinFactory as Factory
         >>> from extract_emails import DefaultWorker
         >>> from extract_emails.browsers import RequestsBrowser as Browser
         >>>
@@ -29,12 +31,18 @@ class DefaultFilterAndEmailFactory(BaseFactory):
                 PageData(
                     website='https://en.wikipedia.org/',
                     page_url='https://en.wikipedia.org/Email_address',
-                    data={'email': ['"John.Doe."@example.com', 'x@example.com']}
+                    data={
+                    'email': ['"John.Doe."@example.com', 'x@example.com'],
+                    'linkedin': ['linkedin_url1', 'linkedin_url2'],
+                    }
                 ),
                 PageData(
                     website='https://en.wikipedia.org/',
                     page_url='https://en.wikipedia.org/Email_address2',
-                    data={'email': ['"John.Doe2."@example.com', 'x2@example.com']}
+                    data={
+                    'email': ['"John.Doe."@example.com', 'x@example.com'],
+                    'linkedin': ['linkedin_url3', 'linkedin_url4'],
+                    }
                 ),
             ]
 
@@ -46,6 +54,6 @@ class DefaultFilterAndEmailFactory(BaseFactory):
         return DefaultLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> List[EmailExtractor]:
-        """Initialize `EmailExtractor`"""
+    def data_extractors(self) -> List[Union[EmailExtractor, LinkedinExtractor]]:
+        """Initialize `EmailExtractor` and `LinkedinExtractor`"""
         return [EmailExtractor()]
