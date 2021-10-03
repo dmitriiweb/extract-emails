@@ -12,8 +12,8 @@ plugins:
 
 nav:
   - Code References:
-      - code/workers.md
       - code/factories.md
+      - code/workers.md
       - code/browsers.md
       - code/link_filters.md
       - code/models.md

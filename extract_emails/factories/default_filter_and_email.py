@@ -6,7 +6,32 @@ from extract_emails.link_filters import DefaultLinkFilter
 
 
 class DefaultFilterAndEmailFactory(BaseFactory):
-    """Will initialize `DefaultLinkFilter and EmailExtractor"""
+    """Will initialize `DefaultLinkFilter and EmailExtractor
+
+    Examples:
+        >>> from extract_emails import DefaultFilterAndEmailFactory as Factory
+        >>> from extract_emails import DefaultWorker
+        >>> from extract_emails.browsers import RequestsBrowser as Browser
+        >>>
+        >>> browser = Browser()
+        >>> url = 'https://en.wikipedia.org/'
+        >>> factory = Factory(website_url=url, browser=browser)
+        >>> worker = DefaultWorker(factory)
+        >>> data = worker.get_data()
+        >>> data
+            [
+                PageData(
+                    website='https://en.wikipedia.org/',
+                    page_url='https://en.wikipedia.org/Email_address',
+                    data={'email': ['"John.Doe."@example.com', 'x@example.com']}
+                ),
+                PageData(
+                    website='https://en.wikipedia.org/',
+                    page_url='https://en.wikipedia.org/Email_address2',
+                    data={'email': ['"John.Doe2."@example.com', 'x2@example.com']}
+                ),
+            ]
+    """
 
     @property
     def link_filter(self) -> DefaultLinkFilter:
