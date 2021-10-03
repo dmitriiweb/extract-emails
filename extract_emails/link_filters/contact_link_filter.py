@@ -54,7 +54,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
         self,
         website: str,
         contruct_candidates: Optional[List[str]] = None,
-        use_default: bool = True,
+        use_default: bool = False,
     ):
         """
 
