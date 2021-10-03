@@ -12,7 +12,7 @@ plugins:
 
 nav:
   - Code References:
-      - code/main_extractor.md
+      - code/workers.md
       - code/factories.md
       - code/browsers.md
       - code/link_filters.md

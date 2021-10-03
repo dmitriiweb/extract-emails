@@ -1,21 +1,20 @@
-from typing import TYPE_CHECKING
 from typing import List
-from typing import Optional
 from typing import Tuple
-from typing import Type
 
 from loguru import logger
 
-
-if TYPE_CHECKING:
-    from extract_emails.factories import BaseFactory
-    from extract_emails.models import PageData
+from extract_emails.factories import BaseFactory
+from extract_emails.models import PageData
 
 
-class MainExtractor:
+class DefaultWorker:
     """All data extractions goes here."""
 
-    def __init__(self, factory: Type[BaseFactory]):
+    def __init__(self, factory: BaseFactory):
+        """
+        Args:
+            factory: see `BaseFactory`
+        """
         self.website_url = factory.website_url
         self.browser = factory.browser
         self.depth = factory.depth
