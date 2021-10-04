@@ -1,0 +1,2199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Factories - Extract Emails</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#factories" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Extract Emails" class="md-header__button md-logo" aria-label="Extract Emails" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Extract Emails
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Factories
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Extract Emails" class="md-nav__button md-logo" aria-label="Extract Emails" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Extract Emails
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick_start/intro/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Code References
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Code References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Code References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Factories
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Factories
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory" class="md-nav__link">
+    extract_emails.factories.base_factory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory" class="md-nav__link">
+    BaseFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="BaseFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email" class="md-nav__link">
+    extract_emails.factories.default_filter_and_email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory" class="md-nav__link">
+    DefaultFilterAndEmailFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndEmailFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin" class="md-nav__link">
+    extract_emails.factories.default_filter_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory" class="md-nav__link">
+    DefaultFilterAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin" class="md-nav__link">
+    extract_emails.factories.default_filter_and_email_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory" class="md-nav__link">
+    DefaultFilterAndEmailAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndEmailAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory" class="md-nav__link">
+    ContactFilterAndEmailFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndEmailFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory" class="md-nav__link">
+    ContactFilterAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_email_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory" class="md-nav__link">
+    ContactFilterAndEmailAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndEmailAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workers/" class="md-nav__link">
+        Workers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../browsers/" class="md-nav__link">
+        Browsers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../link_filters/" class="md-nav__link">
+        Link Filters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        Models
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_extractors/" class="md-nav__link">
+        Data Extractors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        Utils
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory" class="md-nav__link">
+    extract_emails.factories.base_factory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory" class="md-nav__link">
+    BaseFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="BaseFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.base_factory.BaseFactory.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email" class="md-nav__link">
+    extract_emails.factories.default_filter_and_email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory" class="md-nav__link">
+    DefaultFilterAndEmailFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndEmailFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin" class="md-nav__link">
+    extract_emails.factories.default_filter_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory" class="md-nav__link">
+    DefaultFilterAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin" class="md-nav__link">
+    extract_emails.factories.default_filter_and_email_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory" class="md-nav__link">
+    DefaultFilterAndEmailAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="DefaultFilterAndEmailAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory" class="md-nav__link">
+    ContactFilterAndEmailFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndEmailFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory" class="md-nav__link">
+    ContactFilterAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin" class="md-nav__link">
+    extract_emails.factories.contact_filter_and_email_and_linkedin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory" class="md-nav__link">
+    ContactFilterAndEmailAndLinkedinFactory
+  </a>
+  
+    <nav class="md-nav" aria-label="ContactFilterAndEmailAndLinkedinFactory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.data_extractors" class="md-nav__link">
+    data_extractors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.link_filter" class="md-nav__link">
+    link_filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="factories">Factories<a class="headerlink" href="#factories" title="Permanent link">&para;</a></h1>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.base_factory"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.base_factory.BaseFactory">
+        <code>BaseFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.base_factory.BaseFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Base class for all factories</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.base_factory.BaseFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">data_extractor</span><span class="o">.</span><span class="n">DataExtractor</span><span class="p">]]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.base_factory.BaseFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize data extractors</p>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.base_factory.BaseFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">link_filters</span><span class="o">.</span><span class="n">link_filter_base</span><span class="o">.</span><span class="n">LinkFilterBase</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.base_factory.BaseFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize link filter</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.base_factory.BaseFactory.__init__">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">website_url</span><span class="p">,</span> <span class="n">browser</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_links_from_page</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.base_factory.BaseFactory.__init__" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page, default None (all)</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>extract_emails/factories/base_factory.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">website_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">browser</span><span class="p">:</span> <span class="n">PageSourceGetter</span><span class="p">,</span>
+    <span class="n">depth</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_links_from_page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        website_url: website for scan, e.g. https://example.com</span>
+<span class="sd">        browser: browser to get page source by URL</span>
+<span class="sd">        depth: scan&#39;s depth, default 10</span>
+<span class="sd">        max_links_from_page: how many links a script shall get from each page, default None (all)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_website_url</span> <span class="o">=</span> <span class="n">website_url</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_browser</span> <span class="o">=</span> <span class="n">browser</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_depth</span> <span class="o">=</span> <span class="n">depth</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_max_links_from_page</span> <span class="o">=</span> <span class="n">max_links_from_page</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.default_filter_and_email"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory">
+        <code>DefaultFilterAndEmailFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>DefaultLinkFilter</code> and <code>EmailExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultFilterAndEmailFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe2.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x2@example.com&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">email_extractor</span><span class="o">.</span><span class="n">EmailExtractor</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>EmailExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">DefaultLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>DefaultLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.default_filter_and_linkedin"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory">
+        <code>DefaultFilterAndLinkedinFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>DefaultLinkFilter</code> and <code>LinkedinExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultFilterAndLinkedinFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkeding profile url 1&#39;</span><span class="p">,</span> <span class="s1">&#39;linkeding profile url 2&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkeding profile url 3&#39;</span><span class="p">,</span> <span class="s1">&#39;linkeding profile url 4&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">linkedin_extractor</span><span class="o">.</span><span class="n">LinkedinExtractor</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>LinkedinExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">DefaultLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_linkedin.DefaultFilterAndLinkedinFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>DefaultLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.default_filter_and_email_and_linkedin"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory">
+        <code>DefaultFilterAndEmailAndLinkedinFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>DefaultLinkFilter</code> and <code>EmailExtractor</code> and <code>LinkedinExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultFilterAndEmailAndLinkedinFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkedin_url1&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin_url2&#39;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkedin_url3&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin_url4&#39;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">email_extractor</span><span class="o">.</span><span class="n">EmailExtractor</span><span class="p">,</span> <span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">linkedin_extractor</span><span class="o">.</span><span class="n">LinkedinExtractor</span><span class="p">]]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>EmailExtractor</code> and <code>LinkedinExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">DefaultLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.default_filter_and_email_and_linkedin.DefaultFilterAndEmailAndLinkedinFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>DefaultLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.contact_filter_and_email"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory">
+        <code>ContactFilterAndEmailFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>ContactInfoLinkFilter</code> and <code>EmailExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">ContactFilterAndEmailFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe2.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x2@example.com&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">email_extractor</span><span class="o">.</span><span class="n">EmailExtractor</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>EmailExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">ContactInfoLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email.ContactFilterAndEmailFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>ContactInfoLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.contact_filter_and_linkedin"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory">
+        <code>ContactFilterAndLinkedinFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>ContactInfoLinkFilter</code> and <code>LinkedinExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">ContactFilterAndLinkedinFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkeding profile url 1&#39;</span><span class="p">,</span> <span class="s1">&#39;linkeding profile url 2&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkeding profile url 3&#39;</span><span class="p">,</span> <span class="s1">&#39;linkeding profile url 4&#39;</span><span class="p">]}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">linkedin_extractor</span><span class="o">.</span><span class="n">LinkedinExtractor</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>LinkedinExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">ContactInfoLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_linkedin.ContactFilterAndLinkedinFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>ContactInfoLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="extract_emails.factories.contact_filter_and_email_and_linkedin"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory">
+        <code>ContactFilterAndEmailAndLinkedinFactory</code>
+
+
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Will initialize <code>ContactInfoLinkFilter</code> and <code>EmailExtractor</code> and <code>LinkedinExtractor</code></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>website_url</code></td>
+        <td><code>str</code></td>
+        <td><p>website for scan, e.g. <a href="https://example.com">https://example.com</a></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>browser</code></td>
+        <td><code>PageSourceGetter</code></td>
+        <td><p>browser to get page source by URL</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>depth</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>scan's depth, default 10. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_links_from_page</code></td>
+        <td><code>Optional[int]</code></td>
+        <td><p>how many links a script shall get from each page. Defaults to None</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">ContactFilterAndEmailAndLinkedinFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+    <span class="p">[</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkedin_url1&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin_url2&#39;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">),</span>
+        <span class="n">PageData</span><span class="p">(</span>
+            <span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/&#39;</span><span class="p">,</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://en.wikipedia.org/Email_address2&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&quot;John.Doe.&quot;@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;x@example.com&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linkedin_url3&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin_url4&#39;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.data_extractors">
+<code class="highlight language-python"><span class="n">data_extractors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">email_extractor</span><span class="o">.</span><span class="n">EmailExtractor</span><span class="p">,</span> <span class="n">extract_emails</span><span class="o">.</span><span class="n">data_extractors</span><span class="o">.</span><span class="n">linkedin_extractor</span><span class="o">.</span><span class="n">LinkedinExtractor</span><span class="p">]]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.data_extractors" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>EmailExtractor</code> and <code>LinkedinExtractor</code></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.link_filter">
+<code class="highlight language-python"><span class="n">link_filter</span><span class="p">:</span> <span class="n">ContactInfoLinkFilter</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory.link_filter" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize <code>DefaultLinkFilter</code></p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../quick_start/intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quick Start
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../workers/" class="md-footer__link md-footer__link--next" aria-label="Next: Workers" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Workers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
