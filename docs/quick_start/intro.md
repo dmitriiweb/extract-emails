@@ -3,7 +3,7 @@
 There are several main parts in the framework:
 
  - **browser** - Class to navigate through specific website and extract data from the webpages (*requests*, *selenium* etc.)
- - **link filter** - Class to extract URLs from a page corresponding to the website. There are two link filters: 
+ - **link filter** - Class to extract URLs from a page corresponding to the website. There are two link filters:
      - [`DefaultLinkFilter`][extract_emails.link_filters.default_link_filter.DefaultLinkFilter] - Will extract all URLs corresponding to the website
      - [`ContactInfoLinkFilter`][extract_emails.link_filters.contact_link_filter.ContactInfoLinkFilter] - Will extract only contact URLs, e.g. */contact/*, */about-us/* etc
  - **data extractor** - Class to extract data from a page. At the moment there are two data extractors:
@@ -15,10 +15,10 @@ There are several main parts in the framework:
 
 ## Simple Usage:
 ```python
-from extract_emails.browsers import RequestsBrowser as Browser
+from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
 from extract_emails import DefaultFilterAndEmailFactory as Factory
 from extract_emails import DefaultWorker
-    
+
 browser = Browser()
 url = 'https://en.wikipedia.org/'
 factory = Factory(website_url=url, browser=browser)
