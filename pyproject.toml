@@ -22,6 +22,7 @@ mkdocs-material = "^7.2.6"
 mkdocs = "^1.2.2"
 mkdocstrings = "^0.15.2"
 Pygments = "^2.10.0"
+pre-commit = "^2.15.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
