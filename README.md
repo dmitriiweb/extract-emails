@@ -16,7 +16,7 @@ pip install extract_emails
 
 ## Simple Usage
 ```python
-from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
+from extract_emails.browsers import RequestsBrowser as Browser
 from extract_emails import DefaultFilterAndEmailFactory as Factory
 from extract_emails import DefaultWorker
 
