@@ -1,72 +1,106 @@
+import time
+
+from os import PathLike
+from typing import Iterable
 from typing import Optional
 
+from loguru import logger
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from .browser_interface import BrowserInterface
+from extract_emails.browsers.page_source_getter import PageSourceGetter
 
 
-class ChromeBrowser(BrowserInterface):
+class ChromeBrowser(PageSourceGetter):
+    """Getting page sources with selenium and chromedriver
+
+    Examples:
+        >>> from extract_emails.browsers.chrome_browser import ChromeBrowser
+        >>> browser = ChromeBrowser()
+        >>> browser.open()
+        >>> page_source = browser.get_page_source('https://example.com')
+        >>> browser.close()
+
+        >>> from extract_emails.browsers.chrome_browser import ChromeBrowser
+        >>> with ChromeBrowser() as browser:
+        ...     page_source = browser.get_page_source('https://example.com')
+
     """
-    Chrome Browser
-    ---------------
-    Make GET requests via selenium + Google Chrome Browser
 
-    :param bool headless: run browser in headless mode, default: True
-    :param str executable_path: path to the executable. If the default is used it assumes the executable is in the $PATH
-
-    **Example:**
-    ::
-
-        browser = ChromeBrowser()
-        browser.open()
-        page_source = browser.get_page_source('https://example.com')
-        browser.close()
-    """
+    default_options = {
+        "--disable-gpu",
+        "--disable-software-rasterizer",
+        "--disable-dev-shm-usage",
+        "--window-size=1920x1080",
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+    }
+    wait_seconds_after_get = 0
 
     def __init__(
         self,
-        headless: Optional[bool] = True,
-        executable_path: Optional[str] = "chromedriver",
-    ):
+        executable_path: PathLike = "/usr/bin/chromedriver",
+        headless_mode: bool = True,
+        options: Iterable[str] = None,
+    ) -> None:
+        """ChromeBrowser initialization
+
+        Args:
+            executable_path: path to chromedriver, use `which chromedriver` to get the path.
+                Default: /usr/bin/chromedriver
+            headless_mode: run browser with headless mode or not. Default: True
+            options: arguments for chrome.Options().
+                Default: set("--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage",
+                    "--window-size=1920x1080", "--disable-setuid-sandbox", "--no-sandbox", )
+        """
         self.executable_path = executable_path
-        self._chrome_options = Options()
-        self._chrome_options.add_argument("--disable-gpu")
-        self._chrome_options.add_argument("--disable-software-rasterizer")
-        if headless:
-            self._chrome_options.add_argument("--headless")
-        self._chrome_options.add_argument("--disable-dev-shm-usage")
-        self._chrome_options.add_argument("--window-size=1920x1080")
-        self._chrome_options.add_argument("--disable-setuid-sandbox")
-        self._chrome_options.add_argument("--no-sandbox")
-        self._driver = webdriver.Chrome(
-            options=self._chrome_options, executable_path=self.executable_path
+        self.headless_mode = headless_mode
+        self.options = options if options is not None else self.default_options
+        self.driver: Optional[webdriver.Chrome] = None
+
+    def __enter__(self):
+        self.open()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
+    def open(self):
+        """Add arguments to chrome.Options() and run the browser"""
+        options = Options()
+        for option in self.options:
+            options.add_argument(option)
+
+        if self.headless_mode:
+            options.add_argument("--headless")
+
+        self.driver = webdriver.Chrome(
+            options=options, executable_path=self.executable_path
         )
 
     def close(self):
-        self._driver.close()
-        self._driver.quit()
-
-    def _get(self, url: str) -> bool:
-        try:
-            self._driver.get(url)
-            return True
-        except:
-            return False
+        """Close the browser"""
+        self.driver.close()
+        self.driver.quit()
 
     def get_page_source(self, url: str) -> str:
+        """Get page source text from URL
+
+        Args:
+            url: URL
+
+        Returns:
+            page source as text
         """
-        Return page source from url
+        try:
+            self.driver.get(url)
+            time.sleep(self.wait_seconds_after_get)
+            page_source = self.driver.page_source
+        except Exception as e:
+            logger.error(f"Could not get page source from {url}: {e}")
+            return ""
 
-        :param str url: page url
-        :return: str, HTML from page
+        if "<html><head></head><body></body></html>" == page_source:
+            logger.error(f"Could not get page source from {url}: Unknown reason")
 
-        **Example:**
-        ::
-
-            page_source = browser.get_page_source('https://example.com')
-        """
-        is_get = self._get(url)
-        if is_get:
-            return self._driver.page_source
-        return ""
+        return page_source

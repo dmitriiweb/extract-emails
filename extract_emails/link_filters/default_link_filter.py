@@ -1,38 +1,44 @@
-from typing import List, Set
-from urllib.parse import urljoin, urlparse
+from typing import Iterable
+from typing import List
+from typing import Set
+from urllib.parse import urljoin
+from urllib.parse import urlparse
 
-from extract_emails.link_filters import LinkFilterInterface
+from extract_emails.link_filters.link_filter_base import LinkFilterBase
 
 
-class DefaultLinkFilter(LinkFilterInterface):
-    """
-    Default filter for links
+class DefaultLinkFilter(LinkFilterBase):
+    """Default filter for links"""
 
-    :param list(str) links: List of URLs
-    """
+    def __init__(self, website: str):
+        super().__init__(website)
+        self.checked_links = set()
 
-    checked_links: Set[str] = set()
+    def filter(self, links: Iterable[str]) -> List[str]:
+        """Will exclude from a list URLs, which not starts with `self.website` and not starts with '/'
 
-    def filter(self, links: List[str]) -> List[str]:
+        Examples:
+            >>> from extract_emails.link_filters import DefaultLinkFilter
+            >>> test_urls = ["https://example.com/page1.html","/page.html","/page.html", "https://google.com"]
+            >>> link_filter = DefaultLinkFilter("https://example.com/")
+            >>> filtered_urls = link_filter.filter(test_urls)
+            >>> filtered_urls
+            ["https://example.com/page1.html", "https://example.com/page.html"]
+
+        Args:
+            links: List of links for filtering
+
+        Returns:
+            Set of filtered URLs
+        """
         filtered_urls = []
-        for url in links:
-            url = urljoin(self.website, url)
-            if url.startswith(self.website) and url not in self.checked_links:
-                self.checked_links.add(url)
-                filtered_urls.append(url)
+        for link in links:
+            url = urljoin(self.website, link)
+            if not url.startswith(self.website):
+                continue
+            if url in self.checked_links:
+                continue
+            filtered_urls.append(url)
+            self.checked_links.add(url)
+
         return filtered_urls
-
-    @staticmethod
-    def get_website_address(url: str) -> str:
-        """
-        Get website address from an URL
-
-        Example:
-            >>> DefaultLinkFilter.get_website_address('https://example.com/page.html?param=123')
-            ... 'https://example.com/'
-
-        :param str url: some URL
-        :return: website address
-        """
-        parsed_url = urlparse(url)
-        return f"{parsed_url.scheme}://{parsed_url.netloc}/"

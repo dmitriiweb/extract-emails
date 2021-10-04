@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "extract-emails"
+version = "5.0.0"
+description = "Extract email addresses and linkedin profiles from given URL."
+authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
+license = "MIT"
+readme="README.md"
+repository="https://github.com/dmitriiweb/extract-emails"
+documentation="https://extract-emails-docs.dmitrii-web.com"
+keywords=["parser", "email", "linkedin"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Utilities",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.10"
+pydantic = "^1.8.2"
+loguru = "^0.5.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pytest-cov = "^2.12.1"
+pytest_async = "^0.1.1"
+tox = "^3.24.3"
+mkdocs-material = "^7.2.6"
+mkdocs = "^1.2.2"
+mkdocstrings = "^0.15.2"
+Pygments = "^2.10.0"
+pre-commit = "^2.15.0"
+requests = "^2.26.0"
+selenium = "^3.141.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+force_single_line = true
+atomic = true
+include_trailing_comma = true
+lines_after_imports = 2
+lines_between_types = 1
+use_parentheses = true
+src_paths = ["extract_emails", "tests"]
+skip_glob = ["*/setup.py"]
+filter_files = true
+known_first_party = "extract_emails"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/.*/setup.py
+)/
+'''
