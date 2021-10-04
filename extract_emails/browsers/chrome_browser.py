@@ -15,13 +15,13 @@ class ChromeBrowser(PageSourceGetter):
     """Getting page sources with selenium and chromedriver
 
     Examples:
-        >>> from extract_emails.browsers import ChromeBrowser
+        >>> from extract_emails.browsers.chrome_browser import ChromeBrowser
         >>> browser = ChromeBrowser()
         >>> browser.open()
         >>> page_source = browser.get_page_source('https://example.com')
         >>> browser.close()
 
-        >>> from extract_emails.browsers import ChromeBrowser
+        >>> from extract_emails.browsers.chrome_browser import ChromeBrowser
         >>> with ChromeBrowser() as browser:
         ...     page_source = browser.get_page_source('https://example.com')
 

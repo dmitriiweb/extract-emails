@@ -12,7 +12,7 @@ class RequestsBrowser(PageSourceGetter):
     """Wrapper on requests library
 
     Examples:
-        >>> from extract_emails.browsers import RequestsBrowser
+        >>> from extract_emails.browsers.requests_browser import RequestsBrowser
         >>> browser = RequestsBrowser()
         >>> page_source = browser.get_page_source('https://example.com')
     """

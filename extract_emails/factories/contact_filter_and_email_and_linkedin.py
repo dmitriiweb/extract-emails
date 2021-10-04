@@ -19,7 +19,7 @@ class ContactFilterAndEmailAndLinkedinFactory(BaseFactory):
     Examples:
         >>> from extract_emails import ContactFilterAndEmailAndLinkedinFactory as Factory
         >>> from extract_emails import DefaultWorker
-        >>> from extract_emails.browsers import RequestsBrowser as Browser
+        >>> from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
         >>>
         >>> browser = Browser()
         >>> url = 'https://en.wikipedia.org/'
