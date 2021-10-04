@@ -34,7 +34,9 @@ def test_custom_candidates():
 
 
 def test_use_default_true():
-    link_filter = ContactInfoLinkFilter("https://example.com", ["not-call-us"])
+    link_filter = ContactInfoLinkFilter(
+        "https://example.com", ["not-call-us"], use_default=True
+    )
     filtered_links = link_filter.filter(test_urls)
     assert len(filtered_links) == 6
     assert "https://example.com/page" in filtered_links
