@@ -1,6 +1,6 @@
 import pytest
 
-from extract_emails.browsers import ChromeBrowser
+from extract_emails.browsers.chrome_browser import ChromeBrowser
 
 
 @pytest.mark.slow

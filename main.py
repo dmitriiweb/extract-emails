@@ -1,7 +1,7 @@
 from pprint import pprint
 
 from extract_emails import DefaultFilterAndEmailFactory as Factory
-from extract_emails.browsers import RequestsBrowser as Browser
+from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
 from extract_emails.workers import DefaultWorker
 
 

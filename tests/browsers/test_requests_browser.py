@@ -1,6 +1,6 @@
 import pytest
 
-from extract_emails.browsers import RequestsBrowser
+from extract_emails.browsers.requests_browser import RequestsBrowser
 
 
 @pytest.fixture
