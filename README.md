@@ -4,7 +4,7 @@
 
 Extract emails and linkedins profiles from a given website
 
-[Documentation](https://extract-emails-docs.dmitrii-web.com/)
+[Documentation](https://dmitriiweb.github.io/extract-emails/)
 
 ## Requirements
 - Python >= 3.7

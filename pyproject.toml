@@ -1,9 +1,25 @@
 [tool.poetry]
 name = "extract-emails"
 version = "5.0.0"
-description = "Extract email addresses from given URL."
+description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
+readme="README.md"
+repository="https://github.com/dmitriiweb/extract-emails"
+documentation="https://extract-emails-docs.dmitrii-web.com"
+keywords=["parser", "email", "linkedin"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Utilities",
+]
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.10"
