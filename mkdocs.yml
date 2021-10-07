@@ -52,6 +52,7 @@ markdown_extensions:
 
 nav:
   - Quick Start: quick_start/intro.md
+  - Changelogs: changelogs/v5.md
   - Code References:
       - code/factories.md
       - code/workers.md
