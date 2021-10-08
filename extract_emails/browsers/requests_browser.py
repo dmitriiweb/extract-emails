@@ -1,7 +1,14 @@
 from typing import Any
 from typing import Dict
 
-import requests
+from extract_emails.errors import BrowserImportError
+
+
+try:
+    import requests
+except ModuleNotFoundError:
+    msg = "RequestsBrowser require requests library:\n\n\tpip install requests\n\tpoetry add requests\n"
+    raise BrowserImportError(msg)
 
 from loguru import logger
 
