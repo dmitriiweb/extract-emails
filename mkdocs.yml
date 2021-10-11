@@ -53,6 +53,7 @@ markdown_extensions:
 nav:
   - Quick Start:
       - quick_start/intro.md
+      - quick_start/save_data.md
       - quick_start/logs.md
   - Changelogs: changelogs/v5.md
   - Code References:
