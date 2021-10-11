@@ -51,7 +51,9 @@ markdown_extensions:
    - pymdownx.tilde
 
 nav:
-  - Quick Start: quick_start/intro.md
+  - Quick Start:
+      - quick_start/intro.md
+      - quick_start/logs.md
   - Changelogs: changelogs/v5.md
   - Code References:
       - code/factories.md
