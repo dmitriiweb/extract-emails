@@ -5,8 +5,16 @@ from typing import Iterable
 from typing import Optional
 
 from loguru import logger
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+
+from extract_emails.errors import BrowserImportError
+
+
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+except ModuleNotFoundError:
+    msg = "ChromeBrowser require selenium library:\n\n\tpip install selenium\n\tpoetry add selenium\n"
+    raise BrowserImportError(msg)
 
 from extract_emails.browsers.page_source_getter import PageSourceGetter
 
