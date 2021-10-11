@@ -23,6 +23,11 @@ class PageData(BaseModel):
     page_url: str
     data: Optional[Dict[str, List[str]]] = Field(default_factory=dict)
 
+    def __len__(self) -> int:
+        if len(self.data) == 0:
+            return 0
+        return sum(len(i) for i in self.data.values())
+
     def append(self, label: str, vals: List[str]) -> None:
         """Append data from a page to the self.data collection
 

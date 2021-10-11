@@ -18,3 +18,10 @@ def test_add_vals(page_data: PageData):
     page_data.append("emails", ["email@email.com"])
     assert "emails" in page_data.data
     assert "email@email.com" == page_data.data["emails"][0]
+
+
+def test_len(page_data: PageData):
+    page_data.append("emails", ["email@email.com", "email@email.com2"])
+    page_data.append("emails2", ["email@email.com", "email@email.com2"])
+
+    assert len(page_data) == 4
