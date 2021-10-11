@@ -180,10 +180,61 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Quick Start
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../quick_start/intro/" class="md-nav__link">
-        Quick Start
+        Intro
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick_start/save_data/" class="md-nav__link">
+        Save Data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick_start/logs/" class="md-nav__link">
+        Logs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -336,6 +387,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#extract_emails.models.page_data.PageData.save_as_csv" class="md-nav__link">
+    save_as_csv()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -368,6 +426,18 @@
     <li class="md-nav__item">
       <a href="../utils/" class="md-nav__link">
         Utils
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        Errors
       </a>
     </li>
   
@@ -422,6 +492,13 @@
           <li class="md-nav__item">
   <a href="#extract_emails.models.page_data.PageData.append" class="md-nav__link">
     append()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_emails.models.page_data.PageData.save_as_csv" class="md-nav__link">
+    save_as_csv()
   </a>
   
 </li>
@@ -486,14 +563,13 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">page_data</span> <span class="o">=</span> <span class="n">PageData</span><span class="p">(</span><span class="n">website</span><span class="o">=</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">page_url</span><span class="o">=</span><span class="s1">&#39;https://example.com/page123&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p><strong>Parameters:</strong></p>
+<p><strong>Attributes:</strong></p>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Default</th>
     </tr>
   </thead>
   <tbody>
@@ -501,19 +577,16 @@
         <td><code>website</code></td>
         <td><code>str</code></td>
         <td><p>website address from where data</p></td>
-        <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>page_url</code></td>
         <td><code>str</code></td>
         <td><p>Page URL from where data</p></td>
-        <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>data</code></td>
         <td><code>Optional[Dict[str, List[str]]]</code></td>
         <td><p>Data from the page in format: { 'label': [data, data] }, default: {}</p></td>
-        <td><em>required</em></td>
       </tr>
   </tbody>
 </table>
@@ -521,6 +594,7 @@
 
 
   <div class="doc doc-children">
+
 
 
 
@@ -602,6 +676,81 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">vals</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="extract_emails.models.page_data.PageData.save_as_csv">
+<code class="highlight language-python"><span class="n">save_as_csv</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a class="headerlink" href="#extract_emails.models.page_data.PageData.save_as_csv" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Save list of <code>PageData</code> to CSV file</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>data</code></td>
+        <td><code>List[PageData]</code></td>
+        <td><p>list of <code>PageData</code></p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>filepath</code></td>
+        <td><code>PathLike</code></td>
+        <td><p>path to a CSV file</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>extract_emails/models/page_data.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">save_as_csv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;PageData&quot;</span><span class="p">],</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">PathLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Save list of `PageData` to CSV file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: list of `PageData`</span>
+<span class="sd">        filepath: path to a CSV file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">base_headers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">schema</span><span class="p">()[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">base_headers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+    <span class="n">data_headers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="n">base_headers</span> <span class="o">+</span> <span class="n">data_headers</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">data_in_row</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span><span class="o">*</span><span class="n">page</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+                <span class="n">new_row</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;website&quot;</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">website</span><span class="p">,</span> <span class="s2">&quot;page_url&quot;</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">page_url</span><span class="p">}</span>
+                <span class="k">for</span> <span class="n">counter</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_headers</span><span class="p">):</span>
+                    <span class="n">new_row</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_in_row</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span>
+
+                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">new_row</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>

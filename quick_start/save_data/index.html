@@ -14,7 +14,7 @@
     
     
       
-        <title>Changelogs - Extract Emails</title>
+        <title>Save Data - Extract Emails</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v5" class="md-skip">
+        <a href="#save-data" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Changelogs
+              Save Data
             
           </span>
         </div>
@@ -179,12 +179,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Quick Start
@@ -202,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quick_start/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -212,11 +214,51 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../quick_start/save_data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Save Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Save Data
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#save-as-csv" class="md-nav__link">
+    Save as CSV
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -226,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quick_start/logs/" class="md-nav__link">
+      <a href="../logs/" class="md-nav__link">
         Logs
       </a>
     </li>
@@ -245,58 +287,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Changelogs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../changelogs/v5/" class="md-nav__link">
         Changelogs
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#510" class="md-nav__link">
-    5.1.0
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#502" class="md-nav__link">
-    5.0.2
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -453,15 +448,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#510" class="md-nav__link">
-    5.1.0
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#502" class="md-nav__link">
-    5.0.2
+  <a href="#save-as-csv" class="md-nav__link">
+    Save as CSV
   </a>
   
 </li>
@@ -479,18 +467,28 @@
               
                 
                 
-                <h1 id="v5">V5<a class="headerlink" href="#v5" title="Permanent link">&para;</a></h1>
-<h2 id="510">5.1.0<a class="headerlink" href="#510" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Add save_as_csv class method to <code>PageData</code> model</li>
-<li>Check if needed libraries for browsers were installed. If not will show user-friendly error</li>
-<li>Small improvements in the code</li>
-<li>Add logs to DefaultWorker</li>
-</ul>
-<h2 id="502">5.0.2<a class="headerlink" href="#502" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Fix imports for factories and DefaultWorker</li>
-</ul>
+                <h1 id="save-data">Save Data<a class="headerlink" href="#save-data" title="Permanent link">&para;</a></h1>
+<p>Data store as <a href="https://pydantic-docs.helpmanual.io">pydantic</a> models</p>
+<h2 id="save-as-csv">Save as CSV<a class="headerlink" href="#save-as-csv" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultFilterAndEmailFactory</span> <span class="k">as</span> <span class="n">Factory</span>
+<span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="kn">from</span> <span class="nn">extract_emails.models</span> <span class="kn">import</span> <span class="n">PageData</span>
+<span class="kn">from</span> <span class="nn">extract_emails.workers</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+
+
+<span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_links_from_page</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">extractor</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">extractor</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+
+<span class="n">PageData</span><span class="o">.</span><span class="n">save_as_csv</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;output.csv&quot;</span><span class="p">)</span>
+<span class="c1"># cat output.csv</span>
+<span class="n">website</span><span class="p">,</span><span class="n">page_url</span><span class="p">,</span><span class="n">email</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">about</span><span class="o">-</span><span class="n">us</span><span class="p">,</span><span class="n">email</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">about</span><span class="o">-</span><span class="n">us</span><span class="p">,</span><span class="n">email1</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">about</span><span class="o">-</span><span class="n">us</span><span class="p">,</span><span class="n">email2</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">about</span><span class="o">-</span><span class="n">us</span><span class="p">,</span><span class="n">email3</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</code></pre></div>
                 
               
               
@@ -510,7 +508,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../quick_start/logs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Logs" rel="prev">
+        <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intro" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -519,20 +517,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Logs
+              Intro
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../code/factories/" class="md-footer__link md-footer__link--next" aria-label="Next: Factories" rel="next">
+        <a href="../logs/" class="md-footer__link md-footer__link--next" aria-label="Next: Logs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Factories
+              Logs
             </div>
           </div>
           <div class="md-footer__button md-icon">
