@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "extract-emails"
-version = "5.1.0"
+version = "5.1.1"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
 readme="README.md"
 repository="https://github.com/dmitriiweb/extract-emails"
-documentation="https://extract-emails-docs.dmitrii-web.com"
+documentation="https://dmitriiweb.github.io/extract-emails"
 keywords=["parser", "email", "linkedin"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
