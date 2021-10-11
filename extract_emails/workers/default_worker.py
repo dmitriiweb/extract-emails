@@ -30,6 +30,7 @@ class DefaultWorker:
         data: List[PageData] = []
 
         while len(self.links):
+            logger.debug(f"current_depth={self.current_depth}")
             if self.depth is not None and self.current_depth > self.depth:
                 break
             self.current_depth += 1
@@ -45,17 +46,20 @@ class DefaultWorker:
         urls = self.links.pop(0)
 
         for url in urls:
+            logger.info(f"getting data from {url}")
             try:
                 new_urls, page_data = self._get_page_data(url)
             except Exception as e:
                 logger.error("Cannot get data from {}: {}".format(url, e))
                 continue
 
+            logger.info(f"URL: {url} | found {len(page_data)} items")
             data.append(page_data)
 
             if self.max_links_from_page:
                 new_urls = new_urls[: self.max_links_from_page]
 
+            logger.debug(f"Add {len(new_urls)} new URLs to the queue")
             self.links.append(new_urls)
 
         return data
