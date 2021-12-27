@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "extract-emails"
-version = "5.1.1"
+version = "5.1.2"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
@@ -17,12 +17,13 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Utilities",
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.10"
+python = ">=3.7,<3.11"
 pydantic = "^1.8.2"
 loguru = "^0.5.3"
 
