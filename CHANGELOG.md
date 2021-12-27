@@ -1,18 +1,22 @@
-# V5
+# Changelog
 
 ## 5.1.2
+
 ### Added
 - Python 3.10 support
 - Add CHANGELOG.md
 
 ## 5.1.0
+
 ### Added
 - Add save_as_csv class method to `PageData` model
 - Add logs to DefaultWorker
+-
 ### Changed
 - Check if needed libraries for browsers were installed. If not will show user-friendly error
 - Small improvements in the code
 
 ## 5.0.2
+
 ### Changed
 - Fix imports for factories and DefaultWorker
