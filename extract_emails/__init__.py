@@ -1,4 +1,4 @@
-__version__ = "5.1.1"
+__version__ = "5.1.2"
 from .factories import ContactFilterAndEmailAndLinkedinFactory
 from .factories import ContactFilterAndEmailFactory
 from .factories import ContactFilterAndLinkedinFactory
