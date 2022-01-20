@@ -51,6 +51,7 @@ markdown_extensions:
    - pymdownx.tilde
 
 nav:
+  - Extract Emails: index.md
   - Quick Start:
       - quick_start/intro.md
       - quick_start/save_data.md
