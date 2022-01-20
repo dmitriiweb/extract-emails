@@ -1,5 +1,7 @@
 # Extract Emails
 
+![Image](https://github.com/dmitriiweb/extract-emails/blob/docs_improvements/images/email.png?raw=true)
+
 [![PyPI version](https://badge.fury.io/py/extract-emails.svg)](https://badge.fury.io/py/extract-emails)
 
 Extract emails and linkedins profiles from a given website
