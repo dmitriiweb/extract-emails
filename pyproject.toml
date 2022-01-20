@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "extract-emails"
-version = "5.1.2"
+version = "5.1.3"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
@@ -39,6 +39,7 @@ Pygments = "^2.10.0"
 pre-commit = "^2.15.0"
 requests = "^2.26.0"
 selenium = "^3.141.0"
+mkdocs-autorefs = "0.2.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

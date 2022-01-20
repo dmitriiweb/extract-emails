@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.1.3
+
+### Changed
+- Update dependencies
+
 ## 5.1.2
 
 ### Added
@@ -11,7 +16,7 @@
 ### Added
 - Add save_as_csv class method to `PageData` model
 - Add logs to DefaultWorker
--
+
 ### Changed
 - Check if needed libraries for browsers were installed. If not will show user-friendly error
 - Small improvements in the code
