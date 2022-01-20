@@ -7,3 +7,16 @@ test:
 .PHONY: test-all
 test-all:
 	pytest --cov=extract_emails -vv tests/
+
+.PHONY: docs-serve
+docs-serve:
+	mkdocs serve
+
+.PHONY: docs-publish
+docs-publish:
+	mkdocs mkdocs gh-deploy --force
+
+.PHONY: publish
+publish:
+	poetry build
+	poetry publish
