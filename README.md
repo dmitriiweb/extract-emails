@@ -6,7 +6,7 @@
 
 Extract emails and linkedins profiles from a given website
 
-Support the project with BTC: bc1q0cxl5j3se0ufhr96h8x0zs8nz4t7h6krrxkd6l
+**Support the project with BTC**: *bc1q0cxl5j3se0ufhr96h8x0zs8nz4t7h6krrxkd6l*
 
 [Documentation](https://dmitriiweb.github.io/extract-emails/)
 
