@@ -1,5 +1,6 @@
+import csv
+
 from pathlib import Path
-from pprint import pprint
 from typing import Any
 from typing import Dict
 from typing import List
@@ -19,7 +20,12 @@ class CsvSaver(DataSaver):
 
     def save(self, data: List[PageData]):
         processed_data = self.process_data(data)
-        is_new_file = not self.output_path.exists()
+        headers = self.get_headers(processed_data)
+
+        with open(self.output_path, "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=headers)
+            w.writeheader()
+            w.writerows(processed_data)
 
     @staticmethod
     def process_data(data: List[PageData]) -> List[Dict[str, Any]]:
@@ -31,3 +37,10 @@ class CsvSaver(DataSaver):
                     d[k] = item
             processed_data.append(d)
         return processed_data
+
+    @staticmethod
+    def get_headers(data: List[Dict[str, Any]]) -> List[str]:
+        headers = []
+        for i in data:
+            headers.extend(list(i.keys()))
+        return list(set(headers))
