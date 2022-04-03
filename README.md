@@ -19,6 +19,7 @@ pip install extract_emails
 ```
 
 ## Simple Usage
+### As library
 ```python
 from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
 from extract_emails import DefaultFilterAndEmailFactory as Factory
@@ -44,4 +45,13 @@ print(data)
     ),
 ]
 """
+```
+### As CLI tool
+```bash
+$ extract-emails --help
+
+$ extract-emails --url https://en.wikipedia.org/wiki/Email -of output.csv -d 1
+$ cat output.csv
+email,page,website
+bob@b.org,https://en.wikipedia.org/wiki/Email,https://en.wikipedia.org/wiki/Email
 ```
