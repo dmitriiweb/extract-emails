@@ -43,7 +43,7 @@ selenium = "^3.141.0"
 mkdocs-autorefs = "0.2.1"
 
 [tool.poetry.scripts]
-data2model = "extract_emails.console.application:main"
+extract-emails = "extract_emails.console.application:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
