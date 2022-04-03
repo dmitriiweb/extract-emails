@@ -1,4 +1,8 @@
 # Changelog
+## 5.2.0
+### Added
+ - CLI tool
+ - csv data saver
 
 ## 5.1.3
 
