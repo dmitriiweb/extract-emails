@@ -14,7 +14,7 @@ docs-serve:
 
 .PHONY: docs-publish
 docs-publish:
-	mkdocs mkdocs gh-deploy --force
+	mkdocs gh-deploy --force
 
 .PHONY: publish
 publish:
