@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import List
 from typing import Type
 from typing import Union
@@ -10,6 +11,7 @@ from extract_emails import ContactFilterAndLinkedinFactory
 from extract_emails import DefaultWorker
 from extract_emails.browsers.chrome_browser import ChromeBrowser
 from extract_emails.browsers.requests_browser import RequestsBrowser
+from extract_emails.data_savers import CsvSaver
 from extract_emails.factories.base_factory import BaseFactory
 
 
@@ -68,7 +70,8 @@ def main(url: str, output_file: str, browser_name: str, data_type: str, depth: i
     if browser_name == "chrome":
         browser.close()
 
-    print(data)
+    saver = CsvSaver(output_path=Path(output_file))
+    saver.save(data)
 
 
 if __name__ == "__main__":
