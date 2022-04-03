@@ -9,7 +9,6 @@ from extract_emails import ContactFilterAndEmailFactory
 from extract_emails import ContactFilterAndLinkedinFactory
 from extract_emails import DefaultWorker
 from extract_emails.browsers.chrome_browser import ChromeBrowser
-from extract_emails.browsers.page_source_getter import PageSourceGetter
 from extract_emails.browsers.requests_browser import RequestsBrowser
 from extract_emails.factories.base_factory import BaseFactory
 
