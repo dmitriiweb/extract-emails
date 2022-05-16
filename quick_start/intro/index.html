@@ -562,30 +562,29 @@
 </ul>
 <h2 id="simple-usage">Simple Usage:<a class="headerlink" href="#simple-usage" title="Permanent link">&para;</a></h2>
 <h3 id="as-library">As library<a class="headerlink" href="#as-library" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
 <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultFilterAndEmailFactory</span> <span class="k">as</span> <span class="n">Factory</span>
 <span class="kn">from</span> <span class="nn">extract_emails</span> <span class="kn">import</span> <span class="n">DefaultWorker</span>
+<span class="kn">from</span> <span class="nn">extract_emails.browsers.requests_browser</span> <span class="kn">import</span> <span class="n">RequestsBrowser</span> <span class="k">as</span> <span class="n">Browser</span>
+<span class="kn">from</span> <span class="nn">extract_emails.data_savers</span> <span class="kn">import</span> <span class="n">CsvSaver</span>
+
+
+<span class="n">websites</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;website1.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;website2.com&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/&#39;</span>
-<span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="n">website_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">)</span>
-<span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">[</span>
-<span class="sd">    PageData(</span>
-<span class="sd">        website=&#39;https://en.wikipedia.org/&#39;,</span>
-<span class="sd">        page_url=&#39;https://en.wikipedia.org/Email_address&#39;,</span>
-<span class="sd">        data={&#39;email&#39;: [&#39;&quot;John.Doe.&quot;@example.com&#39;, &#39;x@example.com&#39;]}</span>
-<span class="sd">    ),</span>
-<span class="sd">    PageData(</span>
-<span class="sd">        website=&#39;https://en.wikipedia.org/&#39;,</span>
-<span class="sd">        page_url=&#39;https://en.wikipedia.org/Email_address2&#39;,</span>
-<span class="sd">        data={&#39;email&#39;: [&#39;&quot;John.Doe2.&quot;@example.com&#39;, &#39;x2@example.com&#39;]}</span>
-<span class="sd">    ),</span>
-<span class="sd">]</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">data_saver</span> <span class="o">=</span> <span class="n">CsvSaver</span><span class="p">(</span><span class="n">save_mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;output.csv&quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">website</span> <span class="ow">in</span> <span class="n">websites</span><span class="p">:</span>
+    <span class="n">factory</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span>
+        <span class="n">website_url</span><span class="o">=</span><span class="n">website</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_links_from_page</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">worker</span> <span class="o">=</span> <span class="n">DefaultWorker</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+    <span class="n">data_saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="as-cli-tool">As CLI tool<a class="headerlink" href="#as-cli-tool" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ extract-emails --help
