@@ -11,8 +11,9 @@ from .data_saver import DataSaver
 
 
 class CsvSaver(DataSaver):
-    def __init__(self, **kwargs):
+    def __init__(self, save_mode="w", **kwargs):
         super().__init__(**kwargs)
+        self.save_mode = save_mode
         self.output_path = kwargs.get("output_path")
         print(self.output_path)
         if self.output_path is None or not isinstance(self.output_path, Path):
@@ -21,10 +22,12 @@ class CsvSaver(DataSaver):
     def save(self, data: List[PageData]):
         processed_data = self.process_data(data)
         headers = self.get_headers(processed_data)
+        is_new_file = not self.output_path.exists()
 
-        with open(self.output_path, "w", encoding="utf-8", newline="") as f:
+        with open(self.output_path, self.save_mode, encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=headers)
-            w.writeheader()
+            if is_new_file:
+                w.writeheader()
             w.writerows(processed_data)
 
     @staticmethod
