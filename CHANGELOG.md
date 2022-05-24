@@ -1,4 +1,14 @@
 # Changelog
+## 5.3.1
+### Changed
+- Add timeout to RequestBrowser
+    ```python
+    from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
+  
+    browser = Browser()
+    browser.requests_timeout = 1
+    ```
+# Changelog
 ## 5.3.0
 ### Changed
 - Add custom save mode to csv data saver
