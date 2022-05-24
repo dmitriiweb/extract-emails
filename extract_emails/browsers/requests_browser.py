@@ -24,7 +24,7 @@ class RequestsBrowser(PageSourceGetter):
         >>> page_source = browser.get_page_source('https://example.com')
     """
 
-    requests_timeout = 0.05
+    requests_timeout = 0.5
 
     def __init__(self, headers: Dict[str, Any] = None):
         """
@@ -45,7 +45,9 @@ class RequestsBrowser(PageSourceGetter):
             page source as text
         """
         try:
-            response = requests.get(url, headers=self.headers)
+            response = requests.get(
+                url, headers=self.headers, timeout=self.requests_timeout
+            )
         except Exception as e:
             logger.error(f"Could not get page source from {url}: {e}")
             return ""
