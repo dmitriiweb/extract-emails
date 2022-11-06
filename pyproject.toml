@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "extract-emails"
-version = "5.3.1"
+version = "6.0.0"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
