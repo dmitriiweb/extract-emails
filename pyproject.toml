@@ -23,28 +23,31 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
-pydantic = "^1.8.2"
-loguru = "^0.5.3"
-click = "^8.1.2"
+python = ">=3.8,<3.12"
+# TODO: remove playwright and httpx dependencies
+playwright = "^1.27.1"
+httpx = "^0.23.0"
 
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.5"
-pytest-cov = "^2.12.1"
-pytest_async = "^0.1.1"
-tox = "^3.24.3"
-mkdocs-material = "^7.2.6"
-mkdocs = "^1.2.2"
-mkdocstrings = "^0.15.2"
-Pygments = "^2.10.0"
-pre-commit = "^2.15.0"
-requests = "^2.26.0"
-selenium = "^3.141.0"
-mkdocs-autorefs = "0.2.1"
-Jinja2 = "<3.1.0"
+[tool.poetry.extras]
+playwright = ["playwright"]
+httpx = ["httpx"]
+all = ["playwright", "httpx"]
 
 [tool.poetry.scripts]
 extract-emails = "extract_emails.console.application:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+pytest-async = "^0.1.1"
+tox = "^3.27.0"
+mkdocs-material = "^8.5.8"
+mkdocstrings = "^0.19.0"
+pre-commit = "^2.20.0"
+mkdocs = "^1.4.2"
+pygments = "^2.13.0"
+mkdocs-autorefs = "^0.4.1"
+jinja2 = "^3.1.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
