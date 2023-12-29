@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.12"
+python = ">=3.9,<3.13"
 pydantic = "^2.5.3"
 loguru = "^0.5.3"
 click = "^8.1.7"
