@@ -12,6 +12,7 @@ from extract_emails.errors import BrowserImportError
 try:
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service
 except ModuleNotFoundError:
     msg = "ChromeBrowser require selenium library:\n\n\tpip install selenium\n\tpoetry add selenium\n"
     raise BrowserImportError(msg)
@@ -76,6 +77,7 @@ class ChromeBrowser(PageSourceGetter):
     def open(self):
         """Add arguments to chrome.Options() and run the browser"""
         options = Options()
+        service = Service(str(self.executable_path))
         for option in self.options:
             options.add_argument(option)
 
@@ -83,7 +85,7 @@ class ChromeBrowser(PageSourceGetter):
             options.add_argument("--headless")
 
         self.driver = webdriver.Chrome(
-            options=options, executable_path=self.executable_path
+            options=options
         )
 
     def close(self):

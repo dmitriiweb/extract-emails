@@ -59,7 +59,7 @@ class PageData(BaseModel):
             data: list of `PageData`
             filepath: path to a CSV file
         """
-        base_headers: List[str] = list(cls.schema()["properties"].keys())
+        base_headers: List[str] = list(cls.model_json_schema()["properties"].keys())
         base_headers.remove("data")
         data_headers = [i for i in data[0].data.keys()]
         headers = base_headers + data_headers

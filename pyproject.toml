@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "extract-emails"
-version = "5.3.1"
+version = "5.3.2"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
 license = "MIT"
@@ -14,32 +14,31 @@ classifiers = [
     "Operating System :: MacOS",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: Unix",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Utilities",
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
-pydantic = "^1.8.2"
+python = ">=3.9,<3.12"
+pydantic = "^2.5.3"
 loguru = "^0.5.3"
-click = "^8.1.2"
+click = "^8.1.7"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^6.2.5"
 pytest-cov = "^2.12.1"
 pytest_async = "^0.1.1"
-tox = "^3.24.3"
+tox = "^3.28.0"
 mkdocs-material = "^7.2.6"
 mkdocs = "^1.2.2"
 mkdocstrings = "^0.15.2"
 Pygments = "^2.10.0"
-pre-commit = "^2.15.0"
-requests = "^2.26.0"
-selenium = "^3.141.0"
+pre-commit = "^2.21.0"
+requests = "^2.31.0"
+selenium = "^4.9"
 mkdocs-autorefs = "0.2.1"
 Jinja2 = "<3.1.0"
 
