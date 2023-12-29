@@ -1,7 +1,6 @@
 import csv
 from itertools import zip_longest
 from os import PathLike
-from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -21,7 +20,7 @@ class PageData(BaseModel):
 
     website: str
     page_url: str
-    data: Optional[dict[str, list[str]]] = Field(default_factory=dict)
+    data: dict[str, list[str]] = Field(default_factory=dict)
 
     def __len__(self) -> int:
         if len(self.data) == 0:

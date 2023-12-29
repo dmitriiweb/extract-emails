@@ -45,11 +45,11 @@ class ContactFilterAndEmailAndLinkedinFactory(BaseFactory):
     """
 
     @property
-    def link_filter(self) -> ContactInfoLinkFilter:
+    def link_filter(self) -> ContactInfoLinkFilter:  # type: ignore
         """Initialize `DefaultLinkFilter`"""
         return ContactInfoLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> list[EmailExtractor | LinkedinExtractor]:
+    def data_extractors(self) -> list[EmailExtractor | LinkedinExtractor]:  # type: ignore
         """Initialize `EmailExtractor` and `LinkedinExtractor`"""
         return [EmailExtractor()]

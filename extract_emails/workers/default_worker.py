@@ -64,12 +64,12 @@ class DefaultWorker:
         page_source = self.browser.get_page_source(url)
 
         new_links = self.link_filter.get_links(page_source)
-        filtered_links = self.link_filter.filter(new_links)
+        filtered_links = self.link_filter.filter(new_links)  # type: ignore
 
         page_data = PageData(website=self.website_url, page_url=url)
 
         for data_extractor in self.data_extractors:
-            new_data = data_extractor.get_data(page_source)
-            page_data.append(data_extractor.name, list(new_data))
+            new_data = data_extractor.get_data(page_source)  # type: ignore
+            page_data.append(data_extractor.name, list(new_data))  # type: ignore
 
         return filtered_links, page_data

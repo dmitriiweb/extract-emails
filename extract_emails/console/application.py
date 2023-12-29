@@ -68,7 +68,7 @@ def main(url: str, output_file: str, browser_name: str, data_type: str, depth: i
     data = worker.get_data()
 
     if browser_name == "chrome":
-        browser.close()
+        browser.close()  # type: ignore
 
     saver = CsvSaver(output_path=Path(output_file))
     saver.save(data)

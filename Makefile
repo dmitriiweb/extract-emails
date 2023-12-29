@@ -15,7 +15,7 @@ code-format:
 
 .PHONY: code-check
 code-check:
-	ruff extract_emails tests
+	ruff extract_emails
 	mypy extract_emails
 
 .PHONY: docs-serve

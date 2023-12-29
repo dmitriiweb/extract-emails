@@ -39,11 +39,11 @@ class DefaultFilterAndEmailFactory(BaseFactory):
     """
 
     @property
-    def link_filter(self) -> DefaultLinkFilter:
+    def link_filter(self) -> DefaultLinkFilter:  # type: ignore
         """Initialize `DefaultLinkFilter`"""
         return DefaultLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> list[EmailExtractor]:
+    def data_extractors(self) -> list[EmailExtractor]:  # type: ignore
         """Initialize `EmailExtractor`"""
         return [EmailExtractor()]

@@ -9,7 +9,7 @@ class DefaultLinkFilter(LinkFilterBase):
 
     def __init__(self, website: str):
         super().__init__(website)
-        self.checked_links = set()
+        self.checked_links: set[str] = set()
 
     def filter(self, links: Iterable[str]) -> list[str]:
         """Will exclude from a list URLs, which not starts with `self.website` and not starts with '/'

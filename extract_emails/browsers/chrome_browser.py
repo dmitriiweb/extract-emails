@@ -1,6 +1,7 @@
 import time
 from os import PathLike
-from typing import Iterable, Optional
+from pathlib import Path
+from typing import Iterable
 
 from loguru import logger
 
@@ -43,11 +44,13 @@ class ChromeBrowser(PageSourceGetter):
     }
     wait_seconds_after_get = 0
 
+    driver: webdriver.Chrome
+
     def __init__(
         self,
-        executable_path: PathLike = "/usr/bin/chromedriver",
+        executable_path: PathLike = Path("/usr/bin/chromedriver"),
         headless_mode: bool = True,
-        options: Iterable[str] = None,
+        options: Iterable[str] | None = None,
     ) -> None:
         """ChromeBrowser initialization
 
@@ -62,7 +65,6 @@ class ChromeBrowser(PageSourceGetter):
         self.executable_path = executable_path
         self.headless_mode = headless_mode
         self.options = options if options is not None else self.default_options
-        self.driver: Optional[webdriver.Chrome] = None
 
     def __enter__(self):
         self.open()
@@ -81,7 +83,7 @@ class ChromeBrowser(PageSourceGetter):
         if self.headless_mode:
             options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome(options=options, service=service)
 
     def close(self):
         """Close the browser"""

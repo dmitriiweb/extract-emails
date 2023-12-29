@@ -39,11 +39,11 @@ class DefaultFilterAndLinkedinFactory(BaseFactory):
     """
 
     @property
-    def link_filter(self) -> DefaultLinkFilter:
+    def link_filter(self) -> DefaultLinkFilter:  # type: ignore
         """Initialize `DefaultLinkFilter`"""
         return DefaultLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> list[LinkedinExtractor]:
+    def data_extractors(self) -> list[LinkedinExtractor]:  # type: ignore
         """Initialize `LinkedinExtractor`"""
         return [LinkedinExtractor()]

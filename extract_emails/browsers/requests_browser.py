@@ -24,7 +24,7 @@ class RequestsBrowser(PageSourceGetter):
 
     requests_timeout = 0.5
 
-    def __init__(self, headers: dict[str, Any] = None):
+    def __init__(self, headers: dict[str, Any] | None = None):
         """
 
         Args:
