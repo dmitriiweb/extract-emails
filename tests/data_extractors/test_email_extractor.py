@@ -1,6 +1,5 @@
 from extract_emails.data_extractors import EmailExtractor
 
-
 STRING = """
 blah blah email@example.com blah blah
 blah blah "email2@example.com" blah blah

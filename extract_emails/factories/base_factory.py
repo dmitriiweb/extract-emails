@@ -1,9 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import TYPE_CHECKING
-from typing import List
-from typing import Optional
-from typing import Type
+from abc import ABC, abstractmethod
+from typing import Optional, Type
 
 from extract_emails.browsers import PageSourceGetter
 from extract_emails.data_extractors import DataExtractor
@@ -40,7 +36,7 @@ class BaseFactory(ABC):
 
     @property
     @abstractmethod
-    def data_extractors(self) -> List[Type[DataExtractor]]:
+    def data_extractors(self) -> list[Type[DataExtractor]]:
         """Initialize data extractors"""
 
     @property

@@ -1,6 +1,5 @@
 from extract_emails.data_extractors import LinkedinExtractor
 
-
 STRING = """
 The good thing about your LinkedIn URL is that you can have your customized URL. By default, LinkedIn will provide you a profile URL that is alphanumeric and is a combination of your name and numbers.
 For example, it will look something similar to this: https://www.linkedin.com/in/venjamin-brant-73381ujy3u

@@ -1,21 +1,21 @@
 from pathlib import Path
-from typing import List
 from typing import Type
-from typing import Union
 
 import click
 
-from extract_emails import ContactFilterAndEmailAndLinkedinFactory
-from extract_emails import ContactFilterAndEmailFactory
-from extract_emails import ContactFilterAndLinkedinFactory
-from extract_emails import DefaultWorker
+from extract_emails import (
+    ContactFilterAndEmailAndLinkedinFactory,
+    ContactFilterAndEmailFactory,
+    ContactFilterAndLinkedinFactory,
+    DefaultWorker,
+)
 from extract_emails.browsers.chrome_browser import ChromeBrowser
 from extract_emails.browsers.requests_browser import RequestsBrowser
 from extract_emails.data_savers import CsvSaver
 from extract_emails.factories.base_factory import BaseFactory
 
 
-def get_factory(data_type: List[str]) -> Type[BaseFactory]:
+def get_factory(data_type: list[str]) -> Type[BaseFactory]:
     if data_type == ["email"]:
         return ContactFilterAndEmailFactory
     elif data_type == ["linkedin"]:
@@ -26,7 +26,7 @@ def get_factory(data_type: List[str]) -> Type[BaseFactory]:
         raise ValueError(f"Invalid data type: {data_type}")
 
 
-def get_browser(browser: str) -> Union[ChromeBrowser, RequestsBrowser]:
+def get_browser(browser: str) -> ChromeBrowser | RequestsBrowser:
     if browser == "requests":
         return RequestsBrowser()
     elif browser == "chrome":
@@ -68,7 +68,7 @@ def main(url: str, output_file: str, browser_name: str, data_type: str, depth: i
     data = worker.get_data()
 
     if browser_name == "chrome":
-        browser.close()
+        browser.close()  # type: ignore
 
     saver = CsvSaver(output_path=Path(output_file))
     saver.save(data)

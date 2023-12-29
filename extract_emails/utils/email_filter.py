@@ -1,10 +1,9 @@
 from typing import Iterable
-from typing import Set
 
 from ._top_level_domains import TOP_LEVEL_DOMAINS
 
 
-def email_filter(emails: Iterable[str]) -> Set[str]:
+def email_filter(emails: Iterable[str]) -> set[str]:
     """Remove duplicated emails and strings looks like emails (2@pic.png)
 
     Examples:

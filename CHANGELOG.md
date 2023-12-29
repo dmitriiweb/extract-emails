@@ -1,4 +1,10 @@
 # Changelog
+
+## 5.3.2
+### Changed
+- Update dependencies and supported python versions
+- minor fixes and code formatting
+
 ## 5.3.1
 ### Changed
 - Add timeout to RequestBrowser
@@ -8,7 +14,6 @@
     browser = Browser()
     browser.requests_timeout = 1
     ```
-# Changelog
 ## 5.3.0
 ### Changed
 - Add custom save mode to csv data saver

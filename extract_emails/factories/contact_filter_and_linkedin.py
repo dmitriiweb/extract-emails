@@ -1,5 +1,3 @@
-from typing import List
-
 from extract_emails.data_extractors import LinkedinExtractor
 from extract_emails.factories.base_factory import BaseFactory
 from extract_emails.link_filters import ContactInfoLinkFilter
@@ -41,11 +39,11 @@ class ContactFilterAndLinkedinFactory(BaseFactory):
     """
 
     @property
-    def link_filter(self) -> ContactInfoLinkFilter:
+    def link_filter(self) -> ContactInfoLinkFilter:  # type: ignore
         """Initialize `ContactInfoLinkFilter`"""
         return ContactInfoLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> List[LinkedinExtractor]:
+    def data_extractors(self) -> list[LinkedinExtractor]:  # type: ignore
         """Initialize `LinkedinExtractor`"""
         return [LinkedinExtractor()]

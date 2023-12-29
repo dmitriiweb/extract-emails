@@ -11,11 +11,15 @@ Extract emails and linkedins profiles from a given website
 [Documentation](https://dmitriiweb.github.io/extract-emails/)
 
 ## Requirements
-- Python >= 3.7
+- Python >= 3.9
 
 ## Installation
-```
-pip install extract_emails
+```bash
+pip install extract_emails[all]
+# or
+pip install extract_emails[requests]
+# or
+pip install extract_emails[selenium]
 ```
 
 ## Simple Usage

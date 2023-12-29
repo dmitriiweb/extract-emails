@@ -1,17 +1,16 @@
 import time
-
 from os import PathLike
+from pathlib import Path
 from typing import Iterable
-from typing import Optional
 
 from loguru import logger
 
 from extract_emails.errors import BrowserImportError
 
-
 try:
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service
 except ModuleNotFoundError:
     msg = "ChromeBrowser require selenium library:\n\n\tpip install selenium\n\tpoetry add selenium\n"
     raise BrowserImportError(msg)
@@ -45,11 +44,13 @@ class ChromeBrowser(PageSourceGetter):
     }
     wait_seconds_after_get = 0
 
+    driver: webdriver.Chrome
+
     def __init__(
         self,
-        executable_path: PathLike = "/usr/bin/chromedriver",
+        executable_path: PathLike = Path("/usr/bin/chromedriver"),
         headless_mode: bool = True,
-        options: Iterable[str] = None,
+        options: Iterable[str] | None = None,
     ) -> None:
         """ChromeBrowser initialization
 
@@ -64,7 +65,6 @@ class ChromeBrowser(PageSourceGetter):
         self.executable_path = executable_path
         self.headless_mode = headless_mode
         self.options = options if options is not None else self.default_options
-        self.driver: Optional[webdriver.Chrome] = None
 
     def __enter__(self):
         self.open()
@@ -76,15 +76,14 @@ class ChromeBrowser(PageSourceGetter):
     def open(self):
         """Add arguments to chrome.Options() and run the browser"""
         options = Options()
+        service = Service(str(self.executable_path))
         for option in self.options:
             options.add_argument(option)
 
         if self.headless_mode:
             options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(
-            options=options, executable_path=self.executable_path
-        )
+        self.driver = webdriver.Chrome(options=options, service=service)
 
     def close(self):
         """Close the browser"""

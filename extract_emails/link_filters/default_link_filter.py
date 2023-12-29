@@ -1,8 +1,5 @@
 from typing import Iterable
-from typing import List
-from typing import Set
 from urllib.parse import urljoin
-from urllib.parse import urlparse
 
 from extract_emails.link_filters.link_filter_base import LinkFilterBase
 
@@ -12,9 +9,9 @@ class DefaultLinkFilter(LinkFilterBase):
 
     def __init__(self, website: str):
         super().__init__(website)
-        self.checked_links = set()
+        self.checked_links: set[str] = set()
 
-    def filter(self, links: Iterable[str]) -> List[str]:
+    def filter(self, links: Iterable[str]) -> list[str]:
         """Will exclude from a list URLs, which not starts with `self.website` and not starts with '/'
 
         Examples:

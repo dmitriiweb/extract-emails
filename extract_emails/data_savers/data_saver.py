@@ -1,6 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import List
+from abc import ABC, abstractmethod
+from typing import Iterable
 
 from extract_emails.models import PageData
 
@@ -10,5 +9,5 @@ class DataSaver(ABC):
         pass
 
     @abstractmethod
-    def save(self, data: List[PageData]):
+    def save(self, data: Iterable[PageData]):
         pass
