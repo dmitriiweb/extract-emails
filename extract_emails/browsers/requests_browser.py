@@ -1,5 +1,4 @@
 from typing import Any
-from typing import Dict
 
 from extract_emails.errors import BrowserImportError
 
@@ -26,7 +25,7 @@ class RequestsBrowser(PageSourceGetter):
 
     requests_timeout = 0.5
 
-    def __init__(self, headers: Dict[str, Any] = None):
+    def __init__(self, headers: dict[str, Any] = None):
         """
 
         Args:

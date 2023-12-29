@@ -1,6 +1,5 @@
 import re
 
-from typing import Set
 
 from extract_emails.data_extractors import DataExtractor
 from extract_emails.utils import email_filter
@@ -16,7 +15,7 @@ class EmailExtractor(DataExtractor):
     def name(self) -> str:
         return "email"
 
-    def get_data(self, page_source: str) -> Set[str]:
+    def get_data(self, page_source: str) -> set[str]:
         """Extract emails from a string
 
         Args:

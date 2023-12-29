@@ -1,6 +1,5 @@
 from abc import ABC
 from abc import abstractmethod
-from typing import Set
 
 
 class DataExtractor(ABC):
@@ -12,7 +11,7 @@ class DataExtractor(ABC):
         """Name of the data extractor, e.g. email, linkedin"""
 
     @abstractmethod
-    def get_data(self, page_source: str) -> Set[str]:
+    def get_data(self, page_source: str) -> set[str]:
         """Extract needed data from a string
 
         Args:

@@ -1,5 +1,3 @@
-from typing import List
-from typing import Tuple
 
 from loguru import logger
 
@@ -25,9 +23,9 @@ class DefaultWorker:
         self.links = [[self.website_url]]
         self.current_depth = 0
 
-    def get_data(self) -> List[PageData]:
+    def get_data(self) -> list[PageData]:
         """Extract data from a given website"""
-        data: List[PageData] = []
+        data: list[PageData] = []
 
         while len(self.links):
             logger.debug(f"current_depth={self.current_depth}")
@@ -40,9 +38,9 @@ class DefaultWorker:
 
         return data
 
-    def _get_new_data(self) -> List[PageData]:
+    def _get_new_data(self) -> list[PageData]:
 
-        data: List[PageData] = []
+        data: list[PageData] = []
         urls = self.links.pop(0)
 
         for url in urls:
@@ -64,7 +62,7 @@ class DefaultWorker:
 
         return data
 
-    def _get_page_data(self, url: str) -> Tuple[List[str], PageData]:
+    def _get_page_data(self, url: str) -> tuple[list[str], PageData]:
         page_source = self.browser.get_page_source(url)
 
         new_links = self.link_filter.get_links(page_source)

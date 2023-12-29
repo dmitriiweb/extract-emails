@@ -1,6 +1,5 @@
 import re
 
-from typing import Set
 
 from extract_emails.data_extractors import DataExtractor
 
@@ -15,7 +14,7 @@ class LinkedinExtractor(DataExtractor):
     def name(self) -> str:
         return "linkedin"
 
-    def get_data(self, page_source: str) -> Set[str]:
+    def get_data(self, page_source: str) -> set[str]:
         """Extract links to Linkedin profiles
 
         Args:

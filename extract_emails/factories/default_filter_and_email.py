@@ -1,4 +1,3 @@
-from typing import List
 
 from extract_emails.data_extractors import EmailExtractor
 from extract_emails.factories.base_factory import BaseFactory
@@ -46,6 +45,6 @@ class DefaultFilterAndEmailFactory(BaseFactory):
         return DefaultLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> List[EmailExtractor]:
+    def data_extractors(self) -> list[EmailExtractor]:
         """Initialize `EmailExtractor`"""
         return [EmailExtractor()]

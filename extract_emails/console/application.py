@@ -1,7 +1,5 @@
 from pathlib import Path
-from typing import List
 from typing import Type
-from typing import Union
 
 import click
 
@@ -15,7 +13,7 @@ from extract_emails.data_savers import CsvSaver
 from extract_emails.factories.base_factory import BaseFactory
 
 
-def get_factory(data_type: List[str]) -> Type[BaseFactory]:
+def get_factory(data_type: list[str]) -> Type[BaseFactory]:
     if data_type == ["email"]:
         return ContactFilterAndEmailFactory
     elif data_type == ["linkedin"]:
@@ -26,7 +24,7 @@ def get_factory(data_type: List[str]) -> Type[BaseFactory]:
         raise ValueError(f"Invalid data type: {data_type}")
 
 
-def get_browser(browser: str) -> Union[ChromeBrowser, RequestsBrowser]:
+def get_browser(browser: str) -> ChromeBrowser | RequestsBrowser:
     if browser == "requests":
         return RequestsBrowser()
     elif browser == "chrome":

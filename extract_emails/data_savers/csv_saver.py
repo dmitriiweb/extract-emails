@@ -1,9 +1,7 @@
 import csv
 
 from pathlib import Path
-from typing import Any
-from typing import Dict
-from typing import List
+from typing import Any, Iterable
 
 from extract_emails.models import PageData
 
@@ -19,7 +17,7 @@ class CsvSaver(DataSaver):
         if self.output_path is None or not isinstance(self.output_path, Path):
             raise ValueError("output_path must be a Path object")
 
-    def save(self, data: List[PageData]):
+    def save(self, data: Iterable[PageData]):
         processed_data = self.process_data(data)
         headers = self.get_headers(processed_data)
         is_new_file = not self.output_path.exists()
@@ -31,7 +29,7 @@ class CsvSaver(DataSaver):
             w.writerows(processed_data)
 
     @staticmethod
-    def process_data(data: List[PageData]) -> List[Dict[str, Any]]:
+    def process_data(data: Iterable[PageData]) -> list[dict[str, Any]]:
         processed_data = []
         for i in data:
             d = {"website": i.website, "page": i.page_url}
@@ -42,7 +40,7 @@ class CsvSaver(DataSaver):
         return processed_data
 
     @staticmethod
-    def get_headers(data: List[Dict[str, Any]]) -> List[str]:
+    def get_headers(data: Iterable[dict[str, Any]]) -> list[str]:
         headers = []
         for i in data:
             headers.extend(list(i.keys()))

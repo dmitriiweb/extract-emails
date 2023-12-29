@@ -1,7 +1,4 @@
 from typing import Iterable
-from typing import List
-from typing import Optional
-from typing import Set
 from urllib.parse import urljoin
 
 from extract_emails.link_filters.link_filter_base import LinkFilterBase
@@ -48,12 +45,12 @@ class ContactInfoLinkFilter(LinkFilterBase):
         "contactus",
     ]
 
-    checked_links: Set[str] = set()
+    checked_links: set[str] = set()
 
     def __init__(
         self,
         website: str,
-        contruct_candidates: Optional[List[str]] = None,
+        contruct_candidates: list[str] | None = None,
         use_default: bool = False,
     ):
         """
@@ -74,7 +71,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
         )
         self.use_default = use_default
 
-    def filter(self, urls: Iterable[str]) -> List[str]:
+    def filter(self, urls: Iterable[str]) -> list[str]:
         """Filter out the links without keywords
 
         Args:

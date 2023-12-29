@@ -1,5 +1,3 @@
-from typing import List
-from typing import Union
 
 from extract_emails.data_extractors import EmailExtractor
 from extract_emails.data_extractors import LinkedinExtractor
@@ -54,6 +52,6 @@ class DefaultFilterAndEmailAndLinkedinFactory(BaseFactory):
         return DefaultLinkFilter(self.website_url)
 
     @property
-    def data_extractors(self) -> List[Union[EmailExtractor, LinkedinExtractor]]:
+    def data_extractors(self) -> list[EmailExtractor | LinkedinExtractor]:
         """Initialize `EmailExtractor` and `LinkedinExtractor`"""
         return [EmailExtractor()]
