@@ -1,6 +1,5 @@
 import re
 
-
 from extract_emails.data_extractors import DataExtractor
 
 

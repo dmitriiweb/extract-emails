@@ -3,10 +3,12 @@ from typing import Type
 
 import click
 
-from extract_emails import ContactFilterAndEmailAndLinkedinFactory
-from extract_emails import ContactFilterAndEmailFactory
-from extract_emails import ContactFilterAndLinkedinFactory
-from extract_emails import DefaultWorker
+from extract_emails import (
+    ContactFilterAndEmailAndLinkedinFactory,
+    ContactFilterAndEmailFactory,
+    ContactFilterAndLinkedinFactory,
+    DefaultWorker,
+)
 from extract_emails.browsers.chrome_browser import ChromeBrowser
 from extract_emails.browsers.requests_browser import RequestsBrowser
 from extract_emails.data_savers import CsvSaver

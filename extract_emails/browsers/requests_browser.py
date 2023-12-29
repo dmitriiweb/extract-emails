@@ -2,7 +2,6 @@ from typing import Any
 
 from extract_emails.errors import BrowserImportError
 
-
 try:
     import requests
 except ModuleNotFoundError:

@@ -1,11 +1,9 @@
 import csv
-
 from pathlib import Path
 
 import pytest
 
 from extract_emails.models import PageData
-
 
 TEST_FILE = Path(__file__).parent.joinpath("test.csv")
 

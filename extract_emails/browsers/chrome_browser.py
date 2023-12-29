@@ -1,13 +1,10 @@
 import time
-
 from os import PathLike
-from typing import Iterable
-from typing import Optional
+from typing import Iterable, Optional
 
 from loguru import logger
 
 from extract_emails.errors import BrowserImportError
-
 
 try:
     from selenium import webdriver
@@ -84,9 +81,7 @@ class ChromeBrowser(PageSourceGetter):
         if self.headless_mode:
             options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(
-            options=options
-        )
+        self.driver = webdriver.Chrome(options=options)
 
     def close(self):
         """Close the browser"""

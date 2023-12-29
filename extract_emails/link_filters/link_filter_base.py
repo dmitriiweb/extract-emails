@@ -1,10 +1,7 @@
 import re
-
-from abc import ABC
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from typing import Iterable
 from urllib.parse import urlparse
-
 
 RE_LINKS = re.compile(r'<a\s+(?:[^>]*?\s+)?href=(["\'])(.*?)\1')
 

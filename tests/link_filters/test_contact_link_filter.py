@@ -2,7 +2,6 @@ import pytest
 
 from extract_emails.link_filters import ContactInfoLinkFilter
 
-
 test_urls = [
     "https://google.com",
     "/page1",

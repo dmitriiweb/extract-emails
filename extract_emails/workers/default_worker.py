@@ -1,4 +1,3 @@
-
 from loguru import logger
 
 from extract_emails.factories import BaseFactory
@@ -39,7 +38,6 @@ class DefaultWorker:
         return data
 
     def _get_new_data(self) -> list[PageData]:
-
         data: list[PageData] = []
         urls = self.links.pop(0)
 

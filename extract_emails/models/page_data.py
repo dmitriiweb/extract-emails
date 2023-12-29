@@ -1,11 +1,9 @@
 import csv
-
 from itertools import zip_longest
 from os import PathLike
 from typing import Optional
 
-from pydantic import BaseModel
-from pydantic import Field
+from pydantic import BaseModel, Field
 
 
 class PageData(BaseModel):

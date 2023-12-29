@@ -1,7 +1,5 @@
-from abc import ABC
-from abc import abstractmethod
-from typing import Optional
-from typing import Type
+from abc import ABC, abstractmethod
+from typing import Optional, Type
 
 from extract_emails.browsers import PageSourceGetter
 from extract_emails.data_extractors import DataExtractor

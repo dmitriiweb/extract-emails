@@ -1,6 +1,5 @@
 from extract_emails.link_filters import LinkFilterBase
 
-
 HTML_EXAMPLE = """
 <!doctype html>
 <head>

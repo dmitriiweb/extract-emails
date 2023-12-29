@@ -8,6 +8,16 @@ test:
 test-all:
 	pytest --cov=extract_emails -vv tests/
 
+.PHONY: code-format
+code-format:
+	isort extract_emails tests
+	ruff format extract_emails tests
+
+.PHONY: code-check
+code-check:
+	ruff extract_emails tests
+	mypy extract_emails
+
 .PHONY: docs-serve
 docs-serve:
 	mkdocs serve

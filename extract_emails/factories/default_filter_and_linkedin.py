@@ -1,4 +1,3 @@
-
 from extract_emails.data_extractors import LinkedinExtractor
 from extract_emails.factories.base_factory import BaseFactory
 from extract_emails.link_filters import DefaultLinkFilter
