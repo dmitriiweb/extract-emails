@@ -12,7 +12,14 @@ There are several main parts in the framework:
  - **factories** - Combination of different *link filters* and *data extractors*, e.g. [`DefaultFilterAndEmailFactory`][extract_emails.factories.default_filter_and_email.DefaultFilterAndEmailFactory]
  or [`ContactFilterAndEmailAndLinkedinFactory`][extract_emails.factories.contact_filter_and_email_and_linkedin.ContactFilterAndEmailAndLinkedinFactory]
  - [`DefaultWorker`][extract_emails.workers.default_worker.DefaultWorker] - All data extractions goes here
-
+## Installation
+```bash
+pip install extract_emails[all]
+# or
+pip install extract_emails[requests]
+# or
+pip install extract_emails[selenium]
+```
 ## Simple Usage:
 ### As library
 ```python
