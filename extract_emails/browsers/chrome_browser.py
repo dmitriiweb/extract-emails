@@ -38,9 +38,13 @@ class ChromeBrowser(PageSourceGetter):
         "--disable-gpu",
         "--disable-software-rasterizer",
         "--disable-dev-shm-usage",
-        "--window-size=1920x1080",
+        "--window-size=1920,1080",
         "--disable-setuid-sandbox",
         "--no-sandbox",
+        "--start-maximized",
+        "--no-default-browser-check",
+        "--no-first-run",
+        "--test-type",
     }
     wait_seconds_after_get = 0
 
