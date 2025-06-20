@@ -9,7 +9,7 @@ test-all:
 	pytest --cov=extract_emails -vv tests/
 
 .PHONY: format
-code-format:
+format:
 	ruff check extract_emails tests --select I --fix
 	ruff format extract_emails tests
 
