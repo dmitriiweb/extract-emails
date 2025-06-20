@@ -8,14 +8,14 @@ test:
 test-all:
 	pytest --cov=extract_emails -vv tests/
 
-.PHONY: code-format
+.PHONY: format
 code-format:
-	isort extract_emails tests
+	ruff check extract_emails tests --select I --fix
 	ruff format extract_emails tests
 
 .PHONY: code-check
 code-check:
-	ruff extract_emails
+	ruff check extract_emails
 	mypy extract_emails
 
 .PHONY: docs-serve
@@ -28,5 +28,5 @@ docs-publish:
 
 .PHONY: publish
 publish:
-	poetry build
-	poetry publish
+	uv build
+	uv publish
