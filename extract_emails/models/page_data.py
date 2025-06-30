@@ -1,6 +1,6 @@
 import csv
 from itertools import zip_longest
-from os import PathLike
+from pathlib import Path
 
 from pydantic import BaseModel, Field
 
@@ -47,7 +47,7 @@ class PageData(BaseModel):
             self.data[label] = vals
 
     @classmethod
-    def save_as_csv(cls, data: list["PageData"], filepath: PathLike) -> None:
+    def save_as_csv(cls, data: list["PageData"], filepath: Path) -> None:
         """Save list of `PageData` to CSV file
 
         Args:
@@ -58,10 +58,12 @@ class PageData(BaseModel):
         base_headers.remove("data")
         data_headers = [i for i in data[0].data.keys()]
         headers = base_headers + data_headers
+        is_file_exists = filepath.exists()
 
-        with open(filepath, "w", encoding="utf-8", newline="") as f:
+        with open(filepath, "a", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=headers)
-            writer.writeheader()
+            if not is_file_exists:
+                writer.writeheader()
             for page in data:
                 for data_in_row in zip_longest(*page.data.values()):
                     new_row = {"website": page.website, "page_url": page.page_url}
