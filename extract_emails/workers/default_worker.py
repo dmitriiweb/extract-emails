@@ -15,7 +15,22 @@ from extract_emails.models import PageData
 
 
 class DefaultWorker:
-    """All data extractions goes here."""
+    """DefaultWorker is responsible for orchestrating the extraction of emails and LinkedIn URLs from a given website.
+
+    This class utilizes both synchronous and asynchronous workers to perform the extraction process. It manages the
+    configuration of the extraction process, including the website URL, browser, link filter, data extractors, depth,
+    and maximum links to extract from a page.
+
+    Attributes:
+        website_url (str): The URL of the website to extract data from.
+        browser (PageSourceGetter): The browser instance used to fetch page sources.
+        link_filter (LinkFilterBase): The filter used to determine which links to follow.
+        data_extractors (list[DataExtractor]): The list of data extractors to use for extracting information.
+        depth (int): The maximum depth to traverse the website.
+        max_links_from_page (int): The maximum number of links to extract from a single page.
+        links (list[list[str]]): A list of lists containing URLs to be processed at each depth level.
+        current_depth (int): The current depth level of the extraction process.
+    """
 
     def __init__(
         self,

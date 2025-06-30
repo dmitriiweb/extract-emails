@@ -22,8 +22,8 @@ class _SyncChromiumBrowser:
         self.playwright = None
 
     def start(self) -> None:
-        self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch(headless=self.headless)
+        self.playwright = sync_playwright().start()  # type: ignore
+        self.browser = self.playwright.chromium.launch(headless=self.headless)  # type: ignore
         self.context = self.browser.new_context(
             extra_http_headers=self.headers if self.headers else {}
         )
@@ -58,8 +58,8 @@ class _AsyncChromiumBrowser:
         self.playwright = None
 
     async def start(self) -> None:
-        self.playwright = await async_playwright().start()
-        self.browser = await self.playwright.chromium.launch(headless=self.headless)
+        self.playwright = await async_playwright().start()  # type: ignore
+        self.browser = await self.playwright.chromium.launch(headless=self.headless)  # type: ignore
         self.context = await self.browser.new_context(
             extra_http_headers=self.headers if self.headers else {}
         )

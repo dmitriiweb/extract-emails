@@ -12,7 +12,6 @@ class CsvSaver(DataSaver):
         super().__init__(**kwargs)
         self.save_mode = save_mode
         self.output_path = kwargs.get("output_path")
-        print(self.output_path)
         if self.output_path is None or not isinstance(self.output_path, Path):
             raise ValueError("output_path must be a Path object")
 

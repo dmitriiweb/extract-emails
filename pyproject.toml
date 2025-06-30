@@ -23,7 +23,9 @@ classifiers = [
 ]
 dependencies = [
     "httpx>=0.28.1",
+    "loguru>=0.7.3",
     "playwright>=1.52.0",
+    "pydantic>=2.11.7",
 ]
 
 [project.urls]
@@ -49,3 +51,6 @@ dev = [
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[project.scripts]
+extract-emails = "extract_emails.console.application:main"

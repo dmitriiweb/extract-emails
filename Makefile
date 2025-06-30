@@ -13,8 +13,8 @@ format:
 	ruff check extract_emails tests --select I --fix
 	ruff format extract_emails tests
 
-.PHONY: code-check
-code-check:
+.PHONY: lint
+lint:
 	ruff check extract_emails
 	mypy extract_emails
 
