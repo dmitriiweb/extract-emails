@@ -49,6 +49,10 @@ class HttpxBrowser(PageSourceGetter):
     _sync_browser: _SyncHttpxBrowser
     _async_browser: _AsyncHttpxBrowser
 
+    def __init__(self, headers: dict[str, str] | None = None):
+        super().__init__()
+        self.headers = headers
+
     def start(self) -> None:
         self._sync_browser = _SyncHttpxBrowser(self.headers)
         self._sync_browser.start()
