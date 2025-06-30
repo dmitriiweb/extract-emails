@@ -9,8 +9,14 @@
       
       
       
+        <link rel="prev" href="../../quick_start/logs/">
+      
+      
+        <link rel="next" href="../browsers/">
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -18,34 +24,35 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#e92063">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
-    
+      
+
+
     
     
       
+    
+    
+      
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-
+    
     
     
   </head>
@@ -58,8 +65,6 @@
     
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink">
   
-    
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -76,18 +81,22 @@
       
     </div>
     
+    
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Extract Emails" class="md-header__button md-logo" aria-label="Extract Emails" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -106,41 +115,50 @@
       </div>
     </div>
     
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
       
-<div class="md-search" data-md-component="search" role="dialog">
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -165,12 +183,13 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Extract Emails" class="md-nav__button md-logo" aria-label="Extract Emails" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     Extract Emails
@@ -180,14 +199,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Extract Emails
+        
+  
+  
+  <span class="md-ellipsis">
+    Extract Emails
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -195,149 +221,201 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Quick Start
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Quick Start
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
           
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../quick_start/intro/" class="md-nav__link">
-        Intro
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../quick_start/save_data/" class="md-nav__link">
-        Save Data
+        
+  
+  
+  <span class="md-ellipsis">
+    Save Data
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../quick_start/logs/" class="md-nav__link">
-        Logs
+        
+  
+  
+  <span class="md-ellipsis">
+    Logs
+    
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
+    
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Code References
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Code References" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Code References
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
-              
   
   
-  
-    <li class="md-nav__item">
-      <a href="../factories/" class="md-nav__link">
-        Factories
-      </a>
-    </li>
+  <span class="md-ellipsis">
+    Code References
+    
+  </span>
   
 
-            
-          
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Code References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Workers
+          
+  
+  
+  <span class="md-ellipsis">
+    Workers
+    
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Workers
+        
+  
+  
+  <span class="md-ellipsis">
+    Workers
+    
+  </span>
+  
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -353,29 +431,37 @@
       
         <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker" class="md-nav__link">
-    extract_emails.workers.default_worker
+    <span class="md-ellipsis">
+      default_worker
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker.DefaultWorker" class="md-nav__link">
-    DefaultWorker
+    <span class="md-ellipsis">
+      DefaultWorker
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="DefaultWorker">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extract_emails.workers.default_worker.DefaultWorker.__init__" class="md-nav__link">
-    __init__()
+  <a href="#extract_emails.workers.default_worker.DefaultWorker.aget_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      aget_data
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker.DefaultWorker.get_data" class="md-nav__link">
-    get_data()
+    <span class="md-ellipsis">
+      get_data
+    </span>
   </a>
   
 </li>
@@ -392,94 +478,149 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../browsers/" class="md-nav__link">
-        Browsers
+        
+  
+  
+  <span class="md-ellipsis">
+    Browsers
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../link_filters/" class="md-nav__link">
-        Link Filters
+        
+  
+  
+  <span class="md-ellipsis">
+    Link Filters
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../models/" class="md-nav__link">
-        Models
+        
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../data_extractors/" class="md-nav__link">
-        Data Extractors
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Extractors
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../utils/" class="md-nav__link">
-        Utils
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../errors/" class="md-nav__link">
-        Errors
+        
+  
+  
+  <span class="md-ellipsis">
+    Errors
+    
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -496,6 +637,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -511,29 +653,37 @@
       
         <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker" class="md-nav__link">
-    extract_emails.workers.default_worker
+    <span class="md-ellipsis">
+      default_worker
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker.DefaultWorker" class="md-nav__link">
-    DefaultWorker
+    <span class="md-ellipsis">
+      DefaultWorker
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="DefaultWorker">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extract_emails.workers.default_worker.DefaultWorker.__init__" class="md-nav__link">
-    __init__()
+  <a href="#extract_emails.workers.default_worker.DefaultWorker.aget_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      aget_data
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#extract_emails.workers.default_worker.DefaultWorker.get_data" class="md-nav__link">
-    get_data()
+    <span class="md-ellipsis">
+      get_data
+    </span>
   </a>
   
 </li>
@@ -551,15 +701,20 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <h1 id="workers">Workers<a class="headerlink" href="#workers" title="Permanent link">&para;</a></h1>
+                  
 
 
-  <div class="doc doc-object doc-module">
+
+<h1 id="workers">Workers<a class="headerlink" href="#workers" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-module">
+
+
 
 <a id="extract_emails.workers.default_worker"></a>
     <div class="doc doc-contents first">
@@ -567,6 +722,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -575,21 +735,283 @@
 
 
 
-  <div class="doc doc-object doc-class">
+
+<div class="doc doc-object doc-class">
 
 
 
 <h2 id="extract_emails.workers.default_worker.DefaultWorker" class="doc doc-heading">
-        <code>DefaultWorker</code>
-
+            <code>DefaultWorker</code>
 
 
 <a href="#extract_emails.workers.default_worker.DefaultWorker" class="headerlink" title="Permanent link">&para;</a></h2>
 
+
     <div class="doc doc-contents ">
 
-      <p>All data extractions goes here.</p>
 
+        <p>DefaultWorker is responsible for orchestrating the extraction of emails and LinkedIn URLs from a given website.</p>
+<p>This class utilizes both synchronous and asynchronous workers to perform the extraction process. It manages the
+configuration of the extraction process, including the website URL, browser, link filter, data extractors, depth,
+and maximum links to extract from a page.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.website_url">website_url</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The URL of the website to extract data from.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.browser">browser</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="PageSourceGetter (extract_emails.browsers.PageSourceGetter)" href="../browsers/#extract_emails.browsers.page_source_getter.PageSourceGetter">PageSourceGetter</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The browser instance used to fetch page sources.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.link_filter">link_filter</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="LinkFilterBase (extract_emails.link_filters.LinkFilterBase)" href="../link_filters/#extract_emails.link_filters.link_filter_base.LinkFilterBase">LinkFilterBase</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The filter used to determine which links to follow.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.data_extractors">data_extractors</span></code></td>
+            <td>
+                  <code><span title="list">list</span>[<a class="autorefs autorefs-internal" title="DataExtractor (extract_emails.data_extractors.DataExtractor)" href="../data_extractors/#extract_emails.data_extractors.data_extractor.DataExtractor">DataExtractor</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The list of data extractors to use for extracting information.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.depth">depth</span></code></td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maximum depth to traverse the website.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.max_links_from_page">max_links_from_page</span></code></td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maximum number of links to extract from a single page.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.links">links</span></code></td>
+            <td>
+                  <code><span title="list">list</span>[<span title="list">list</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of lists containing URLs to be processed at each depth level.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="extract_emails.workers.default_worker.DefaultWorker.current_depth">current_depth</span></code></td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The current depth level of the extraction process.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>extract_emails/workers/default_worker.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DefaultWorker</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;DefaultWorker is responsible for orchestrating the extraction of emails and LinkedIn URLs from a given website.</span>
+
+<span class="sd">    This class utilizes both synchronous and asynchronous workers to perform the extraction process. It manages the</span>
+<span class="sd">    configuration of the extraction process, including the website URL, browser, link filter, data extractors, depth,</span>
+<span class="sd">    and maximum links to extract from a page.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        website_url (str): The URL of the website to extract data from.</span>
+<span class="sd">        browser (PageSourceGetter): The browser instance used to fetch page sources.</span>
+<span class="sd">        link_filter (LinkFilterBase): The filter used to determine which links to follow.</span>
+<span class="sd">        data_extractors (list[DataExtractor]): The list of data extractors to use for extracting information.</span>
+<span class="sd">        depth (int): The maximum depth to traverse the website.</span>
+<span class="sd">        max_links_from_page (int): The maximum number of links to extract from a single page.</span>
+<span class="sd">        links (list[list[str]]): A list of lists containing URLs to be processed at each depth level.</span>
+<span class="sd">        current_depth (int): The current depth level of the extraction process.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">website_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">browser</span><span class="p">:</span> <span class="n">PageSourceGetter</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">link_filter</span><span class="p">:</span> <span class="n">LinkFilterBase</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data_extractors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">DataExtractor</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">max_links_from_page</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">website_url</span> <span class="o">=</span> <span class="n">website_url</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="n">browser</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link_filter</span> <span class="o">=</span> <span class="n">link_filter</span> <span class="ow">or</span> <span class="n">ContactInfoLinkFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">website_url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_extractors</span> <span class="o">=</span> <span class="n">data_extractors</span> <span class="ow">or</span> <span class="p">[</span>
+            <span class="n">EmailExtractor</span><span class="p">(),</span>
+            <span class="n">LinkedinExtractor</span><span class="p">(),</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">depth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_links_from_page</span> <span class="o">=</span> <span class="n">max_links_from_page</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">website_url</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_depth</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sync_worker</span> <span class="o">=</span> <span class="n">_SyncDefaultWorker</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">website_url</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="p">,</span>
+            <span class="n">link_filter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">link_filter</span><span class="p">,</span>
+            <span class="n">data_extractors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data_extractors</span><span class="p">,</span>
+            <span class="n">depth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span>
+            <span class="n">max_links_from_page</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_links_from_page</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_async_worker</span> <span class="o">=</span> <span class="n">_AsyncDefaultWorker</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">website_url</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="p">,</span>
+            <span class="n">link_filter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">link_filter</span><span class="p">,</span>
+            <span class="n">data_extractors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data_extractors</span><span class="p">,</span>
+            <span class="n">depth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span>
+            <span class="n">max_links_from_page</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_links_from_page</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageData</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve extracted data synchronously.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[PageData]: A list of PageData objects containing the extracted information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sync_worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">aget_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageData</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve extracted data asynchronously.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[PageData]: A list of PageData objects containing the extracted information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_async_worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+              </details>
 
 
 
@@ -603,101 +1025,133 @@
 
 
 
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
+<h3 id="extract_emails.workers.default_worker.DefaultWorker.aget_data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">aget_data</span><span class="p">()</span></code>
 
-<h3 id="extract_emails.workers.default_worker.DefaultWorker.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factory</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
   </span>
 
-<a href="#extract_emails.workers.default_worker.DefaultWorker.__init__" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#extract_emails.workers.default_worker.DefaultWorker.aget_data" class="headerlink" title="Permanent link">&para;</a></h3>
+
 
     <div class="doc doc-contents ">
 
+        <p>Retrieve extracted data asynchronously.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>factory</code></td>
-        <td><code>BaseFactory</code></td>
-        <td><p>see <code>BaseFactory</code></p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>extract_emails/workers/default_worker.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factory</span><span class="p">:</span> <span class="n">BaseFactory</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Args:</span>
-<span class="sd">        factory: see `BaseFactory`</span>
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<a class="autorefs autorefs-internal" title="PageData (extract_emails.models.PageData)" href="../models/#extract_emails.models.page_data.PageData">PageData</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[PageData]: A list of PageData objects containing the extracted information.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>extract_emails/workers/default_worker.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">aget_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageData</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve extracted data asynchronously.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[PageData]: A list of PageData objects containing the extracted information.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">website_url</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">website_url</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">browser</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">depth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">max_links_from_page</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">max_links_from_page</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">link_filter</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">link_filter</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">data_extractors</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">data_extractors</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">website_url</span><span class="p">]]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">current_depth</span> <span class="o">=</span> <span class="mi">0</span>
-</code></pre></div>
-        </details>
+    <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_async_worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
     </div>
 
-  </div>
+</div>
 
-
-
-  <div class="doc doc-object doc-method">
-
+<div class="doc doc-object doc-function">
 
 
 <h3 id="extract_emails.workers.default_worker.DefaultWorker.get_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
+            <code class="highlight language-python"><span class="n">get_data</span><span class="p">()</span></code>
 
 <a href="#extract_emails.workers.default_worker.DefaultWorker.get_data" class="headerlink" title="Permanent link">&para;</a></h3>
 
+
     <div class="doc doc-contents ">
 
-      <p>Extract data from a given website</p>
+        <p>Retrieve extracted data synchronously.</p>
 
-        <details class="quote">
-          <summary>Source code in <code>extract_emails/workers/default_worker.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">PageData</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Extract data from a given website&quot;&quot;&quot;</span>
-    <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PageData</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">links</span><span class="p">):</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;current_depth=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_depth</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_depth</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">depth</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">current_depth</span> <span class="o">+=</span> <span class="mi">1</span>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<a class="autorefs autorefs-internal" title="PageData (extract_emails.models.PageData)" href="../models/#extract_emails.models.page_data.PageData">PageData</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[PageData]: A list of PageData objects containing the extracted information.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-        <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_new_data</span><span class="p">()</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">data</span>
-</code></pre></div>
-        </details>
+            <details class="quote">
+              <summary>Source code in <code>extract_emails/workers/default_worker.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageData</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve extracted data synchronously.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[PageData]: A list of PageData objects containing the extracted information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sync_worker</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
     </div>
 
+</div>
+
+
+
   </div>
 
+    </div>
+
+</div>
 
 
 
@@ -706,7 +1160,7 @@
 
     </div>
 
-  </div>
+</div>
 
 
 
@@ -714,74 +1168,34 @@
 
 
 
-  </div>
 
-    </div>
 
-  </div>
+
+
+
                 
-              
-              
-                
-
-
-              
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
-        
-<footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../factories/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Factories" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Factories
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../browsers/" class="md-footer__link md-footer__link--next" aria-label="Next: Browsers" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Browsers
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a>
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -791,10 +1205,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
