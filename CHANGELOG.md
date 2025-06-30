@@ -1,5 +1,28 @@
 # Changelog
 
+## 6.0.0
+
+### Added
+- New browser backends: `ChromiumBrowser` (sync/async, via Playwright) and `HttpxBrowser` (sync/async, via httpx)
+- Async CSV saving: `PageData.ato_csv` for async CSV export
+- Full async/sync support for all main workflows
+
+### Changed
+- Refactored `PageData.save_as_csv` → `PageData.to_csv` (sync) and added `ato_csv` (async)
+- Refactored and improved `DefaultWorker` (sync/async extraction, more robust)
+- Updated documentation and quick start guides for new API and CLI
+- Updated test suite for new browser backends
+
+### Removed
+- Removed all old factory classes and related docs
+- Removed legacy browsers: `chrome_browser.py`, `requests_browser.py`
+- Removed all old factory-based test and code paths
+
+### Other
+- Switched package/dependency management from Poetry to `uv`
+- Updated Python support: now requires Python 3.10+
+- Updated dependencies
+
 ## 5.3.4
 
 ### Changed
