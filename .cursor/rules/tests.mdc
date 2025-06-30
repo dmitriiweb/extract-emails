@@ -1,6 +1,6 @@
 ---
 description: 
-globs: tests/*.*
+globs: tests/**.py
 alwaysApply: false
 ---
 # Tests Writing Rules
