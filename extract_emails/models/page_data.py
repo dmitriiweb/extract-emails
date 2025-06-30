@@ -1,4 +1,6 @@
 import csv
+import aiofiles
+from aiocsv import AsyncDictWriter
 from itertools import zip_longest
 from pathlib import Path
 
@@ -71,3 +73,29 @@ class PageData(BaseModel):
                         new_row[column] = data_in_row[counter]
 
                     writer.writerow(new_row)
+
+    @classmethod
+    async def ato_csv(cls, data: list["PageData"], filepath: Path) -> None:
+        """Async save list of `PageData` to CSV file
+
+        Args:
+            data: list of `PageData`
+            filepath: path to a CSV file
+        """
+        base_headers: list[str] = list(cls.model_json_schema()["properties"].keys())
+        base_headers.remove("data")
+        data_headers = [i for i in data[0].data.keys()]
+        headers = base_headers + data_headers
+        is_file_exists = filepath.exists()
+
+        async with aiofiles.open(filepath, "a", encoding="utf-8", newline="") as f:
+            writer = AsyncDictWriter(f, fieldnames=headers)
+            if not is_file_exists:
+                await writer.writeheader()
+            for page in data:
+                for data_in_row in zip_longest(*page.data.values()):
+                    new_row = {"website": page.website, "page_url": page.page_url}
+                    for counter, column in enumerate(data_headers):
+                        new_row[column] = data_in_row[counter]
+
+                    await writer.writerow(new_row)
