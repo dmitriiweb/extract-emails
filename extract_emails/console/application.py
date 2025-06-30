@@ -61,7 +61,7 @@ def main(url: str, output_file: str, browser_name: str, data_type: str):
 
     browser.stop()
 
-    PageData.save_as_csv(data, Path(output_file))
+    PageData.to_csv(data, Path(output_file))
 
 
 if __name__ == "__main__":

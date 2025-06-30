@@ -47,7 +47,7 @@ class PageData(BaseModel):
             self.data[label] = vals
 
     @classmethod
-    def save_as_csv(cls, data: list["PageData"], filepath: Path) -> None:
+    def to_csv(cls, data: list["PageData"], filepath: Path) -> None:
         """Save list of `PageData` to CSV file
 
         Args:
