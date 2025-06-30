@@ -3,6 +3,46 @@ revision = 2
 requires-python = ">=3.10, <3.14"
 
 [[package]]
+name = "aiocsv"
+version = "1.3.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/33/78/bd4a85d195e57e72837415ef81d26ce6db6fdf185dce8d4f6a7c099ed4af/aiocsv-1.3.2.tar.gz", hash = "sha256:806d93465c7808d58d3ff0d2bba270fb4d04b934be6a1e95d0834c50a510910e", size = 24837, upload-time = "2024-04-28T10:30:30.382Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5b/ac/f16d8ac8f340f84102294837cbf1ee8a30a211270f49f91ccc084f0bea93/aiocsv-1.3.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:f1996ac960c196aecc7d22e701c273a2676d13bf25575af78d4e515fc724ef20", size = 26421, upload-time = "2024-04-28T10:35:41.197Z" },
+    { url = "https://files.pythonhosted.org/packages/7d/d5/616a3d7b07558ee1010cf233784bf1a6844b0664e92a489a380b887ff773/aiocsv-1.3.2-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bdd688dbc1723f2b3a433e42041ceb9c9a8fe70f547d35b2da4ea31e4c78efc5", size = 47958, upload-time = "2024-04-28T10:35:42.717Z" },
+    { url = "https://files.pythonhosted.org/packages/66/1b/e03e1469ff228ac0a2c852d6fadfeebacd347f11f7aedd5818f7d42e0ba1/aiocsv-1.3.2-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:2f921828e386bb6945ed7d268e1524349ea506974ae35b9772542714f0ef3efd", size = 52246, upload-time = "2024-04-28T10:35:44.774Z" },
+    { url = "https://files.pythonhosted.org/packages/eb/a2/a4413bdd3dee738e387ff0a98a4b9b3a7fc6dd8f55c456d832ae9ea0df3c/aiocsv-1.3.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:c17dba00ac5a0ba0a3962902ebd60ed529a59440c957343175e815947ac7f114", size = 47077, upload-time = "2025-01-21T16:53:38.435Z" },
+    { url = "https://files.pythonhosted.org/packages/ac/69/d6da552b7fe5d2908c9bfbcc62c100cf19eaaf711a213cb9f84448569765/aiocsv-1.3.2-cp310-cp310-win_amd64.whl", hash = "sha256:198c905ec29897c347bf9b18eb410af13d7ac94a03d4b673e64eaa5f4557c913", size = 29080, upload-time = "2024-04-28T10:35:46.408Z" },
+    { url = "https://files.pythonhosted.org/packages/d6/b3/548e5b377f65d3ae02c0674a54de76c150c8d050f4fe7b0e43be866ba1be/aiocsv-1.3.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:7c25ad8afbf79d28ec3320e608c7f38d3eff93e96ebbbd2430ae8fa0f6e7631b", size = 26420, upload-time = "2024-04-28T10:35:47.945Z" },
+    { url = "https://files.pythonhosted.org/packages/0d/bc/2659b85488b520d66b31ac83f42f7493653f61a4941b4f0807f3f73bd3e0/aiocsv-1.3.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4004569bff39cb839a335b8f673a6496fd5b0b6e074c7adb7aee4a0c8379ea22", size = 49433, upload-time = "2024-04-28T10:35:49.428Z" },
+    { url = "https://files.pythonhosted.org/packages/41/c2/0f7d38cf5411350b8448f7c5c77f65247224fa96edfc7a5e997deb5fc96d/aiocsv-1.3.2-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:e9c98f8d760add0b52274523baa4b81dde4a3c96f79222d3d4d6965bac9cdcbd", size = 54346, upload-time = "2024-04-28T10:35:50.888Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/73/d0a79681701a119c830104fa71bab7283a872a91bc2489d6631b8a93e15c/aiocsv-1.3.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:b3dce5e3b18e24b2e06d93cbd8186eac2e6a385cac40bbdfa09d6110a7f48d40", size = 48199, upload-time = "2025-01-21T16:53:41.463Z" },
+    { url = "https://files.pythonhosted.org/packages/33/e6/5e661bc89cd094a7d92f5883c16f9651a52c4a8f38623c8de1851d7ffa84/aiocsv-1.3.2-cp311-cp311-win_amd64.whl", hash = "sha256:9edb342b0d7dba94d8976f46ba5814b8d8704d67a45e1b8a6579ab0ba04309e7", size = 29090, upload-time = "2024-04-28T10:35:52.357Z" },
+    { url = "https://files.pythonhosted.org/packages/a6/ab/4c811d08dafb35832e799b7c8284426c037f136f7287b7fe32d5d932778a/aiocsv-1.3.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:5aa586564800df49280e0aa108acc855062ac5b9486bb052f0dd0c0051ea4f18", size = 26506, upload-time = "2025-01-21T16:53:42.545Z" },
+    { url = "https://files.pythonhosted.org/packages/52/b5/48e8b825d8ec9ffbb47ebbc381702d5dfb59ef01ad00174bf43123b860cf/aiocsv-1.3.2-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:db943a463cb6828ba81bd7c083c6dd4c96edac4880b8638af81798d694405e26", size = 26497, upload-time = "2024-04-28T10:35:53.272Z" },
+    { url = "https://files.pythonhosted.org/packages/94/6f/cb2d7b751a03433a30e7a645f0b3a126f5f2ecb0947c3da5a04496c06767/aiocsv-1.3.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:10780033a1ed3da825f2256449d177b7106b3c5a2d64bd683eab37f1fdee1e36", size = 51459, upload-time = "2024-04-28T10:35:54.747Z" },
+    { url = "https://files.pythonhosted.org/packages/c2/19/67edf04b47168a2639d73ebaae25f2459d7284d10a5e7a2fef72a69bb31e/aiocsv-1.3.2-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8c7aee34ceff4eaa654f01acbdba648297f5f9532dc7a23fac62defec28e0fe5", size = 55921, upload-time = "2024-04-28T10:35:56.205Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/e9/00fd06908ec1a0b2f2e6c6e10e6e8344dc2d6ca03c2a40b5241bdbd3b817/aiocsv-1.3.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:f848e1cca7d22d8bd6480fa4c7338dc8be2abdd02e0b99f677b8a7af27e15767", size = 50088, upload-time = "2025-01-21T16:53:43.645Z" },
+    { url = "https://files.pythonhosted.org/packages/13/39/ee5645807a947736c87ab7c0dfcdbceb7d7f8d1d31cb7d52992cbd5d6d44/aiocsv-1.3.2-cp312-cp312-win_amd64.whl", hash = "sha256:59b0ea2d9e73539d4c1276467c4457acafa995717ea1b5340f3737f2cde2f71a", size = 29137, upload-time = "2024-04-28T10:35:57.094Z" },
+    { url = "https://files.pythonhosted.org/packages/3e/0f/1826e1c0f561c831aa933d24918e51645b4b162abf1b5df4c37ef0ddc172/aiocsv-1.3.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:f4039dcf7bd684a98bf7c2218b8e7dc4abc951e1045dadd8813e992a1ba829ff", size = 26497, upload-time = "2025-01-21T16:53:47.544Z" },
+    { url = "https://files.pythonhosted.org/packages/00/dc/d479b647af73a3b2126f9e364d669c9acb4e9b1f0e5006b8f74271820d40/aiocsv-1.3.2-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4d8612392b7da7bff545b69202fb03a8e09381fff2d5c4d9594246d7375cd603", size = 51261, upload-time = "2025-01-21T16:53:48.794Z" },
+    { url = "https://files.pythonhosted.org/packages/75/68/aec1088dcc216c40b86122183fd28771e9a43f79a6866d1b912e8c282700/aiocsv-1.3.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:cee1577a381a44a18bcaed97c41f39b4400655de1a873f4e90b64af68e19dcd9", size = 50092, upload-time = "2025-01-21T16:53:50.107Z" },
+    { url = "https://files.pythonhosted.org/packages/45/9a/18f65720081f2564f614fa872812508aa7e93651d3b3a0ca4eb42a744de1/aiocsv-1.3.2-cp313-cp313-win_amd64.whl", hash = "sha256:0f0437f34ab7d1da86b30407653d635cf7de330681e746859b8c54aaac2c4574", size = 29290, upload-time = "2025-01-21T16:53:51.655Z" },
+]
+
+[[package]]
+name = "aiofiles"
+version = "24.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz", hash = "sha256:22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c", size = 30247, upload-time = "2024-06-24T11:02:03.584Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a5/45/30bb92d442636f570cb5651bc661f52b610e2eec3f891a5dc3a4c3667db0/aiofiles-24.1.0-py3-none-any.whl", hash = "sha256:b4ec55f4195e3eb5d7abd1bf7e061763e864dd4954231fb8539a0ef8bb8260e5", size = 15896, upload-time = "2024-06-24T11:02:01.529Z" },
+]
+
+[[package]]
 name = "annotated-types"
 version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -252,13 +292,17 @@ name = "extract-emails"
 version = "6.0.0"
 source = { editable = "." }
 dependencies = [
-    { name = "httpx" },
+    { name = "aiocsv" },
+    { name = "aiofiles" },
     { name = "loguru" },
-    { name = "playwright" },
     { name = "pydantic" },
 ]
 
 [package.optional-dependencies]
+all = [
+    { name = "httpx" },
+    { name = "playwright" },
+]
 dev = [
     { name = "jinja2" },
     { name = "mkdocs" },
@@ -273,10 +317,19 @@ dev = [
     { name = "ruff" },
     { name = "tox" },
 ]
+httpx = [
+    { name = "httpx" },
+]
+playwright = [
+    { name = "playwright" },
+]
 
 [package.metadata]
 requires-dist = [
-    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "aiocsv", specifier = ">=1.3.2" },
+    { name = "aiofiles", specifier = ">=24.1.0" },
+    { name = "httpx", marker = "extra == 'all'", specifier = ">=0.28.1" },
+    { name = "httpx", marker = "extra == 'httpx'", specifier = ">=0.28.1" },
     { name = "jinja2", marker = "extra == 'dev'", specifier = ">=3.1.6" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mkdocs", marker = "extra == 'dev'", specifier = ">=1.6.1" },
@@ -284,7 +337,8 @@ requires-dist = [
     { name = "mkdocs-material", marker = "extra == 'dev'", specifier = ">=9.6.14" },
     { name = "mkdocstrings", extras = ["python"], marker = "extra == 'dev'", specifier = ">=0.29.1" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.16.1" },
-    { name = "playwright", specifier = ">=1.52.0" },
+    { name = "playwright", marker = "extra == 'all'", specifier = ">=1.52.0" },
+    { name = "playwright", marker = "extra == 'playwright'", specifier = ">=1.52.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pygments", marker = "extra == 'dev'", specifier = ">=2.19.1" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.4.1" },
@@ -293,7 +347,7 @@ requires-dist = [
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.12.0" },
     { name = "tox", marker = "extra == 'dev'", specifier = ">=4.27.0" },
 ]
-provides-extras = ["dev"]
+provides-extras = ["all", "httpx", "playwright", "dev"]
 
 [[package]]
 name = "filelock"
