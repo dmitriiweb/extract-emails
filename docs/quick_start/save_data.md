@@ -11,8 +11,7 @@ from extract_emails.workers import DefaultWorker
 
 
 browser = Browser()
-factory = Factory(website_url='https://example.com', browser=browser, depth=0, max_links_from_page=0)
-extractor = DefaultWorker(factory)
+extractor = DefaultWorker("https://example.com", browser)
 data = extractor.get_data()
 
 PageData.save_as_csv(data, "output.csv")

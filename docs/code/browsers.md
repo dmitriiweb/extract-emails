@@ -2,6 +2,6 @@
 
 ::: extract_emails.browsers.page_source_getter
 
-::: extract_emails.browsers.chrome_browser
+::: extract_emails.browsers.chromium_browser
 
-::: extract_emails.browsers.requests_browser
+::: extract_emails.browsers.httpx_browser

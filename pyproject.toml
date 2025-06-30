@@ -1,12 +1,12 @@
-[tool.poetry]
+[project]
 name = "extract-emails"
-version = "5.3.4"
+version = "6.0.0"
+requires-python = ">=3.10,<3.14"
 description = "Extract email addresses and linkedin profiles from given URL."
-authors = ["Dmitrii Kurlov <dmitriik@tutanota.com>"]
-license = "MIT"
+authors = [
+  {name = "Dmitrii K", email = "dmitriik@proton.me"}
+]
 readme = "README.md"
-repository = "https://github.com/dmitriiweb/extract-emails"
-documentation = "https://dmitriiweb.github.io/extract-emails"
 keywords = ["parser", "email", "linkedin"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -17,111 +17,53 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: Implementation :: CPython",
   "Topic :: Utilities",
 ]
-
-[tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-pydantic = "^2.5.3"
-loguru = "^0.5.3"
-click = "^8.1.7"
-requests = { version = "^2.31.0", optional = true }
-selenium = { version = "^4.9", optional = true }
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^6.2.5"
-pytest-cov = "^2.12.1"
-pytest_async = "^0.1.1"
-tox = "^3.28.0"
-mkdocs-material = "^7.2.6"
-mkdocs = "^1.2.2"
-mkdocstrings = "^0.15.2"
-Pygments = "^2.10.0"
-pre-commit = "^2.21.0"
-requests = "^2.31.0"
-selenium = "^4.9"
-mkdocs-autorefs = "0.2.1"
-Jinja2 = "<3.1.0"
-ruff = "^0.1.9"
-isort = "^5.13.2"
-mypy = "^1.8.0"
-
-[tool.poetry.extras]
-selenium = ["selenium"]
-requests = ["requests"]
-all = ["selenium", "requests"]
-
-[tool.poetry.scripts]
-extract-emails = "extract_emails.console.application:main"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.ruff]
-# Exclude a variety of commonly ignored directories.
-exclude = [
-  ".bzr",
-  ".direnv",
-  ".eggs",
-  ".git",
-  ".git-rewrite",
-  ".hg",
-  ".ipynb_checkpoints",
-  ".mypy_cache",
-  ".nox",
-  ".pants.d",
-  ".pyenv",
-  ".pytest_cache",
-  ".pytype",
-  ".ruff_cache",
-  ".svn",
-  ".tox",
-  ".venv",
-  ".vscode",
-  "__pypackages__",
-  "_build",
-  "buck-out",
-  "build",
-  "dist",
-  "node_modules",
-  "site-packages",
-  "venv",
+dependencies = [
+    "aiocsv>=1.3.2",
+    "aiofiles>=24.1.0",
+    "loguru>=0.7.3",
+    "pydantic>=2.11.7",
 ]
 
-# Same as Black.
-line-length = 88
-indent-width = 4
+[project.urls]
+repository = "https://github.com/dmitriiweb/extract-emails"
+documentation = "https://dmitriiweb.github.io/extract-emails"
 
-# Assume Python 3.8
-target-version = "py38"
+[project.optional-dependencies]
+all = [
+    "httpx>=0.28.1",
+    "playwright>=1.52.0",
+] 
+httpx = [
+    "httpx>=0.28.1",
+]
+playwright = [
+    "playwright>=1.52.0",
+]
+dev = [
+    "jinja2>=3.1.6",
+    "mkdocs>=1.6.1",
+    "mkdocs-autorefs>=1.4.2",
+    "mkdocs-material>=9.6.14",
+    "mkdocstrings[python]>=0.29.1",
+    "mypy>=1.16.1",
+    "pygments>=2.19.1",
+    "pytest>=8.4.1",
+    "pytest-async>=0.1.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.0",
+    "tox>=4.27.0",
+]
 
-[tool.ruff.lint]
-# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
-select = ["E4", "E7", "E9", "F"]
-ignore = []
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-# Allow fix for all enabled rules (when `--fix`) is provided.
-fixable = ["ALL"]
-unfixable = []
+[project.scripts]
+extract-emails = "extract_emails.console.application:main"
 
-# Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-
-[tool.ruff.format]
-# Like Black, use double quotes for strings.
-quote-style = "double"
-
-# Like Black, indent with spaces, rather than tabs.
-indent-style = "space"
-
-# Like Black, respect magic trailing commas.
-skip-magic-trailing-comma = false
-
-# Like Black, automatically detect the appropriate line ending.
-line-ending = "auto"
-
-[tool.isort]
-profile = "hug"
-src_paths = ["extract_emails", "test"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

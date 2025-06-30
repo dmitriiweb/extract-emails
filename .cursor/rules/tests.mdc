@@ -1,0 +1,11 @@
+---
+description: 
+globs: tests/**.py
+alwaysApply: false
+---
+# Tests Writing Rules
+
+- use pytest
+- each test - one function, don't write classes for tests
+- do not mark tests as @pytest.makr.asyncio, because in pyproject.toml settings up autodiscovering
+- run tests with: `pytest --cov=extract_emails -vv tests/`

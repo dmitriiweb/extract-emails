@@ -9,10 +9,10 @@ Please feel free to contribute to the project by adding new features, fixing bug
 You can create a virtual environment using [poetry](https://python-poetry.org/docs/):
 ```shell
 # Install dependencies
-poetry install
+uv sync --all-extras
 
 # Activate the virtual environment
-poetry shell
+source .venv/bin/activate
 ```
 
 ## Tests

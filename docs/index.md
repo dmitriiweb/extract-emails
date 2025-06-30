@@ -2,4 +2,4 @@
 
 ### Index
 - [Quick Start](quick_start/intro.md#Intro)
-- [Code References](code/factories.md#Factories)
+- [Code References](code/workers.md#Workers)

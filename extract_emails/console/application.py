@@ -1,38 +1,31 @@
 from pathlib import Path
-from typing import Type
 
 import click
 
-from extract_emails import (
-    ContactFilterAndEmailAndLinkedinFactory,
-    ContactFilterAndEmailFactory,
-    ContactFilterAndLinkedinFactory,
-    DefaultWorker,
+from extract_emails import browsers
+from extract_emails.data_extractors import (
+    DataExtractor,
+    EmailExtractor,
+    LinkedinExtractor,
 )
-from extract_emails.browsers.chrome_browser import ChromeBrowser
-from extract_emails.browsers.requests_browser import RequestsBrowser
-from extract_emails.data_savers import CsvSaver
-from extract_emails.factories.base_factory import BaseFactory
+from extract_emails.models.page_data import PageData
+from extract_emails.workers import DefaultWorker
 
 
-def get_factory(data_type: list[str]) -> Type[BaseFactory]:
-    if data_type == ["email"]:
-        return ContactFilterAndEmailFactory
-    elif data_type == ["linkedin"]:
-        return ContactFilterAndLinkedinFactory
-    elif "email" in data_type and "linkedin" in data_type:
-        return ContactFilterAndEmailAndLinkedinFactory
+def get_data_extractors(data_type: str) -> list[DataExtractor]:
+    if data_type == "email":
+        return [EmailExtractor()]
+    elif data_type == "linkedin":
+        return [LinkedinExtractor()]
     else:
         raise ValueError(f"Invalid data type: {data_type}")
 
 
-def get_browser(browser: str) -> ChromeBrowser | RequestsBrowser:
-    if browser == "requests":
-        return RequestsBrowser()
-    elif browser == "chrome":
-        b = ChromeBrowser()
-        b.open()
-        return b
+def get_browser(browser: str) -> browsers.PageSourceGetter:
+    if browser == "httpx":
+        return browsers.HttpxBrowser()
+    elif browser == "chromium":
+        return browsers.ChromiumBrowser()
     else:
         raise ValueError(f"Invalid browser: {browser}")
 
@@ -44,8 +37,8 @@ def get_browser(browser: str) -> ChromeBrowser | RequestsBrowser:
     "-b",
     "--browser-name",
     type=str,
-    default="chrome",
-    help="Browser to use, can be 'chrome' or 'requests'. Default: chrome",
+    default="chromium",
+    help="Browser to use, can be 'chromium' or 'httpx'. Default: chromium",
 )
 @click.option(
     "-dt",
@@ -53,25 +46,22 @@ def get_browser(browser: str) -> ChromeBrowser | RequestsBrowser:
     type=str,
     default="email",
     help="Data type to extract, must be a list separated by comma, e.g. 'email,linkedin. "
-    "Available options: email, linkedin. Default: email",
+    "Available options: email, linkedin. Default: email,linkedin",
 )
-@click.option(
-    "-d", "--depth", type=int, default=10, help="Depth of the search. Default: 10"
-)
-def main(url: str, output_file: str, browser_name: str, data_type: str, depth: int):
-    tfactory = get_factory(data_type=[i.strip() for i in data_type.split(",")])
+def main(url: str, output_file: str, browser_name: str, data_type: str):
     browser = get_browser(browser_name)
+    browser.start()
 
-    factory = tfactory(website_url=url, browser=browser, depth=depth)
-
-    worker = DefaultWorker(factory=factory)
+    worker = DefaultWorker(
+        website_url=url,
+        browser=browser,
+        data_extractors=get_data_extractors(data_type),
+    )
     data = worker.get_data()
 
-    if browser_name == "chrome":
-        browser.close()  # type: ignore
+    browser.stop()
 
-    saver = CsvSaver(output_path=Path(output_file))
-    saver.save(data)
+    PageData.to_csv(data, Path(output_file))
 
 
 if __name__ == "__main__":
