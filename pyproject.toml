@@ -54,3 +54,6 @@ build-backend = "hatchling.build"
 
 [project.scripts]
 extract-emails = "extract_emails.console.application:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
