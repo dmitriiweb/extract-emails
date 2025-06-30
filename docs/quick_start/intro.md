@@ -7,6 +7,7 @@ pip install extract_emails[all]
 pip install extract_emails[httpx]
 # or
 pip install extract_emails[playwright]
+playwright install chromium --with-deps
 ```
 
 ## Quick Usage

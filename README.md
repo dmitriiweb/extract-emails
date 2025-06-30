@@ -6,8 +6,6 @@
 
 Extract emails and linkedins profiles from a given website
 
-**Support the project with BTC**: *bc1q0cxl5j3se0ufhr96h8x0zs8nz4t7h6krrxkd6l*
-
 [Documentation](https://dmitriiweb.github.io/extract-emails/)
 
 ## Requirements
@@ -19,54 +17,51 @@ Extract emails and linkedins profiles from a given website
 ```bash
 pip install extract_emails[all]
 # or
-pip install extract_emails[requests]
+pip install extract_emails[httpx]
 # or
-pip install extract_emails[selenium]
+pip install extract_emails[playwright]
+playwright install chromium --with-deps
 ```
 
-## Simple Usage
-
+## Quick Usage
 ### As library
 
 ```python
 from pathlib import Path
 
-from extract_emails import DefaultFilterAndEmailFactory as Factory
 from extract_emails import DefaultWorker
-from extract_emails.browsers.requests_browser import RequestsBrowser as Browser
-from extract_emails.data_savers import CsvSaver
+from extract_emails.browsers import ChromiumBrowser, HttpxBrowser
+from extract_emails.models import PageData
 
+def main():
+    with ChromiumBrowser() as browser:
+        worker = DefaultWorker("https://example.com, browser)
+        data = worker.get_data()
+        PageData.to_csv(data, Path("output.csv"))
 
-websites = [
-    "website1.com",
-    "website2.com",
-]
+    with HttpxBrowser() as browser:
+        worker = DefaultWorker("https://example.com, browser)
+        data = worker.get_data()
+        PageData.to_csv(data, Path("output.csv"))
 
-browser = Browser()
-data_saver = CsvSaver(save_mode="a", output_path=Path("output.csv"))
+async def main():
+    async with ChromiumBrowser() as browser:
+        worker = DefaultWorker("https://example.com, browser)
+        data = await worker.aget_data()
+        await PageData.to_csv(data, Path("output.csv"))
 
-for website in websites:
-    factory = Factory(
-        website_url=website, browser=browser, depth=5, max_links_from_page=1
-    )
-    worker = DefaultWorker(factory)
-    data = worker.get_data()
-    data_saver.save(data)
+    async with HttpxBrowser() as browser:
+        worker = DefaultWorker("https://example.com, browser)
+        data = await worker.aget_data()
+        await PageData.to_csv(data, Path("output.csv"))
+
 ```
-
 ### As CLI tool
-
 ```bash
 $ extract-emails --help
 
-$ extract-emails --url https://en.wikipedia.org/wiki/Email -of output.csv -d 1
+$ extract-emails --url https://en.wikipedia.org/wiki/Email -of output.csv
 $ cat output.csv
 email,page,website
 bob@b.org,https://en.wikipedia.org/wiki/Email,https://en.wikipedia.org/wiki/Email
 ```
-
-### By me a coffee
-
-- **USDT** (TRC20): TXuYegp5L8Zf7wF2YRFjskZwdBxhRpvxBS
-- **BEP20**: 0x4D51Db2B754eA83ce228F7de8EaEB93a88bdC965
-- **TON**: UQA5quJljQz84RwzteN3uuKsdPTDee7a_GF5lgIgezA2oib5
