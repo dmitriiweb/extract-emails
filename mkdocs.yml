@@ -58,7 +58,6 @@ nav:
       - quick_start/save_data.md
       - quick_start/logs.md
   - Code References:
-      - code/factories.md
       - code/workers.md
       - code/browsers.md
       - code/link_filters.md

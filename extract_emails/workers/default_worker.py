@@ -73,9 +73,19 @@ class DefaultWorker:
         )
 
     def get_data(self) -> list[PageData]:
+        """Retrieve extracted data synchronously.
+
+        Returns:
+            list[PageData]: A list of PageData objects containing the extracted information.
+        """
         return self._sync_worker.get_data()
 
     async def aget_data(self) -> list[PageData]:
+        """Retrieve extracted data asynchronously.
+
+        Returns:
+            list[PageData]: A list of PageData objects containing the extracted information.
+        """
         return await self._async_worker.get_data()
 
 
