@@ -213,7 +213,7 @@ class _AsyncDefaultWorker(_DefaultWorker):
         page_data = PageData(website=self.website_url, page_url=url)
 
         for data_extractor in self.data_extractors:
-            new_data = await data_extractor.aget_data(page_source)  # type: ignore
+            new_data = data_extractor.get_data(page_source)  # type: ignore
             page_data.append(data_extractor.name, list(new_data))  # type: ignore
 
         return filtered_links, page_data
