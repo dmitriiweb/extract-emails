@@ -1,6 +1,6 @@
 ---
 description: 
-globs: **.md
+globs: **/*.md
 alwaysApply: false
 ---
 - Write documentation for all functions, types, interfaces, and ensure examples are accurate
