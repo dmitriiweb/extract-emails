@@ -36,7 +36,7 @@ def test_to_csv(page_data: PageData):
     page_data.append("emails", ["email@email.com", "email@email.com2"])
     page_data.append("emails2", ["email@email.com", "email@email.com2"])
 
-    PageData.save_as_csv([page_data], TEST_FILE)
+    PageData.to_csv([page_data], TEST_FILE)
 
     with open(TEST_FILE, "r") as f:
         reader = csv.DictReader(f)
