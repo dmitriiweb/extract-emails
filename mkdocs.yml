@@ -4,6 +4,8 @@ plugins:
   - search
   - mkdocstrings
   - autorefs
+  - copy-to-llm:
+      repo_url: "https://raw.githubusercontent.com/dmitriiweb/extract-emails/main"
 
 theme:
   name: "material"

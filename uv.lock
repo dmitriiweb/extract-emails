@@ -307,6 +307,7 @@ dev = [
     { name = "jinja2" },
     { name = "mkdocs" },
     { name = "mkdocs-autorefs" },
+    { name = "mkdocs-copy-to-llm" },
     { name = "mkdocs-material" },
     { name = "mkdocstrings", extra = ["python"] },
     { name = "mypy" },
@@ -334,6 +335,7 @@ requires-dist = [
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mkdocs", marker = "extra == 'dev'", specifier = ">=1.6.1" },
     { name = "mkdocs-autorefs", marker = "extra == 'dev'", specifier = ">=1.4.2" },
+    { name = "mkdocs-copy-to-llm", marker = "extra == 'dev'", specifier = ">=0.2.6" },
     { name = "mkdocs-material", marker = "extra == 'dev'", specifier = ">=9.6.14" },
     { name = "mkdocstrings", extras = ["python"], marker = "extra == 'dev'", specifier = ">=0.29.1" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.16.1" },
@@ -618,6 +620,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/47/0c/c9826f35b99c67fa3a7cddfa094c1a6c43fafde558c309c6e4403e5b37dc/mkdocs_autorefs-1.4.2.tar.gz", hash = "sha256:e2ebe1abd2b67d597ed19378c0fff84d73d1dbce411fce7a7cc6f161888b6749", size = 54961, upload-time = "2025-05-20T13:09:09.886Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/dc/fc063b78f4b769d1956319351704e23ebeba1e9e1d6a41b4b602325fd7e4/mkdocs_autorefs-1.4.2-py3-none-any.whl", hash = "sha256:83d6d777b66ec3c372a1aad4ae0cf77c243ba5bcda5bf0c6b8a2c5e7a3d89f13", size = 24969, upload-time = "2025-05-20T13:09:08.237Z" },
+]
+
+[[package]]
+name = "mkdocs-copy-to-llm"
+version = "0.2.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mkdocs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6f/98/c1beedea85602c3353cc74c263f67894848469b82eff4790e192e0eb0eb6/mkdocs_copy_to_llm-0.2.6.tar.gz", hash = "sha256:0e6319750ff1b98e0e0860cee1d21aeffa9dc06e55e349ceffbe4272fa8583c5", size = 30645, upload-time = "2025-08-30T00:37:41.309Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e2/a6/b192e36c52c072b00990e29d716a008314ed804d20d620d30ac3d064628d/mkdocs_copy_to_llm-0.2.6-py3-none-any.whl", hash = "sha256:e4fdc77e074ac7d62449c05178c97ec66721fab03f04252cd144b2209ea1679e", size = 21883, upload-time = "2025-08-30T00:37:39.938Z" },
 ]
 
 [[package]]
