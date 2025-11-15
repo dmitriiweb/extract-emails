@@ -1,30 +1,30 @@
-version := $(shell python -c 'from extract_emails import __version__; print(__version__)')
+version := $(shell uv run python -c 'from extract_emails import __version__; print(__version__)')
 
 .PHONY: test
 test:
-	pytest --cov=extract_emails -vv -m "not slow" tests/
+	uv run pytest --cov=extract_emails -vv -m "not slow" tests/
 
 .PHONY: test-all
 test-all:
-	pytest --cov=extract_emails -vv tests/
+	uv run pytest --cov=extract_emails -vv tests/
 
 .PHONY: format
 format:
-	ruff check extract_emails tests --select I --fix
-	ruff format extract_emails tests
+	uv run ruff check extract_emails tests --select I --fix
+	uv run ruff format extract_emails tests
 
 .PHONY: lint
 lint:
-	ruff check extract_emails
-	mypy extract_emails
+	uv run ruff check extract_emails
+	uv run mypy extract_emails
 
 .PHONY: docs-serve
 docs-serve:
-	mkdocs serve
+	uv run mkdocs serve
 
 .PHONY: docs-publish
 docs-publish:
-	mkdocs gh-deploy --force
+	uv run mkdocs gh-deploy --force
 
 .PHONY: publish
 publish:
