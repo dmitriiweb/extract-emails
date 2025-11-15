@@ -1,22 +1,23 @@
 import pytest
+import pytest_asyncio
 
 from extract_emails.browsers import ChromiumBrowser
 
-@pytest.fixture
-def browser():
+@pytest_asyncio.fixture
+async def browser():
     browser = ChromiumBrowser()
-    browser.start()
+    await browser.astart()
     yield browser
-    browser.stop()
+    await browser.astop()
 
 @pytest.mark.slow
-def test_get_page_source(browser):
+async def test_get_page_source(browser):
     url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
-    page_source = browser.get_page_source(url)
+    page_source = await browser.aget_page_source(url)
     assert "Python (programming language)" in page_source
 
 @pytest.mark.slow
-def test_get_page_source_wrong_url(browser):
+async def test_get_page_source_wrong_url(browser):
     url = "ttps://en.wikipedia.org/wiki/Python_(programming_language)"
-    page_source = browser.get_page_source(url)
+    page_source = await browser.aget_page_source(url)
     assert page_source == ""

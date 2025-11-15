@@ -1,5 +1,20 @@
 # Changelog
 
+## 6.0.1
+
+### Added
+- Added `pytest-asyncio` dependency for async test support
+
+### Changed
+- `HttpxBrowser` now sets a default User-Agent header when none is provided (fixes Wikipedia and other sites that block requests without user-agent)
+- Converted `ChromiumBrowser` tests to use async methods for compatibility with pytest asyncio mode
+- Updated `pytest.ini` to include `asyncio_mode = auto` for automatic async test detection
+- Fixed test method name: `PageData.save_as_csv` → `PageData.to_csv` in test suite
+
+### Fixed
+- Fixed async/sync API conflict in ChromiumBrowser tests when running in pytest asyncio mode
+- Fixed test failures due to missing user-agent header in HttpxBrowser
+
 ## 6.0.0
 
 ### Added
