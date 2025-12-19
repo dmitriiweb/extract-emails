@@ -1,7 +1,7 @@
 [project]
 name = "extract-emails"
-version = "6.0.1"
-requires-python = ">=3.10,<3.14"
+version = "6.0.2"
+requires-python = ">=3.10,<3.15"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = [
   {name = "Dmitrii K", email = "dmitriik@proton.me"}
