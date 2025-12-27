@@ -14,7 +14,7 @@ class _SyncHttpxBrowser:
         self.headers = headers
 
     def start(self) -> None:
-        self.client = httpx.Client(headers=self.headers)
+        self.client = httpx.Client(headers=self.headers, follow_redirects=True)
         self.client.__enter__()
 
     def stop(self) -> None:
@@ -33,7 +33,7 @@ class _AsyncHttpxBrowser:
         self.headers = headers
 
     async def start(self) -> None:
-        self.client = httpx.AsyncClient(headers=self.headers)
+        self.client = httpx.AsyncClient(headers=self.headers, follow_redirects=True)
         await self.client.__aenter__()
 
     async def stop(self) -> None:
