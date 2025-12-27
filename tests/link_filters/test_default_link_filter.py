@@ -13,3 +13,11 @@ def test_default_link_filter():
 
     assert "https://google.com" not in filtered_urls
     assert len(filtered_urls) == 2
+
+
+def test_default_link_filter_www_variant():
+    test_urls = ["https://www.example.com/page1.html"]
+    link_filter = DefaultLinkFilter("https://example.com/")
+    filtered_urls = link_filter.filter(test_urls)
+
+    assert "https://www.example.com/page1.html" in filtered_urls
