@@ -26,6 +26,7 @@ dependencies = [
     "aiofiles>=24.1.0",
     "loguru>=0.7.3",
     "pydantic>=2.11.7",
+    "beautifulsoup4"
 ]
 
 [project.urls]
