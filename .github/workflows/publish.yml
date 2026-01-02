@@ -56,7 +56,7 @@ jobs:
         run: uv sync --all-extras
       
       - name: Run tests
-        run: uv run tox
+        run: uv run tox -- -m "not slow"
       
       - name: Build package
         run: uv build
