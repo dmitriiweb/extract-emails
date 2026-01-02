@@ -1,0 +1,65 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+      
+      - name: Cache uv dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-uv-
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      
+      - name: Extract version from tag
+        id: tag_version
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$TAG_VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $TAG_VERSION"
+      
+      - name: Verify tag matches pyproject.toml version
+        run: |
+          PYPROJECT_VERSION=$(uv run python -c "import tomllib; f=open('pyproject.toml', 'rb'); data=tomllib.load(f); print(data['project']['version'])")
+          if [ "$PYPROJECT_VERSION" != "${{ steps.tag_version.outputs.version }}" ]; then
+            echo "Error: Tag version (${{ steps.tag_version.outputs.version }}) does not match pyproject.toml version ($PYPROJECT_VERSION)"
+            exit 1
+          fi
+          echo "Version match confirmed: $PYPROJECT_VERSION"
+      
+      - name: Install dependencies
+        run: uv sync --all-extras
+      
+      - name: Run tests
+        run: uv run tox
+      
+      - name: Build package
+        run: uv build
+      
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
