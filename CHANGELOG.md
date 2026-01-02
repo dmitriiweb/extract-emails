@@ -1,5 +1,18 @@
 # Changelog
 
+## 6.1.0
+
+### Added
+- `AdvancedEmailExtractor` class that normalizes common email obfuscations (`[at]`, `(dot)`, etc.), decodes Cloudflare `data-cfemail` protected addresses, and filters junk/system emails for cleaner results
+- Documentation for `extract_emails.data_extractors.advanced_email_extractor` in docs
+
+### Changed
+- URL normalization now treats www/apex variants (e.g., `example.com` and `www.example.com`) as same-site, preventing extraction failures when browsers follow redirects
+
+### Fixed
+- Link filtering now correctly handles redirects from `example.com` to `www.example.com` (and vice versa)
+- Resolves issue #40 (email extraction improvements)
+
 ## 6.0.2
 
 ### Added
