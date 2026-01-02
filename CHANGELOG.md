@@ -1,5 +1,31 @@
 # Changelog
 
+## 6.0.2
+
+### Added
+- GitHub Actions workflows for automated testing and publishing
+- `AGENTS.md` documentation file with repository structure and workflow rules
+- Codex skills structure (`.codex/skills/`) with multiple assistant skills:
+  - agents-md-assistant
+  - code-review-assistant
+  - debug-logging-assistant
+  - format-lint-assistant
+  - git-commit-assistant
+  - google-docstring-assistant
+  - pytest-testing-assistant
+  - skill-creator
+  - uv-package-management-assistant
+
+### Changed
+- Migrated from `.cursor/rules/` to `.codex/skills/` structure
+- Pinned `pydantic` to version 2.12.0
+- Updated `tox.ini` configuration
+- Added Python 3.14 support to classifiers
+
+### Removed
+- Removed `.cursor/rules/` files (migrated to `.codex/skills/` structure)
+- Removed `.cursor/commands/git-commit.md` (moved to skills structure)
+
 ## 6.0.1
 
 ### Added

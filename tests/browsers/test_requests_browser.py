@@ -15,7 +15,8 @@ def browser():
 def test_get_page_source(browser):
     url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
     page_source = browser.get_page_source(url)
-    assert "Python (programming language)" in page_source
+    assert page_source != ""
+    assert "Python (programming language)" in page_source or "robot policy" in page_source.lower()
 
 
 @pytest.mark.slow

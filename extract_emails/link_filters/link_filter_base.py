@@ -15,7 +15,32 @@ class LinkFilterBase(ABC):
         Args:
             website: website address (scheme and domain), e.g. https://example.com
         """
-        self.website = website
+        self.website = self._normalize_website(website)
+        self.allowed_netlocs = self._build_allowed_netlocs(self.website)
+
+    @staticmethod
+    def _normalize_website(website: str) -> str:
+        if "://" not in website:
+            website = f"https://{website}"
+        return LinkFilterBase.get_website_address(website)
+
+    @staticmethod
+    def _build_allowed_netlocs(website: str) -> set[str]:
+        netloc = urlparse(website).netloc
+        if not netloc:
+            return set()
+        allowed = {netloc}
+        if netloc.startswith("www."):
+            allowed.add(netloc.removeprefix("www."))
+        else:
+            allowed.add(f"www.{netloc}")
+        return allowed
+
+    def _is_allowed(self, url: str) -> bool:
+        netloc = urlparse(url).netloc
+        if not netloc:
+            return False
+        return netloc in self.allowed_netlocs
 
     @staticmethod
     def get_website_address(url: str) -> str:

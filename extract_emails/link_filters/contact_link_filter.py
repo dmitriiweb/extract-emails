@@ -86,7 +86,7 @@ class ContactInfoLinkFilter(LinkFilterBase):
         for url in urls:
             url = urljoin(self.website, url)
 
-            if not url.startswith(self.website):
+            if not self._is_allowed(url):
                 continue
             if url in self.checked_links:
                 continue

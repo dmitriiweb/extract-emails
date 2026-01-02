@@ -47,3 +47,11 @@ def test_use_default_false():
     )
     filtered_links = link_filter.filter(test_urls)
     assert len(filtered_links) == 0
+
+
+def test_www_variant_allowed():
+    link_filter = ContactInfoLinkFilter("https://example.com")
+    filtered_links = link_filter.filter(
+        ["https://www.example.com/contact", "https://example.com/about"]
+    )
+    assert "https://www.example.com/contact" in filtered_links

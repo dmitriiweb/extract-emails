@@ -31,7 +31,7 @@ class DefaultLinkFilter(LinkFilterBase):
         filtered_urls = []
         for link in links:
             url = urljoin(self.website, link)
-            if not url.startswith(self.website):
+            if not self._is_allowed(url):
                 continue
             if url in self.checked_links:
                 continue

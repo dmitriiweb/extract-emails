@@ -1,7 +1,7 @@
 [project]
 name = "extract-emails"
-version = "6.0.1"
-requires-python = ">=3.10,<3.14"
+version = "6.0.2"
+requires-python = ">=3.10,<3.15"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = [
   {name = "Dmitrii K", email = "dmitriik@proton.me"}
@@ -18,6 +18,7 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: Implementation :: CPython",
   "Topic :: Utilities",
 ]
@@ -26,7 +27,7 @@ dependencies = [
     "aiofiles>=24.1.0",
     "loguru>=0.7.3",
     "lxml>=6.0.2",
-    "pydantic>=2.11.7",
+    "pydantic==2.12.0",
 ]
 
 [project.urls]
