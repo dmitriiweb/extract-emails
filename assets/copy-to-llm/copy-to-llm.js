@@ -80,6 +80,39 @@ ${content}`;
     }
   }
 
+  // Get the main content element using fallback selectors
+  // Issue #19 fix: Support different Material theme versions and layouts
+  function getMainContentElement() {
+    // Try multiple selectors in order of preference
+    const selectors = [
+      '.md-content__inner .md-typeset',  // Material theme primary
+      '.md-content__inner',               // Material theme fallback
+      'article.md-content__inner',        // Material theme article variant
+      'main .md-typeset',                 // Material theme main variant
+      'article',                          // Generic article tag
+      '.md-content',                      // Material theme content class
+      'main'                              // Final fallback to main tag
+    ];
+
+    for (const selector of selectors) {
+      const element = document.querySelector(selector);
+      if (element) {
+        // Optional debug logging
+        if (window.copyToLLMDebug) {
+          console.log(`[Copy to LLM] Found content using selector: ${selector}`);
+        }
+        return element;
+      }
+    }
+
+    // No element found - log error and alert user
+    console.error('[Copy to LLM] Could not find content element. Tried selectors:', selectors);
+    if (window.copyToLLMDebug) {
+      alert('Copy to LLM: Could not locate page content. Please check the DOM structure.');
+    }
+    return null;
+  }
+
   // Get current page context
   function getPageContext() {
     return {
@@ -125,8 +158,30 @@ ${content}`;
     // Fallback: construct URL from current path
     const currentPath = window.location.pathname;
 
+    // Strip base_path prefix if configured
+    // This is needed when the site is deployed to a subdirectory (e.g., /docs/)
+    // and the repository files don't include that prefix
+    const metaBasePath = document.querySelector('meta[name="mkdocs-copy-to-llm-base-path"]');
+    let path = currentPath;
+
+    if (metaBasePath && metaBasePath.content) {
+      const basePath = metaBasePath.content;
+      // Ensure basePath starts with / for consistent comparison
+      const normalizedBasePath = basePath.startsWith('/') ? basePath : '/' + basePath;
+      // Remove trailing slash from basePath for consistent stripping
+      const basePathToStrip = normalizedBasePath.endsWith('/') ? normalizedBasePath.slice(0, -1) : normalizedBasePath;
+
+      if (path.startsWith(basePathToStrip)) {
+        path = path.slice(basePathToStrip.length);
+        // Ensure path starts with / after stripping
+        if (!path.startsWith('/')) {
+          path = '/' + path;
+        }
+      }
+    }
+
     // Remove the trailing slash if present
-    let path = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
 
     // Handle root and index pages
     if (!path || path === '') {
@@ -649,7 +704,7 @@ ${content}`;
             }, 3000);
           } else {
             // Fallback to formatted content if fetch fails
-            const articleContent = document.querySelector('.md-content__inner .md-typeset');
+            const articleContent = getMainContentElement();
             if (articleContent) {
               const formattedContent = formatSectionForLLM(articleContent);
               await copyToClipboard(formattedContent, copyButton, 'page_content');
@@ -669,7 +724,7 @@ ${content}`;
         } catch (error) {
           // Fallback to formatted content if fetch fails
           console.error('Failed to fetch markdown:', error);
-          const articleContent = document.querySelector('.md-content__inner .md-typeset');
+          const articleContent = getMainContentElement();
           if (articleContent) {
             const formattedContent = formatSectionForLLM(articleContent);
             await copyToClipboard(formattedContent, copyButton, 'page_content');
@@ -726,7 +781,7 @@ ${content}`;
         if (!item) return;
 
         const action = item.dataset.action;
-        const articleContent = document.querySelector('.md-content__inner .md-typeset');
+        const articleContent = getMainContentElement();
         let contentToCopy = '';
 
         switch(action) {
@@ -782,19 +837,6 @@ ${content}`;
         }
       });
 
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!container.contains(e.target)) {
-          dropdownMenu.classList.remove('show');
-          dropdownButton.classList.remove('active');
-          // Reset chevron rotation
-          const chevron = dropdownButton.querySelector('.chevron-icon');
-          if (chevron) {
-            chevron.style.transform = '';
-          }
-        }
-      });
-
       wrapper.appendChild(container);
     }
   }
@@ -813,31 +855,53 @@ ${content}`;
     return content;
   }
 
+  // Single document-level listener for closing dropdowns (added once to avoid memory leaks)
+  // Uses event delegation to work with dynamically created elements
+  document.addEventListener('click', (e) => {
+    // Find all open dropdowns and close them if click is outside
+    document.querySelectorAll('.copy-to-llm-split-container').forEach(container => {
+      if (!container.contains(e.target)) {
+        const dropdownMenu = container.querySelector('.copy-to-llm-dropdown');
+        const dropdownButton = container.querySelector('.copy-to-llm-right');
+        if (dropdownMenu && dropdownButton) {
+          dropdownMenu.classList.remove('show');
+          dropdownButton.classList.remove('active');
+          dropdownButton.setAttribute('aria-expanded', 'false');
+          // Reset chevron rotation
+          const chevron = dropdownButton.querySelector('.chevron-icon');
+          if (chevron) {
+            chevron.style.transform = '';
+          }
+        }
+      }
+    });
+  });
+
   // Initialize on DOM ready
   function initialize() {
     addCodeCopyButtons();
     addSectionCopyButtons();
-
-    // Re-run when content changes (for dynamic content)
-    const observer = new MutationObserver(() => {
-      addCodeCopyButtons();
-      addSectionCopyButtons();
-    });
-
-    const content = document.querySelector('.md-content');
-    if (content) {
-      observer.observe(content, {
-        childList: true,
-        subtree: true
-      });
-    }
   }
 
-  // Wait for DOM to be ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initialize);
+  // Support MkDocs Material instant navigation
+  // When instant loading is enabled, clicks on internal links are intercepted
+  // and content is replaced via XHR without a full page reload. This means
+  // DOMContentLoaded only fires once on initial load. The document$ observable
+  // is provided by Material for MkDocs to handle this - it emits whenever the
+  // content changes, including during instant navigation.
+  // See: https://squidfunk.github.io/mkdocs-material/customization/#additional-javascript
+  if (typeof document$ !== 'undefined') {
+    // MkDocs Material with instant navigation - subscribe to content changes
+    document$.subscribe(function() {
+      initialize();
+    });
   } else {
-    initialize();
+    // Fallback for non-Material themes or when instant navigation is disabled
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+      initialize();
+    }
   }
 
 })();
