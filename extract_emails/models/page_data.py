@@ -1,9 +1,9 @@
 import csv
-import aiofiles
-from aiocsv import AsyncDictWriter
 from itertools import zip_longest
 from pathlib import Path
 
+import aiofiles
+from aiocsv import AsyncDictWriter
 from pydantic import BaseModel, Field
 
 
