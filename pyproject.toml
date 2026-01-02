@@ -1,6 +1,6 @@
 [project]
 name = "extract-emails"
-version = "6.0.2"
+version = "6.1.0"
 requires-python = ">=3.10,<3.15"
 description = "Extract email addresses and linkedin profiles from given URL."
 authors = [
