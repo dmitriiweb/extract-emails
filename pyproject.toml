@@ -73,3 +73,6 @@ extract-emails = "extract_emails.console.application:main"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+
+[tool.uv]
+exclude-newer = "1 week"
