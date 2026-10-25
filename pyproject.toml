@@ -74,6 +74,20 @@ extract-emails = "extract_emails.console.application:main"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["B", "C90", "E4", "E7", "E9", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 24
 
 [tool.uv]
 exclude-newer = "1 week"

@@ -8,6 +8,10 @@ test:
 test-all:
 	uv run pytest --cov=extract_emails -vv tests/
 
+.PHONY: test-browsers
+test-browsers:
+	uv run pytest -vv tests/browsers/
+
 .PHONY: format
 format:
 	uv run ruff check extract_emails tests --select I --fix
@@ -15,7 +19,7 @@ format:
 
 .PHONY: lint
 lint:
-	uv run ruff check extract_emails
+	uv run ruff check extract_emails tests
 	uv run mypy extract_emails
 
 .PHONY: docs-serve

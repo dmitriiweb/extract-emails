@@ -12,6 +12,10 @@
 - The CLI declares its runtime dependency, validates comma-separated data types and browser choices before startup, defaults to email extraction, and closes browsers through context management.
 - Browser lifecycle cleanup handles partial startup and repeated stop calls; HTTPX status errors return an empty result while programming and lifecycle errors propagate. Chromium retains its existing `networkidle` wait.
 
+### Changed
+- Added deterministic coverage for CSV, worker, CLI, extractor, and browser failure boundaries; browser checks use local fixtures rather than external websites.
+- Updated onboarding examples and contributor instructions to use the current API, `uv`, and explicit offline/browser test commands.
+
 ## 6.1.0
 
 ### Added
