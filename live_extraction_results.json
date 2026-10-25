@@ -1,0 +1,1492 @@
+{
+  "sites": [
+    {
+      "counts": {
+        "emails": 8,
+        "linkedin": 14,
+        "pages": 3
+      },
+      "emails": [
+        "abigail.boadu@mnachc.org",
+        "brittney.dahlin@mnachc.org",
+        "jonathan.watson@mnachc.org",
+        "monet.goudreault@mnachc.org",
+        "renee.garcia@mnachc.org",
+        "rochelle.westlund@mnachc.org",
+        "sara.bolnick@mnachc.org",
+        "user@domain.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/abbie-b-460300242/",
+        "https://www.linkedin.com/in/abbie-b-460300242/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&lt;p",
+        "https://www.linkedin.com/in/brittney-dahlin-ms-rhia-cphq-2a3a5740/",
+        "https://www.linkedin.com/in/brittney-dahlin-ms-rhia-cphq-2a3a5740/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+        "https://www.linkedin.com/in/jonathan-watson-b914217/",
+        "https://www.linkedin.com/in/jonathan-watson-b914217/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+        "https://www.linkedin.com/in/monet-goudreault/",
+        "https://www.linkedin.com/in/monet-goudreault/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+        "https://www.linkedin.com/in/renee-edelhauser/",
+        "https://www.linkedin.com/in/renee-edelhauser/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+        "https://www.linkedin.com/in/rochelle-westlund-25639512/",
+        "https://www.linkedin.com/in/rochelle-westlund-25639512/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+        "https://www.linkedin.com/in/sarabolnickmph/",
+        "https://www.linkedin.com/in/sarabolnickmph/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot"
+      ],
+      "name": "Minnesota Association of Community Health Centers",
+      "pages": [
+        {
+          "emails": [
+            "abigail.boadu@mnachc.org",
+            "brittney.dahlin@mnachc.org",
+            "jonathan.watson@mnachc.org",
+            "monet.goudreault@mnachc.org",
+            "renee.garcia@mnachc.org",
+            "rochelle.westlund@mnachc.org",
+            "sara.bolnick@mnachc.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/abbie-b-460300242/",
+            "https://www.linkedin.com/in/abbie-b-460300242/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&lt;p",
+            "https://www.linkedin.com/in/brittney-dahlin-ms-rhia-cphq-2a3a5740/",
+            "https://www.linkedin.com/in/brittney-dahlin-ms-rhia-cphq-2a3a5740/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+            "https://www.linkedin.com/in/jonathan-watson-b914217/",
+            "https://www.linkedin.com/in/jonathan-watson-b914217/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+            "https://www.linkedin.com/in/monet-goudreault/",
+            "https://www.linkedin.com/in/monet-goudreault/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+            "https://www.linkedin.com/in/renee-edelhauser/",
+            "https://www.linkedin.com/in/renee-edelhauser/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+            "https://www.linkedin.com/in/rochelle-westlund-25639512/",
+            "https://www.linkedin.com/in/rochelle-westlund-25639512/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot",
+            "https://www.linkedin.com/in/sarabolnickmph/",
+            "https://www.linkedin.com/in/sarabolnickmph/\\&quot;&gt;LinkedIn&lt;\\/a&gt;&lt;\\/p&gt;&quot"
+          ],
+          "source_url": "https://www.mnachc.org/ourteam",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "brittney.dahlin@mnachc.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.mnachc.org/about",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "brittney.dahlin@mnachc.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.mnachc.org/about-1",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified team directory publishes staff email links and LinkedIn /in/ profiles; strong expected coverage for both.",
+      "status": "success",
+      "url": "https://www.mnachc.org/ourteam"
+    },
+    {
+      "counts": {
+        "emails": 7,
+        "linkedin": 5,
+        "pages": 1
+      },
+      "emails": [
+        "abdow@credama.org",
+        "anderson@credama.org",
+        "chateauneuf@credama.org",
+        "communications@credama.org",
+        "daou@credama.org",
+        "osheroff@credama.org",
+        "small@credama.org"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/anastasia-nicolaou-426b661/",
+        "https://www.linkedin.com/in/jessicaeanderson4/",
+        "https://www.linkedin.com/in/lindaachateauneuf/",
+        "https://www.linkedin.com/in/lucy-abdow-66b15522b/",
+        "https://www.linkedin.com/in/tamara-small-34b2a214/"
+      ],
+      "name": "CREDA Massachusetts",
+      "pages": [
+        {
+          "emails": [
+            "abdow@credama.org",
+            "anderson@credama.org",
+            "chateauneuf@credama.org",
+            "communications@credama.org",
+            "daou@credama.org",
+            "osheroff@credama.org",
+            "small@credama.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/anastasia-nicolaou-426b661/",
+            "https://www.linkedin.com/in/jessicaeanderson4/",
+            "https://www.linkedin.com/in/lindaachateauneuf/",
+            "https://www.linkedin.com/in/lucy-abdow-66b15522b/",
+            "https://www.linkedin.com/in/tamara-small-34b2a214/"
+          ],
+          "source_url": "https://credama.org/contact-our-team/",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified team contact page publishes staff emails and LinkedIn /in/ links; strong expected coverage for both.",
+      "status": "success",
+      "url": "https://credama.org/contact-our-team/"
+    },
+    {
+      "counts": {
+        "emails": 20,
+        "linkedin": 5,
+        "pages": 2
+      },
+      "emails": [
+        "//605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+        "/046c982186afa15dc9513490293d26b1@o37417.ingest.sentry.io",
+        "/18d2f96d279149989b95faf0a4b41882@sentry-next.wixpress.com",
+        "/2062d0a4929b45348643784b5cb39c36@sentry.wixpress.com",
+        "/271e9fa3230b4eec94b02bf95780f5f2@sentry.wixpress.com",
+        "/460ff4620fa44cba8df530afde949785@sentry.wixpress.com",
+        "/5d1795a2db124a268f1e1bd88f503500@sentry.wixpress.com",
+        "/78f7996315bc402f9dcb8a2f974b82d1@sentry.wixpress.com",
+        "/88170cb0c9d64f94b5821ca7fd2d55a4@sentry-next.wixpress.com",
+        "/8c4075d5481d476e945486754f783364@sentry.io",
+        "/8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com",
+        "/9a65e97ebe8141fca0c4fd686f70996b@sentry.wixpress.com",
+        "/ed436f5053144538958ad06a5005e99a@sentry.wixpress.com",
+        "amy@patchprogram.org",
+        "chelsea@patchprogram.org",
+        "erica@patchprogram.org",
+        "jay@patchprogram.org",
+        "kendra@patchprogram.org",
+        "kiana@patchprogram.org",
+        "staff@patchprogram.org"
+      ],
+      "errors": [],
+      "linkedin": [
+        "http://www.linkedin.com/in/amyybeth",
+        "https://www.linkedin.com/in/chelsea-aeschbach/",
+        "https://www.linkedin.com/in/erica-koepsel-b5514b66/",
+        "https://www.linkedin.com/in/kendra-block-22kb/",
+        "https://www.linkedin.com/in/kiana-gasch-025969164/"
+      ],
+      "name": "PATCH Program",
+      "pages": [
+        {
+          "emails": [
+            "//605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+            "/046c982186afa15dc9513490293d26b1@o37417.ingest.sentry.io",
+            "/18d2f96d279149989b95faf0a4b41882@sentry-next.wixpress.com",
+            "/2062d0a4929b45348643784b5cb39c36@sentry.wixpress.com",
+            "/271e9fa3230b4eec94b02bf95780f5f2@sentry.wixpress.com",
+            "/460ff4620fa44cba8df530afde949785@sentry.wixpress.com",
+            "/5d1795a2db124a268f1e1bd88f503500@sentry.wixpress.com",
+            "/78f7996315bc402f9dcb8a2f974b82d1@sentry.wixpress.com",
+            "/88170cb0c9d64f94b5821ca7fd2d55a4@sentry-next.wixpress.com",
+            "/8c4075d5481d476e945486754f783364@sentry.io",
+            "/8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com",
+            "/9a65e97ebe8141fca0c4fd686f70996b@sentry.wixpress.com",
+            "/ed436f5053144538958ad06a5005e99a@sentry.wixpress.com",
+            "amy@patchprogram.org",
+            "chelsea@patchprogram.org",
+            "erica@patchprogram.org",
+            "jay@patchprogram.org",
+            "kendra@patchprogram.org",
+            "kiana@patchprogram.org",
+            "staff@patchprogram.org"
+          ],
+          "linkedin": [
+            "http://www.linkedin.com/in/amyybeth",
+            "https://www.linkedin.com/in/chelsea-aeschbach/",
+            "https://www.linkedin.com/in/erica-koepsel-b5514b66/",
+            "https://www.linkedin.com/in/kendra-block-22kb/",
+            "https://www.linkedin.com/in/kiana-gasch-025969164/"
+          ],
+          "source_url": "https://www.patchprogram.org/our-team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "//605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+            "/046c982186afa15dc9513490293d26b1@o37417.ingest.sentry.io",
+            "/18d2f96d279149989b95faf0a4b41882@sentry-next.wixpress.com",
+            "/2062d0a4929b45348643784b5cb39c36@sentry.wixpress.com",
+            "/271e9fa3230b4eec94b02bf95780f5f2@sentry.wixpress.com",
+            "/460ff4620fa44cba8df530afde949785@sentry.wixpress.com",
+            "/5d1795a2db124a268f1e1bd88f503500@sentry.wixpress.com",
+            "/78f7996315bc402f9dcb8a2f974b82d1@sentry.wixpress.com",
+            "/88170cb0c9d64f94b5821ca7fd2d55a4@sentry-next.wixpress.com",
+            "/8c4075d5481d476e945486754f783364@sentry.io",
+            "/8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com",
+            "/9a65e97ebe8141fca0c4fd686f70996b@sentry.wixpress.com",
+            "/ed436f5053144538958ad06a5005e99a@sentry.wixpress.com",
+            "staff@patchprogram.org"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.patchprogram.org/about-patch",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified nonprofit team page includes multiple visible staff emails and LinkedIn /in/ profiles; strong expected coverage for both.",
+      "status": "success",
+      "url": "https://www.patchprogram.org/our-team"
+    },
+    {
+      "counts": {
+        "emails": 8,
+        "linkedin": 6,
+        "pages": 2
+      },
+      "emails": [
+        "admin@cchi.org",
+        "brianna@cchi.org",
+        "caitlin@cchi.org",
+        "char@cchi.org",
+        "elisa@elisamcclureconsulting.com",
+        "irina@cchi.org",
+        "sean@cchi.org",
+        "user@domain.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/caitlin-flammer/",
+        "https://www.linkedin.com/in/char-velasco",
+        "https://www.linkedin.com/in/elisa-mcclure-2b924549/",
+        "https://www.linkedin.com/in/herb-schultz-461b7b7/",
+        "https://www.linkedin.com/in/salesforce-bri/",
+        "https://www.linkedin.com/in/sean-yen-a981783a8/"
+      ],
+      "name": "California Coverage & Health Initiatives",
+      "pages": [
+        {
+          "emails": [
+            "admin@cchi.org",
+            "brianna@cchi.org",
+            "caitlin@cchi.org",
+            "char@cchi.org",
+            "elisa@elisamcclureconsulting.com",
+            "irina@cchi.org",
+            "sean@cchi.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/caitlin-flammer/",
+            "https://www.linkedin.com/in/char-velasco",
+            "https://www.linkedin.com/in/elisa-mcclure-2b924549/",
+            "https://www.linkedin.com/in/herb-schultz-461b7b7/",
+            "https://www.linkedin.com/in/salesforce-bri/",
+            "https://www.linkedin.com/in/sean-yen-a981783a8/"
+          ],
+          "source_url": "https://cchi.org/ourteam",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "admin@cchi.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://cchi.org/contact-us",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified nonprofit staff page publishes email links and several LinkedIn /in/ profiles; strong expected coverage for both, though some staff have no listed profile.",
+      "status": "success",
+      "url": "https://cchi.org/ourteam"
+    },
+    {
+      "counts": {
+        "emails": 38,
+        "linkedin": 35,
+        "pages": 4
+      },
+      "emails": [
+        "SafforeA@rightplace.org",
+        "alibhait@rightplace.org",
+        "beeringj@rightplace.org",
+        "berschek@rightplace.org",
+        "bookerr@rightplace.org",
+        "burdettec@rightplace.org",
+        "caseb@rightplace.org",
+        "commentb@rightplace.org",
+        "coneyd@rightplace.org",
+        "elliottj@rightplace.org",
+        "fordd@rightplace.org",
+        "forwardn@rightplace.org",
+        "georgek@hellowestmichigan.com",
+        "hamiltonb@rightplace.org",
+        "hello@mightyinthemidwest.com",
+        "hungerfordp@rightplace.org",
+        "icarde@rightplace.org",
+        "info@rightplace.org",
+        "johnsont@rightplace.org",
+        "kohsels@rightplace.org",
+        "krausm@rightplace.org",
+        "macee@rightplace.org",
+        "mrozt@rightplace.org",
+        "murphya@rightplace.org",
+        "neffd@rightplace.org",
+        "nicholsj@rightplace.org",
+        "panzlauk@rightplace.org",
+        "randy.thelen@rightplace.org",
+        "rapeykoe@rightplace.org",
+        "romkemaa@rightplace.org",
+        "streeterm@rightplace.org",
+        "tierneyj@rightplace.org",
+        "tuthille@rightplace.org",
+        "violeta@rightplace.org",
+        "wanglerj@rightplace.org",
+        "wiegandj@rightplace.org",
+        "wilsonr@rightplace.org",
+        "zimmermank@rightplace.org"
+      ],
+      "errors": [],
+      "linkedin": [
+        "http://www.linkedin.com/in/john-wiegand-4522335b",
+        "https://www.linkedin.com/in/a-mya-s-7200a629b/",
+        "https://www.linkedin.com/in/allyssa-murphy/",
+        "https://www.linkedin.com/in/andria-romkema/",
+        "https://www.linkedin.com/in/bham116/",
+        "https://www.linkedin.com/in/brad-comment-22243a15/",
+        "https://www.linkedin.com/in/brentmcase/",
+        "https://www.linkedin.com/in/burdettec/",
+        "https://www.linkedin.com/in/dayna-neff-74236034/",
+        "https://www.linkedin.com/in/donna-ford-8a18077/",
+        "https://www.linkedin.com/in/dylan-coney-65525128b/",
+        "https://www.linkedin.com/in/elise-rapeyko/",
+        "https://www.linkedin.com/in/emilygmace/",
+        "https://www.linkedin.com/in/emma-tuthill/",
+        "https://www.linkedin.com/in/eric-icard-67bb422",
+        "https://www.linkedin.com/in/jane-tierney-5b556b5b/",
+        "https://www.linkedin.com/in/jillianelliott117/",
+        "https://www.linkedin.com/in/jodi-nichols-3664538/",
+        "https://www.linkedin.com/in/karen-george-8a91a9206/",
+        "https://www.linkedin.com/in/katrinapanzlau/",
+        "https://www.linkedin.com/in/kristi-zimmerman-0b3499132/",
+        "https://www.linkedin.com/in/kristine-szurna-bersche-3981a92/",
+        "https://www.linkedin.com/in/mark-kraus-0b0a5bb/",
+        "https://www.linkedin.com/in/matthewstreeter3/",
+        "https://www.linkedin.com/in/nicole-forward/",
+        "https://www.linkedin.com/in/peter-hungerford/",
+        "https://www.linkedin.com/in/randythelen/",
+        "https://www.linkedin.com/in/ren%C3%A9-booker-6214aab/",
+        "https://www.linkedin.com/in/ryan-p-wilson/",
+        "https://www.linkedin.com/in/scott-kohsel-389351b/",
+        "https://www.linkedin.com/in/taheersalibhai",
+        "https://www.linkedin.com/in/taritajohnson/",
+        "https://www.linkedin.com/in/timmroz/",
+        "https://www.linkedin.com/in/violetangela/",
+        "https://www.linkedin.com/in/wanglerj/"
+      ],
+      "name": "The Right Place",
+      "pages": [
+        {
+          "emails": [
+            "SafforeA@rightplace.org",
+            "alibhait@rightplace.org",
+            "beeringj@rightplace.org",
+            "berschek@rightplace.org",
+            "bookerr@rightplace.org",
+            "burdettec@rightplace.org",
+            "caseb@rightplace.org",
+            "commentb@rightplace.org",
+            "coneyd@rightplace.org",
+            "elliottj@rightplace.org",
+            "fordd@rightplace.org",
+            "forwardn@rightplace.org",
+            "georgek@hellowestmichigan.com",
+            "hamiltonb@rightplace.org",
+            "hello@mightyinthemidwest.com",
+            "hungerfordp@rightplace.org",
+            "icarde@rightplace.org",
+            "info@rightplace.org",
+            "johnsont@rightplace.org",
+            "kohsels@rightplace.org",
+            "krausm@rightplace.org",
+            "macee@rightplace.org",
+            "mrozt@rightplace.org",
+            "murphya@rightplace.org",
+            "neffd@rightplace.org",
+            "nicholsj@rightplace.org",
+            "panzlauk@rightplace.org",
+            "randy.thelen@rightplace.org",
+            "rapeykoe@rightplace.org",
+            "romkemaa@rightplace.org",
+            "streeterm@rightplace.org",
+            "tierneyj@rightplace.org",
+            "tuthille@rightplace.org",
+            "violeta@rightplace.org",
+            "wanglerj@rightplace.org",
+            "wiegandj@rightplace.org",
+            "wilsonr@rightplace.org",
+            "zimmermank@rightplace.org"
+          ],
+          "linkedin": [
+            "http://www.linkedin.com/in/john-wiegand-4522335b",
+            "https://www.linkedin.com/in/a-mya-s-7200a629b/",
+            "https://www.linkedin.com/in/allyssa-murphy/",
+            "https://www.linkedin.com/in/andria-romkema/",
+            "https://www.linkedin.com/in/bham116/",
+            "https://www.linkedin.com/in/brad-comment-22243a15/",
+            "https://www.linkedin.com/in/brentmcase/",
+            "https://www.linkedin.com/in/burdettec/",
+            "https://www.linkedin.com/in/dayna-neff-74236034/",
+            "https://www.linkedin.com/in/donna-ford-8a18077/",
+            "https://www.linkedin.com/in/dylan-coney-65525128b/",
+            "https://www.linkedin.com/in/elise-rapeyko/",
+            "https://www.linkedin.com/in/emilygmace/",
+            "https://www.linkedin.com/in/emma-tuthill/",
+            "https://www.linkedin.com/in/eric-icard-67bb422",
+            "https://www.linkedin.com/in/jane-tierney-5b556b5b/",
+            "https://www.linkedin.com/in/jillianelliott117/",
+            "https://www.linkedin.com/in/jodi-nichols-3664538/",
+            "https://www.linkedin.com/in/karen-george-8a91a9206/",
+            "https://www.linkedin.com/in/katrinapanzlau/",
+            "https://www.linkedin.com/in/kristi-zimmerman-0b3499132/",
+            "https://www.linkedin.com/in/kristine-szurna-bersche-3981a92/",
+            "https://www.linkedin.com/in/mark-kraus-0b0a5bb/",
+            "https://www.linkedin.com/in/matthewstreeter3/",
+            "https://www.linkedin.com/in/nicole-forward/",
+            "https://www.linkedin.com/in/peter-hungerford/",
+            "https://www.linkedin.com/in/randythelen/",
+            "https://www.linkedin.com/in/ren%C3%A9-booker-6214aab/",
+            "https://www.linkedin.com/in/ryan-p-wilson/",
+            "https://www.linkedin.com/in/scott-kohsel-389351b/",
+            "https://www.linkedin.com/in/taheersalibhai",
+            "https://www.linkedin.com/in/taritajohnson/",
+            "https://www.linkedin.com/in/timmroz/",
+            "https://www.linkedin.com/in/violetangela/",
+            "https://www.linkedin.com/in/wanglerj/"
+          ],
+          "source_url": "https://www.rightplace.org/about-us/our-team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "hello@mightyinthemidwest.com",
+            "info@rightplace.org"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.rightplace.org/about-us",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "commentb@rightplace.org",
+            "hello@mightyinthemidwest.com",
+            "info@rightplace.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/brad-comment-22243a15/"
+          ],
+          "source_url": "https://www.rightplace.org/about-us/strategic-plan",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "hello@mightyinthemidwest.com",
+            "info@rightplace.org"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.rightplace.org/about-us/annual-report",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified economic-development organization directory publishes numerous staff emails and LinkedIn /in/ links; strong expected coverage for both.",
+      "status": "success",
+      "url": "https://www.rightplace.org/about-us/our-team"
+    },
+    {
+      "counts": {
+        "emails": 28,
+        "linkedin": 26,
+        "pages": 3
+      },
+      "emails": [
+        "aebsa@ameswatson.com",
+        "amason@ameswatson.com",
+        "amclaughlin@ameswatson.com",
+        "bsanet@ameswatson.com",
+        "ccostabile@ameswatson.com",
+        "cruiz@ameswatson.com",
+        "ctang@ameswatson.com",
+        "eschoenbach@ameswatson.com",
+        "eyankovich@ameswatson.com",
+        "ggriffin@ameswatson.com",
+        "info@ameswatson.com",
+        "jkoplan@ameswatson.com",
+        "jpillay@ameswatson.com",
+        "jthomas@ameswatson.com",
+        "lberger@ameswatson.com",
+        "lspurge@ameswatson.com",
+        "mhahn@ameswatson.com",
+        "mliberto@ameswatson.com",
+        "nhall@ameswatson.com",
+        "pgreene@ameswatson.com",
+        "rdevine@ameswatson.com",
+        "slim@ameswatson.com",
+        "smccabe@ameswatson.com",
+        "smiller@ameswatson.com",
+        "sprice@ameswatson.com",
+        "tripley@ameswatson.com",
+        "user@domain.com",
+        "vingram@ameswatson.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "http://linkedin.com/in/lisa-spurge-33859649/",
+        "https://www.linkedin.com/in/alex-mclaughlin-cpa-654621119/",
+        "https://www.linkedin.com/in/alexandrabmason/",
+        "https://www.linkedin.com/in/ashenafi-ebsa/",
+        "https://www.linkedin.com/in/brentsanet202/",
+        "https://www.linkedin.com/in/chao-tang1995/",
+        "https://www.linkedin.com/in/cmcostabile/",
+        "https://www.linkedin.com/in/coleman-ruiz-b65a2531/",
+        "https://www.linkedin.com/in/emily-yankovich/",
+        "https://www.linkedin.com/in/eric-schoenbach-05b12a50/",
+        "https://www.linkedin.com/in/erik-miller-9b7b7092/",
+        "https://www.linkedin.com/in/grace-griffin22/",
+        "https://www.linkedin.com/in/hallmnicholas/",
+        "https://www.linkedin.com/in/jacob-koplan-690274127/",
+        "https://www.linkedin.com/in/jana-pillay-0b6099131/",
+        "https://www.linkedin.com/in/jesse-thomas-a34a579b/",
+        "https://www.linkedin.com/in/lawrence-berger-414a1814/",
+        "https://www.linkedin.com/in/melissa-hahn-cpa/",
+        "https://www.linkedin.com/in/morgan-liberto-mpa-348626219/",
+        "https://www.linkedin.com/in/patrickrgreene/",
+        "https://www.linkedin.com/in/ripleydevine/",
+        "https://www.linkedin.com/in/sarah-lim-a5a494a9/",
+        "https://www.linkedin.com/in/sean-mccabe-5b7b6318/",
+        "https://www.linkedin.com/in/seanpricepmp2588/",
+        "https://www.linkedin.com/in/tomripley/",
+        "https://www.linkedin.com/in/vicki-ingram-105ba613/"
+      ],
+      "name": "Ames Watson",
+      "pages": [
+        {
+          "emails": [
+            "aebsa@ameswatson.com",
+            "amason@ameswatson.com",
+            "amclaughlin@ameswatson.com",
+            "bsanet@ameswatson.com",
+            "ccostabile@ameswatson.com",
+            "cruiz@ameswatson.com",
+            "ctang@ameswatson.com",
+            "eschoenbach@ameswatson.com",
+            "eyankovich@ameswatson.com",
+            "ggriffin@ameswatson.com",
+            "jkoplan@ameswatson.com",
+            "jpillay@ameswatson.com",
+            "jthomas@ameswatson.com",
+            "lberger@ameswatson.com",
+            "lspurge@ameswatson.com",
+            "mhahn@ameswatson.com",
+            "mliberto@ameswatson.com",
+            "nhall@ameswatson.com",
+            "pgreene@ameswatson.com",
+            "rdevine@ameswatson.com",
+            "slim@ameswatson.com",
+            "smccabe@ameswatson.com",
+            "smiller@ameswatson.com",
+            "sprice@ameswatson.com",
+            "tripley@ameswatson.com",
+            "user@domain.com",
+            "vingram@ameswatson.com"
+          ],
+          "linkedin": [
+            "http://linkedin.com/in/lisa-spurge-33859649/",
+            "https://www.linkedin.com/in/alex-mclaughlin-cpa-654621119/",
+            "https://www.linkedin.com/in/alexandrabmason/",
+            "https://www.linkedin.com/in/ashenafi-ebsa/",
+            "https://www.linkedin.com/in/brentsanet202/",
+            "https://www.linkedin.com/in/chao-tang1995/",
+            "https://www.linkedin.com/in/cmcostabile/",
+            "https://www.linkedin.com/in/coleman-ruiz-b65a2531/",
+            "https://www.linkedin.com/in/emily-yankovich/",
+            "https://www.linkedin.com/in/eric-schoenbach-05b12a50/",
+            "https://www.linkedin.com/in/erik-miller-9b7b7092/",
+            "https://www.linkedin.com/in/grace-griffin22/",
+            "https://www.linkedin.com/in/hallmnicholas/",
+            "https://www.linkedin.com/in/jacob-koplan-690274127/",
+            "https://www.linkedin.com/in/jana-pillay-0b6099131/",
+            "https://www.linkedin.com/in/jesse-thomas-a34a579b/",
+            "https://www.linkedin.com/in/lawrence-berger-414a1814/",
+            "https://www.linkedin.com/in/melissa-hahn-cpa/",
+            "https://www.linkedin.com/in/morgan-liberto-mpa-348626219/",
+            "https://www.linkedin.com/in/patrickrgreene/",
+            "https://www.linkedin.com/in/ripleydevine/",
+            "https://www.linkedin.com/in/sarah-lim-a5a494a9/",
+            "https://www.linkedin.com/in/sean-mccabe-5b7b6318/",
+            "https://www.linkedin.com/in/seanpricepmp2588/",
+            "https://www.linkedin.com/in/tomripley/",
+            "https://www.linkedin.com/in/vicki-ingram-105ba613/"
+          ],
+          "source_url": "https://www.ameswatson.com/ames-watson-team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@ameswatson.com",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.ameswatson.com/contact",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.ameswatson.com/about-1",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified investment firm team page lists staff email links and LinkedIn /in/ profiles; strong expected coverage for both.",
+      "status": "success",
+      "url": "https://www.ameswatson.com/ames-watson-team"
+    },
+    {
+      "counts": {
+        "emails": 41,
+        "linkedin": 29,
+        "pages": 3
+      },
+      "emails": [
+        "adauterman@twgdev.com",
+        "afrazier@twgdev.com",
+        "aguhl@twgdev.com",
+        "ahawkin@twgdev.com",
+        "arodman@twgdev.com",
+        "awiz@twgdev.com",
+        "bhendricks@twgdev.com",
+        "bhilts@twgdev.com",
+        "bhiltunen@twgdev.com",
+        "bvandemoortele@tegdev.com",
+        "cday@twgdev.com",
+        "chausz@twgdev.com",
+        "cmccauley@twgdev.com",
+        "csmith@twgdev.com",
+        "cwhite@twgdev.com",
+        "ddetzler@twgdev.com",
+        "dkej@twgdev.com",
+        "hmacdougall@twgdev.com",
+        "info@twgdev.com",
+        "jackson.taylor@twgdev.com",
+        "jhenney@twgdev.com",
+        "jhuerta@twgdev.com",
+        "jparks@twgdev.com",
+        "kkuruzar@twgdev.com",
+        "krichman@twgdev.com",
+        "ksera@twgdev.com",
+        "loswald@twgdev.com",
+        "lsowers@twgdev.com",
+        "madams@twgdev.com",
+        "mcollins@twgdev.com",
+        "mconatser@twgdev.com",
+        "mhunt@twgdev.com",
+        "mkompara@twgdev.com",
+        "mritchie@twgdev.com",
+        "myron.thomas@twgdev.com",
+        "nvannatter@twgdev.com",
+        "rburger@twgdev.com",
+        "rhughes@twgdev.com",
+        "rkelly@twgdev.com",
+        "satkinson@twgdev.com",
+        "thaviland@twgdev.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/ahawkins0323/",
+        "https://www.linkedin.com/in/allen-dauterman-01a5a4b2/",
+        "https://www.linkedin.com/in/andrew-guhl/",
+        "https://www.linkedin.com/in/audreyrodman/",
+        "https://www.linkedin.com/in/brian-hendricks-5595391a1/",
+        "https://www.linkedin.com/in/brian-hiltunen/",
+        "https://www.linkedin.com/in/brian-vandemoortele-06b2b67/",
+        "https://www.linkedin.com/in/bridget-hilts-ab773566/",
+        "https://www.linkedin.com/in/chase-smith-51183b4b/",
+        "https://www.linkedin.com/in/chris-hausz-004a4713/",
+        "https://www.linkedin.com/in/chriscwhiteiu/",
+        "https://www.linkedin.com/in/dominic-kej-9377911ba/",
+        "https://www.linkedin.com/in/dustin-detzler-609204a/",
+        "https://www.linkedin.com/in/frazieralexander/",
+        "https://www.linkedin.com/in/hollymacdougall112233/",
+        "https://www.linkedin.com/in/jacksontaylor1/",
+        "https://www.linkedin.com/in/joel-henney-224551102/",
+        "https://www.linkedin.com/in/joseghuerta/",
+        "https://www.linkedin.com/in/kevin-kuruzar-cpa-inactive-8500075/",
+        "https://www.linkedin.com/in/lawren-nelson-941009238/",
+        "https://www.linkedin.com/in/levi-oswald-aa49a01a6/",
+        "https://www.linkedin.com/in/marisa-conatser/",
+        "https://www.linkedin.com/in/matt-kompara-b4146131",
+        "https://www.linkedin.com/in/megan-adams-976a3281/",
+        "https://www.linkedin.com/in/nkvannatter1404/",
+        "https://www.linkedin.com/in/rodney-hughes-9434767a/",
+        "https://www.linkedin.com/in/ryanalankelly/",
+        "https://www.linkedin.com/in/seth-atkinson-75b034188/",
+        "https://www.linkedin.com/in/taylor-haviland-cpa-b89ba446/"
+      ],
+      "name": "TWG Development",
+      "pages": [
+        {
+          "emails": [
+            "adauterman@twgdev.com",
+            "afrazier@twgdev.com",
+            "aguhl@twgdev.com",
+            "ahawkin@twgdev.com",
+            "arodman@twgdev.com",
+            "awiz@twgdev.com",
+            "bhendricks@twgdev.com",
+            "bhilts@twgdev.com",
+            "bhiltunen@twgdev.com",
+            "bvandemoortele@tegdev.com",
+            "cday@twgdev.com",
+            "chausz@twgdev.com",
+            "cmccauley@twgdev.com",
+            "csmith@twgdev.com",
+            "cwhite@twgdev.com",
+            "ddetzler@twgdev.com",
+            "dkej@twgdev.com",
+            "hmacdougall@twgdev.com",
+            "info@twgdev.com",
+            "jackson.taylor@twgdev.com",
+            "jhenney@twgdev.com",
+            "jhuerta@twgdev.com",
+            "jparks@twgdev.com",
+            "kkuruzar@twgdev.com",
+            "krichman@twgdev.com",
+            "ksera@twgdev.com",
+            "loswald@twgdev.com",
+            "lsowers@twgdev.com",
+            "madams@twgdev.com",
+            "mcollins@twgdev.com",
+            "mconatser@twgdev.com",
+            "mhunt@twgdev.com",
+            "mkompara@twgdev.com",
+            "mritchie@twgdev.com",
+            "myron.thomas@twgdev.com",
+            "nvannatter@twgdev.com",
+            "rburger@twgdev.com",
+            "rhughes@twgdev.com",
+            "rkelly@twgdev.com",
+            "satkinson@twgdev.com",
+            "thaviland@twgdev.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/ahawkins0323/",
+            "https://www.linkedin.com/in/allen-dauterman-01a5a4b2/",
+            "https://www.linkedin.com/in/andrew-guhl/",
+            "https://www.linkedin.com/in/audreyrodman/",
+            "https://www.linkedin.com/in/brian-hendricks-5595391a1/",
+            "https://www.linkedin.com/in/brian-hiltunen/",
+            "https://www.linkedin.com/in/brian-vandemoortele-06b2b67/",
+            "https://www.linkedin.com/in/bridget-hilts-ab773566/",
+            "https://www.linkedin.com/in/chase-smith-51183b4b/",
+            "https://www.linkedin.com/in/chris-hausz-004a4713/",
+            "https://www.linkedin.com/in/chriscwhiteiu/",
+            "https://www.linkedin.com/in/dominic-kej-9377911ba/",
+            "https://www.linkedin.com/in/dustin-detzler-609204a/",
+            "https://www.linkedin.com/in/frazieralexander/",
+            "https://www.linkedin.com/in/hollymacdougall112233/",
+            "https://www.linkedin.com/in/jacksontaylor1/",
+            "https://www.linkedin.com/in/joel-henney-224551102/",
+            "https://www.linkedin.com/in/joseghuerta/",
+            "https://www.linkedin.com/in/kevin-kuruzar-cpa-inactive-8500075/",
+            "https://www.linkedin.com/in/lawren-nelson-941009238/",
+            "https://www.linkedin.com/in/levi-oswald-aa49a01a6/",
+            "https://www.linkedin.com/in/marisa-conatser/",
+            "https://www.linkedin.com/in/matt-kompara-b4146131",
+            "https://www.linkedin.com/in/megan-adams-976a3281/",
+            "https://www.linkedin.com/in/nkvannatter1404/",
+            "https://www.linkedin.com/in/rodney-hughes-9434767a/",
+            "https://www.linkedin.com/in/ryanalankelly/",
+            "https://www.linkedin.com/in/seth-atkinson-75b034188/",
+            "https://www.linkedin.com/in/taylor-haviland-cpa-b89ba446/"
+          ],
+          "source_url": "https://www.twgdev.com/team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@twgdev.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.twgdev.com/about",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@twgdev.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.twgdev.com/contact",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Verified real-estate development team page publishes email and LinkedIn /in/ links for several leadership profiles; good expected coverage for both.",
+      "status": "success",
+      "url": "https://www.twgdev.com/team"
+    },
+    {
+      "counts": {
+        "emails": 4,
+        "linkedin": 12,
+        "pages": 3
+      },
+      "emails": [
+        "enrollment@ticp.org",
+        "info@ticp.org",
+        "intake@ticp.org",
+        "user@domain.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app",
+        "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app&quot",
+        "https://www.linkedin.com/in/jillmoses/",
+        "https://www.linkedin.com/in/jillmoses/&quot",
+        "https://www.linkedin.com/in/kristynna-soto-4b6b349a/",
+        "https://www.linkedin.com/in/kristynna-soto-4b6b349a/&quot",
+        "https://www.linkedin.com/in/noel-f1211/",
+        "https://www.linkedin.com/in/noel-f1211/&quot",
+        "https://www.linkedin.com/in/stephanie-cotto-14544b17/",
+        "https://www.linkedin.com/in/stephanie-cotto-14544b17/&quot",
+        "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/",
+        "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/&quot"
+      ],
+      "name": "The Inspired Community Project",
+      "pages": [
+        {
+          "emails": [
+            "info@ticp.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app",
+            "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app&quot",
+            "https://www.linkedin.com/in/jillmoses/",
+            "https://www.linkedin.com/in/jillmoses/&quot",
+            "https://www.linkedin.com/in/kristynna-soto-4b6b349a/",
+            "https://www.linkedin.com/in/kristynna-soto-4b6b349a/&quot",
+            "https://www.linkedin.com/in/noel-f1211/",
+            "https://www.linkedin.com/in/noel-f1211/&quot",
+            "https://www.linkedin.com/in/stephanie-cotto-14544b17/",
+            "https://www.linkedin.com/in/stephanie-cotto-14544b17/&quot",
+            "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/",
+            "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/&quot"
+          ],
+          "source_url": "https://www.ticp.org/our-team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@ticp.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app",
+            "https://www.linkedin.com/in/ariane-leon-386819356?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app&quot",
+            "https://www.linkedin.com/in/jillmoses/",
+            "https://www.linkedin.com/in/jillmoses/&quot",
+            "https://www.linkedin.com/in/kristynna-soto-4b6b349a/",
+            "https://www.linkedin.com/in/kristynna-soto-4b6b349a/&quot",
+            "https://www.linkedin.com/in/noel-f1211/",
+            "https://www.linkedin.com/in/noel-f1211/&quot",
+            "https://www.linkedin.com/in/stephanie-cotto-14544b17/",
+            "https://www.linkedin.com/in/stephanie-cotto-14544b17/&quot",
+            "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/",
+            "https://www.linkedin.com/in/vielka-ramirez-espinal-6b611353/&quot"
+          ],
+          "source_url": "https://www.ticp.org/about-us",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "enrollment@ticp.org",
+            "info@ticp.org",
+            "intake@ticp.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.ticp.org/contact-us",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered nonprofit team page reported to include staff LinkedIn links and a public general email; likely LinkedIn coverage, email coverage may be limited to the general contact.",
+      "status": "success",
+      "url": "https://www.ticp.org/our-team"
+    },
+    {
+      "counts": {
+        "emails": 3,
+        "linkedin": 1,
+        "pages": 2
+      },
+      "emails": [
+        "info@kyoutofschool.org",
+        "kkelly@kyoutofschoolalliance.org",
+        "user@domain.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/kathleen-kelly-b2654648/"
+      ],
+      "name": "Kentucky Out-of-School Alliance",
+      "pages": [
+        {
+          "emails": [
+            "info@kyoutofschool.org",
+            "kkelly@kyoutofschoolalliance.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/kathleen-kelly-b2654648/"
+          ],
+          "source_url": "https://www.kyosa.org/ourteam",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@kyoutofschool.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.kyosa.org/aboutus",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered nonprofit team page reported to provide leadership email and LinkedIn contact options; expected coverage for both.",
+      "status": "success",
+      "url": "https://www.kyosa.org/ourteam"
+    },
+    {
+      "counts": {
+        "emails": 0,
+        "linkedin": 0,
+        "pages": 1
+      },
+      "emails": [],
+      "errors": [
+        {
+          "error": "empty_response",
+          "source_url": "https://globalhealthprojects.org/our-team/"
+        }
+      ],
+      "linkedin": [],
+      "name": "Global Health and Education Projects",
+      "pages": [
+        {
+          "emails": [],
+          "linkedin": [],
+          "source_url": "https://globalhealthprojects.org/our-team/",
+          "status": "empty_response"
+        }
+      ],
+      "reason": "Search-discovered nonprofit team page reported to list team email addresses and LinkedIn profiles; expected coverage for both.",
+      "status": "fetch_failed",
+      "url": "https://globalhealthprojects.org/our-team/"
+    },
+    {
+      "counts": {
+        "emails": 9,
+        "linkedin": 18,
+        "pages": 2
+      },
+      "emails": [
+        "John@legallink.org",
+        "gabriela@legallink.org",
+        "jane@legallink.org",
+        "jenecia@legallink.org",
+        "joshua@legallink.org",
+        "jwan@legallink.org",
+        "kate@legallink.org",
+        "support@legallink.org",
+        "william@legallink.org"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/deliacleveland/",
+        "https://www.linkedin.com/in/ellie-frazier-7077b53a/",
+        "https://www.linkedin.com/in/eshwareswaran/",
+        "https://www.linkedin.com/in/evonnemsilva/",
+        "https://www.linkedin.com/in/gabriela-222/",
+        "https://www.linkedin.com/in/jacqueline-molinerogutierrez/",
+        "https://www.linkedin.com/in/jeneciamartinez/",
+        "https://www.linkedin.com/in/jjanewong/",
+        "https://www.linkedin.com/in/john-swindle-2b138b2a7/",
+        "https://www.linkedin.com/in/joshua-medina-2a7473300/",
+        "https://www.linkedin.com/in/judy-appel-3009539/",
+        "https://www.linkedin.com/in/katecrowleyrichardson/",
+        "https://www.linkedin.com/in/maleachavez/?challengeId=AQF3X9ySsyo11QAAAY9ZegNi8kcq_rioer9dtpvkmYpZZ7CfSfVwKYwHV2uyVx0_SU17w0j8_9Wmpf6ApuJOCnQz7-9uoe07RA&amp;submissionId=f8bac1e2-0d97-cd17-c56d-3873363bf57f&amp;challengeSource=AgGt18uWeYsHGwAAAY9Zeys-CUd7wp_kFexi_8htJmtZ0D0cCogKylHt3tw5vNo&amp;challegeType=AgF0G95PnxZ19gAAAY9ZeytCaAYuWx5NpVhX1kLBRMJM7V5PGuURVfs&amp;memberId=AgFewrjzo9K48AAAAY9ZeytFRCfs93xBBcGqY715tH7FLTc&amp;recognizeDevice=AgFXCgZaL4NnGQAAAY9ZeytInMuYMc19jygx6zYe2aWV98wzsLet",
+        "https://www.linkedin.com/in/montezjoybrooks/",
+        "https://www.linkedin.com/in/peyton-yen-msw-22358a17a/",
+        "https://www.linkedin.com/in/salena-copeland-1a302378/",
+        "https://www.linkedin.com/in/sidhukiran/",
+        "https://www.linkedin.com/in/williamryland/"
+      ],
+      "name": "Legal Link",
+      "pages": [
+        {
+          "emails": [
+            "John@legallink.org",
+            "gabriela@legallink.org",
+            "jane@legallink.org",
+            "jenecia@legallink.org",
+            "joshua@legallink.org",
+            "jwan@legallink.org",
+            "kate@legallink.org",
+            "support@legallink.org",
+            "william@legallink.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/deliacleveland/",
+            "https://www.linkedin.com/in/ellie-frazier-7077b53a/",
+            "https://www.linkedin.com/in/eshwareswaran/",
+            "https://www.linkedin.com/in/evonnemsilva/",
+            "https://www.linkedin.com/in/gabriela-222/",
+            "https://www.linkedin.com/in/jacqueline-molinerogutierrez/",
+            "https://www.linkedin.com/in/jeneciamartinez/",
+            "https://www.linkedin.com/in/jjanewong/",
+            "https://www.linkedin.com/in/john-swindle-2b138b2a7/",
+            "https://www.linkedin.com/in/joshua-medina-2a7473300/",
+            "https://www.linkedin.com/in/judy-appel-3009539/",
+            "https://www.linkedin.com/in/katecrowleyrichardson/",
+            "https://www.linkedin.com/in/maleachavez/?challengeId=AQF3X9ySsyo11QAAAY9ZegNi8kcq_rioer9dtpvkmYpZZ7CfSfVwKYwHV2uyVx0_SU17w0j8_9Wmpf6ApuJOCnQz7-9uoe07RA&amp;submissionId=f8bac1e2-0d97-cd17-c56d-3873363bf57f&amp;challengeSource=AgGt18uWeYsHGwAAAY9Zeys-CUd7wp_kFexi_8htJmtZ0D0cCogKylHt3tw5vNo&amp;challegeType=AgF0G95PnxZ19gAAAY9ZeytCaAYuWx5NpVhX1kLBRMJM7V5PGuURVfs&amp;memberId=AgFewrjzo9K48AAAAY9ZeytFRCfs93xBBcGqY715tH7FLTc&amp;recognizeDevice=AgFXCgZaL4NnGQAAAY9ZeytInMuYMc19jygx6zYe2aWV98wzsLet",
+            "https://www.linkedin.com/in/montezjoybrooks/",
+            "https://www.linkedin.com/in/peyton-yen-msw-22358a17a/",
+            "https://www.linkedin.com/in/salena-copeland-1a302378/",
+            "https://www.linkedin.com/in/sidhukiran/",
+            "https://www.linkedin.com/in/williamryland/"
+          ],
+          "source_url": "https://legallink.org/our-team/",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "support@legallink.org"
+          ],
+          "linkedin": [],
+          "source_url": "https://legallink.org/contact/",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered public team page reported to include staff email and LinkedIn information; likely coverage for both, with potentially few profiles.",
+      "status": "success",
+      "url": "https://legallink.org/our-team/"
+    },
+    {
+      "counts": {
+        "emails": 5,
+        "linkedin": 8,
+        "pages": 2
+      },
+      "emails": [
+        "chidi.onwuanibe@coreservefoundation.org",
+        "dinobi@coreservefoundation.org",
+        "info@coreservefoundation.org",
+        "muyiwa@coreservefoundation.org",
+        "you@example.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/abu-ogunsola-b89163382/",
+        "https://www.linkedin.com/in/abu-ogunsola-b89163382/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+        "https://www.linkedin.com/in/dara-oyeleye-27346a362/",
+        "https://www.linkedin.com/in/dara-oyeleye-27346a362/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+        "https://www.linkedin.com/in/dinobi-offurum/",
+        "https://www.linkedin.com/in/dinobi-offurum/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+        "https://www.linkedin.com/in/muyiwa-ogunsola-2847662b2/",
+        "https://www.linkedin.com/in/muyiwa-ogunsola-2847662b2/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener"
+      ],
+      "name": "CoreServe Foundation",
+      "pages": [
+        {
+          "emails": [
+            "chidi.onwuanibe@coreservefoundation.org",
+            "dinobi@coreservefoundation.org",
+            "info@coreservefoundation.org",
+            "muyiwa@coreservefoundation.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/abu-ogunsola-b89163382/",
+            "https://www.linkedin.com/in/abu-ogunsola-b89163382/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+            "https://www.linkedin.com/in/dara-oyeleye-27346a362/",
+            "https://www.linkedin.com/in/dara-oyeleye-27346a362/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+            "https://www.linkedin.com/in/dinobi-offurum/",
+            "https://www.linkedin.com/in/dinobi-offurum/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener",
+            "https://www.linkedin.com/in/muyiwa-ogunsola-2847662b2/",
+            "https://www.linkedin.com/in/muyiwa-ogunsola-2847662b2/\\\",\\\"target\\\":\\\"_blank\\\",\\\"rel\\\":\\\"noopener"
+          ],
+          "source_url": "https://www.coreservefoundation.org/team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@coreservefoundation.org",
+            "you@example.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.coreservefoundation.org/contact",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered nonprofit team page reported to list public staff emails and LinkedIn links; expected coverage for both.",
+      "status": "success",
+      "url": "https://www.coreservefoundation.org/team"
+    },
+    {
+      "counts": {
+        "emails": 3,
+        "linkedin": 2,
+        "pages": 2
+      },
+      "emails": [
+        "hello@ndisu.org",
+        "lizz@ndisu.org",
+        "user@domain.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/emhangami/",
+        "https://www.linkedin.com/in/nkambulebanele/"
+      ],
+      "name": "NDISU",
+      "pages": [
+        {
+          "emails": [
+            "hello@ndisu.org",
+            "lizz@ndisu.org",
+            "user@domain.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/emhangami/",
+            "https://www.linkedin.com/in/nkambulebanele/"
+          ],
+          "source_url": "https://www.ndisu.org/our-team",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "hello@ndisu.org",
+            "user@domain.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.ndisu.org/contact-us",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered public team page reported to provide LinkedIn references and a general contact section; likely LinkedIn coverage, email extraction may yield only a shared contact.",
+      "status": "success",
+      "url": "https://www.ndisu.org/our-team"
+    },
+    {
+      "counts": {
+        "emails": 28,
+        "linkedin": 30,
+        "pages": 2
+      },
+      "emails": [
+        "Development@mainstreethotels.com",
+        "alvin.tsuma@mainstreethotels.com",
+        "andres.gutierrez@mainstreethotels.com",
+        "benjamin.moulton@mainstreethotels.com",
+        "beth.diskin@mainstreethotels.com",
+        "bonnie.bonn-buffoni@mainstreethotels.com",
+        "carla.child@mainstreethotels.com",
+        "daniel.braun@mainstreethotels.com",
+        "david.good@islandhousenewport.com",
+        "greta.kipp@mainstreethotels.com",
+        "janine.vellucci@mainstreethotels.com",
+        "jennifer.curtin@thebeatrice.com",
+        "joe.gallo@mainstreethotels.com",
+        "john.harrison@mainstreethotels.com",
+        "jsiddall@portcunningtonlodge.com",
+        "katie.myers@mainstreethotels.com",
+        "matt.polk@mainstreethotels.com",
+        "matthew.kristan@canoeplace.com",
+        "mel.karakaya@porches.com",
+        "michael.lamb@mainstreethotels.com",
+        "neda.pittershouse@hammettshotel.com",
+        "randi.milewski@hammettshotel.com",
+        "rebecca.scott@mainstreethotels.com",
+        "sarah.eustis@mainstreethotels.com",
+        "shira.wilkofsky@mainstreethotels.com",
+        "suzi.darre@mainstreethotels.com",
+        "tcoughlin@granvillehouseinn.com",
+        "venecia.lopez@mainstreethotels.com"
+      ],
+      "errors": [],
+      "linkedin": [
+        "http://linkedin.com/in/pamela-neferkara",
+        "https://www.linkedin.com/in/alysonbrandt/",
+        "https://www.linkedin.com/in/andres-gutierrez-msba/",
+        "https://www.linkedin.com/in/anthonyweintraub/",
+        "https://www.linkedin.com/in/benjamin-moulton14/",
+        "https://www.linkedin.com/in/beth-diskin-a1602927/",
+        "https://www.linkedin.com/in/carla-child-ab812b119/",
+        "https://www.linkedin.com/in/colin-p-kane-b73bab2/",
+        "https://www.linkedin.com/in/danielbraun1/",
+        "https://www.linkedin.com/in/greta-kipp-6a24a13b/",
+        "https://www.linkedin.com/in/hansmorris/",
+        "https://www.linkedin.com/in/helixgrowthcapital/",
+        "https://www.linkedin.com/in/janine-vellucci-5011a61b/",
+        "https://www.linkedin.com/in/jennifer-curtin-4b756a48/",
+        "https://www.linkedin.com/in/johnharrisoncmp/",
+        "https://www.linkedin.com/in/kelly-otto-22a3aa8/",
+        "https://www.linkedin.com/in/lisa-atkin-158971160/",
+        "https://www.linkedin.com/in/matthew-kristan-707b4333/",
+        "https://www.linkedin.com/in/matthewgpolk/",
+        "https://www.linkedin.com/in/melahatkarakaya/",
+        "https://www.linkedin.com/in/neda-nacar-pittershouse-0316/",
+        "https://www.linkedin.com/in/randi-paola-milewski-87917669/",
+        "https://www.linkedin.com/in/rebecca-scott-837950117/",
+        "https://www.linkedin.com/in/rennygleeson/",
+        "https://www.linkedin.com/in/rmlamb/",
+        "https://www.linkedin.com/in/sarah-eustis-4a41198/",
+        "https://www.linkedin.com/in/shira-wilkofsky/",
+        "https://www.linkedin.com/in/suzidarre/",
+        "https://www.linkedin.com/in/venecia-lopez-22b08a49/",
+        "https://www.linkedin.com/in/william-reynolds-3531baa/"
+      ],
+      "name": "Main Street Hospitality Group",
+      "pages": [
+        {
+          "emails": [
+            "alvin.tsuma@mainstreethotels.com",
+            "andres.gutierrez@mainstreethotels.com",
+            "benjamin.moulton@mainstreethotels.com",
+            "beth.diskin@mainstreethotels.com",
+            "bonnie.bonn-buffoni@mainstreethotels.com",
+            "carla.child@mainstreethotels.com",
+            "daniel.braun@mainstreethotels.com",
+            "david.good@islandhousenewport.com",
+            "greta.kipp@mainstreethotels.com",
+            "janine.vellucci@mainstreethotels.com",
+            "jennifer.curtin@thebeatrice.com",
+            "joe.gallo@mainstreethotels.com",
+            "john.harrison@mainstreethotels.com",
+            "jsiddall@portcunningtonlodge.com",
+            "katie.myers@mainstreethotels.com",
+            "matt.polk@mainstreethotels.com",
+            "matthew.kristan@canoeplace.com",
+            "mel.karakaya@porches.com",
+            "michael.lamb@mainstreethotels.com",
+            "neda.pittershouse@hammettshotel.com",
+            "randi.milewski@hammettshotel.com",
+            "rebecca.scott@mainstreethotels.com",
+            "sarah.eustis@mainstreethotels.com",
+            "shira.wilkofsky@mainstreethotels.com",
+            "suzi.darre@mainstreethotels.com",
+            "tcoughlin@granvillehouseinn.com",
+            "venecia.lopez@mainstreethotels.com"
+          ],
+          "linkedin": [
+            "http://linkedin.com/in/pamela-neferkara",
+            "https://www.linkedin.com/in/alysonbrandt/",
+            "https://www.linkedin.com/in/andres-gutierrez-msba/",
+            "https://www.linkedin.com/in/anthonyweintraub/",
+            "https://www.linkedin.com/in/benjamin-moulton14/",
+            "https://www.linkedin.com/in/beth-diskin-a1602927/",
+            "https://www.linkedin.com/in/carla-child-ab812b119/",
+            "https://www.linkedin.com/in/colin-p-kane-b73bab2/",
+            "https://www.linkedin.com/in/danielbraun1/",
+            "https://www.linkedin.com/in/greta-kipp-6a24a13b/",
+            "https://www.linkedin.com/in/hansmorris/",
+            "https://www.linkedin.com/in/helixgrowthcapital/",
+            "https://www.linkedin.com/in/janine-vellucci-5011a61b/",
+            "https://www.linkedin.com/in/jennifer-curtin-4b756a48/",
+            "https://www.linkedin.com/in/johnharrisoncmp/",
+            "https://www.linkedin.com/in/kelly-otto-22a3aa8/",
+            "https://www.linkedin.com/in/lisa-atkin-158971160/",
+            "https://www.linkedin.com/in/matthew-kristan-707b4333/",
+            "https://www.linkedin.com/in/matthewgpolk/",
+            "https://www.linkedin.com/in/melahatkarakaya/",
+            "https://www.linkedin.com/in/neda-nacar-pittershouse-0316/",
+            "https://www.linkedin.com/in/randi-paola-milewski-87917669/",
+            "https://www.linkedin.com/in/rebecca-scott-837950117/",
+            "https://www.linkedin.com/in/rennygleeson/",
+            "https://www.linkedin.com/in/rmlamb/",
+            "https://www.linkedin.com/in/sarah-eustis-4a41198/",
+            "https://www.linkedin.com/in/shira-wilkofsky/",
+            "https://www.linkedin.com/in/suzidarre/",
+            "https://www.linkedin.com/in/venecia-lopez-22b08a49/",
+            "https://www.linkedin.com/in/william-reynolds-3531baa/"
+          ],
+          "source_url": "https://mainstreethospitalitygroup.com/meet-team/",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "Development@mainstreethotels.com",
+            "alvin.tsuma@mainstreethotels.com",
+            "andres.gutierrez@mainstreethotels.com",
+            "benjamin.moulton@mainstreethotels.com",
+            "beth.diskin@mainstreethotels.com",
+            "bonnie.bonn-buffoni@mainstreethotels.com",
+            "carla.child@mainstreethotels.com",
+            "daniel.braun@mainstreethotels.com",
+            "david.good@islandhousenewport.com",
+            "greta.kipp@mainstreethotels.com",
+            "janine.vellucci@mainstreethotels.com",
+            "jennifer.curtin@thebeatrice.com",
+            "joe.gallo@mainstreethotels.com",
+            "john.harrison@mainstreethotels.com",
+            "jsiddall@portcunningtonlodge.com",
+            "katie.myers@mainstreethotels.com",
+            "matt.polk@mainstreethotels.com",
+            "matthew.kristan@canoeplace.com",
+            "mel.karakaya@porches.com",
+            "michael.lamb@mainstreethotels.com",
+            "neda.pittershouse@hammettshotel.com",
+            "randi.milewski@hammettshotel.com",
+            "rebecca.scott@mainstreethotels.com",
+            "sarah.eustis@mainstreethotels.com",
+            "shira.wilkofsky@mainstreethotels.com",
+            "suzi.darre@mainstreethotels.com",
+            "tcoughlin@granvillehouseinn.com",
+            "venecia.lopez@mainstreethotels.com"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/andres-gutierrez-msba/",
+            "https://www.linkedin.com/in/benjamin-moulton14/",
+            "https://www.linkedin.com/in/beth-diskin-a1602927/",
+            "https://www.linkedin.com/in/carla-child-ab812b119/",
+            "https://www.linkedin.com/in/danielbraun1/",
+            "https://www.linkedin.com/in/greta-kipp-6a24a13b/",
+            "https://www.linkedin.com/in/helixgrowthcapital/",
+            "https://www.linkedin.com/in/janine-vellucci-5011a61b/",
+            "https://www.linkedin.com/in/jennifer-curtin-4b756a48/",
+            "https://www.linkedin.com/in/johnharrisoncmp/",
+            "https://www.linkedin.com/in/kelly-otto-22a3aa8/",
+            "https://www.linkedin.com/in/matthew-kristan-707b4333/",
+            "https://www.linkedin.com/in/matthewgpolk/",
+            "https://www.linkedin.com/in/melahatkarakaya/",
+            "https://www.linkedin.com/in/neda-nacar-pittershouse-0316/",
+            "https://www.linkedin.com/in/randi-paola-milewski-87917669/",
+            "https://www.linkedin.com/in/rebecca-scott-837950117/",
+            "https://www.linkedin.com/in/rmlamb/",
+            "https://www.linkedin.com/in/sarah-eustis-4a41198/",
+            "https://www.linkedin.com/in/shira-wilkofsky/",
+            "https://www.linkedin.com/in/suzidarre/",
+            "https://www.linkedin.com/in/venecia-lopez-22b08a49/"
+          ],
+          "source_url": "https://mainstreethospitalitygroup.com/contact-us/",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered public team page; selected as a hospitality-sector contact-directory example. Email and LinkedIn coverage is uncertain from search evidence and may be sparse.",
+      "status": "success",
+      "url": "https://mainstreethospitalitygroup.com/meet-team/"
+    },
+    {
+      "counts": {
+        "emails": 10,
+        "linkedin": 8,
+        "pages": 3
+      },
+      "emails": [
+        "amanda.marcusky@floridamakes.com",
+        "amanda.someillan@floridamakes.com",
+        "beth.maraman@floridamakes.com",
+        "danielly.orozco-cole@flate.org",
+        "info@floridamakes.com",
+        "kaitlin.centonze@floridamakes.com",
+        "mariely.velez@floridamakes.com",
+        "stephanie.starling@floridamakes.com",
+        "stephon.wright@floridamakes.com",
+        "teresa.potter@flate.org"
+      ],
+      "errors": [],
+      "linkedin": [
+        "https://www.linkedin.com/in/amanda-marcusky/",
+        "https://www.linkedin.com/in/amandasomeillan/",
+        "https://www.linkedin.com/in/beth-maraman-6761a794/",
+        "https://www.linkedin.com/in/danielly-orozco-cole-41967491/",
+        "https://www.linkedin.com/in/marielyvelez/",
+        "https://www.linkedin.com/in/stephanie-starling-a32376bb/",
+        "https://www.linkedin.com/in/stephonwright/",
+        "https://www.linkedin.com/in/teresa-potter-49197628/"
+      ],
+      "name": "FloridaMakes",
+      "pages": [
+        {
+          "emails": [
+            "amanda.marcusky@floridamakes.com",
+            "amanda.someillan@floridamakes.com",
+            "beth.maraman@floridamakes.com",
+            "danielly.orozco-cole@flate.org",
+            "info@floridamakes.com",
+            "kaitlin.centonze@floridamakes.com",
+            "mariely.velez@floridamakes.com",
+            "stephanie.starling@floridamakes.com",
+            "stephon.wright@floridamakes.com",
+            "teresa.potter@flate.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/amanda-marcusky/",
+            "https://www.linkedin.com/in/amandasomeillan/",
+            "https://www.linkedin.com/in/beth-maraman-6761a794/",
+            "https://www.linkedin.com/in/danielly-orozco-cole-41967491/",
+            "https://www.linkedin.com/in/marielyvelez/",
+            "https://www.linkedin.com/in/stephanie-starling-a32376bb/",
+            "https://www.linkedin.com/in/stephonwright/",
+            "https://www.linkedin.com/in/teresa-potter-49197628/"
+          ],
+          "source_url": "https://www.floridamakes.com/webdev/about-us/our-team/staff",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "info@floridamakes.com"
+          ],
+          "linkedin": [],
+          "source_url": "https://www.floridamakes.com/HigherLogic/Security/Login.aspx?ReturnURL=https%3a%2f%2fwww.floridamakes.com%2fwebdev%2fabout-us%2four-team%2fstaff",
+          "status": "fetched"
+        },
+        {
+          "emails": [
+            "amanda.marcusky@floridamakes.com",
+            "amanda.someillan@floridamakes.com",
+            "beth.maraman@floridamakes.com",
+            "danielly.orozco-cole@flate.org",
+            "info@floridamakes.com",
+            "kaitlin.centonze@floridamakes.com",
+            "mariely.velez@floridamakes.com",
+            "stephanie.starling@floridamakes.com",
+            "stephon.wright@floridamakes.com",
+            "teresa.potter@flate.org"
+          ],
+          "linkedin": [
+            "https://www.linkedin.com/in/amanda-marcusky/",
+            "https://www.linkedin.com/in/amandasomeillan/",
+            "https://www.linkedin.com/in/beth-maraman-6761a794/",
+            "https://www.linkedin.com/in/danielly-orozco-cole-41967491/",
+            "https://www.linkedin.com/in/marielyvelez/",
+            "https://www.linkedin.com/in/stephanie-starling-a32376bb/",
+            "https://www.linkedin.com/in/stephonwright/",
+            "https://www.linkedin.com/in/teresa-potter-49197628/"
+          ],
+          "source_url": "https://www.floridamakes.com/contactus",
+          "status": "fetched"
+        }
+      ],
+      "reason": "Search-discovered public staff directory page for a manufacturing-support organization; expected to have public organizational contacts, while staff LinkedIn coverage is uncertain.",
+      "status": "success",
+      "url": "https://www.floridamakes.com/webdev/about-us/our-team/staff"
+    }
+  ],
+  "summary": {
+    "emails": 207,
+    "failed": 1,
+    "linkedin": 199,
+    "no_contacts": 0,
+    "partial_error": 0,
+    "sites": 15,
+    "success": 14
+  }
+}
