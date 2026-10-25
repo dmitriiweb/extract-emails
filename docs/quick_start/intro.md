@@ -52,15 +52,22 @@ independent. To use Chromium, replace `HttpxBrowser` with `ChromiumBrowser` in
 the relevant sync or async context manager. Use
 `pip install "extract-emails[all]"` only when you need every optional backend.
 
-### As CLI tool
-```bash
-$ extract-emails --help
+### As a CLI tool
 
-$ extract-emails --url https://en.wikipedia.org/wiki/Email -of output.csv
-$ cat output.csv
-email,page,website
-bob@b.org,https://en.wikipedia.org/wiki/Email,https://en.wikipedia.org/wiki/Email
+The CLI defaults to `email`. Request both supported data types with a
+comma-separated value:
+
+```bash
+extract-emails --help
+extract-emails --url http://127.0.0.1:8000/ --output-file output.csv \
+  --browser-name httpx --data-type email,linkedin
 ```
+
+`--browser-name` accepts `httpx` or `chromium` and defaults to `chromium`.
+`--data-type` accepts `email` and `linkedin`; its default is `email`. Output
+CSV metadata columns are `website` and `page_url`, followed by extracted data
+columns.
+
 There are several main parts in the framework:
 
  - **browser** - Class to navigate through specific website and extract data from the webpages (*httpx*, *playwright* etc.)

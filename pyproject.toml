@@ -25,6 +25,7 @@ classifiers = [
 dependencies = [
     "aiocsv>=1.4.1",
     "aiofiles>=25.1.0",
+    "click>=8.1",
     "loguru>=0.7.3",
     "lxml>=6.1.3",
     "pydantic>=2.14.1",

@@ -67,12 +67,18 @@ independent; installing one does not install the other. For Chromium, replace
 context manager and install the Playwright extra. Install both extras only if
 you need both backends. `pip install "extract-emails[all]"` installs all extras.
 
-### As CLI tool
-```bash
-$ extract-emails --help
+### As a CLI tool
 
-$ extract-emails --url https://en.wikipedia.org/wiki/Email -of output.csv
-$ cat output.csv
-email,page,website
-bob@b.org,https://en.wikipedia.org/wiki/Email,https://en.wikipedia.org/wiki/Email
+The CLI defaults to extracting email addresses. You can request both supported
+data types with a comma-separated list:
+
+```bash
+extract-emails --help
+extract-emails --url http://127.0.0.1:8000/ --output-file output.csv \
+  --browser-name httpx --data-type email,linkedin
 ```
+
+`--browser-name` accepts `httpx` or `chromium`; its default is `chromium`.
+`--data-type` defaults to `email`; accepted values are `email` and `linkedin`.
+The CSV columns include `website` and `page_url` metadata, followed by requested
+data columns that are present in the crawl.
