@@ -4,6 +4,8 @@
 
 ### Fixed
 - Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
+- Crawling now observes link distance from the seed page, deduplicates scheduled URLs, and validates negative depth and per-page link limits; zero outgoing-link limit remains unlimited and workers remain single-use.
+- Link and contact extraction handles ordinary anchor attributes, resolves relative links against the requested page, strips fragments, and rejects non-HTTP(S) targets. Email matching preserves quoted-address boundaries and mixed-case casing, LinkedIn matching validates hosts without dropping pages for malformed candidates, and decoded XHTML links survive leading XML declarations.
 - Advanced extraction no longer requires `cssselect`; empty or malformed page-controlled Cloudflare attributes are handled locally without discarding other candidates.
 - TLD membership comparisons normalize case and canonicalize malformed snapshot entries while preserving the existing reserved-domain policy.
 - Browser lifecycle cleanup handles partial startup and repeated stop calls; HTTPX status errors return an empty result while programming and lifecycle errors propagate. Chromium retains its existing `networkidle` wait.

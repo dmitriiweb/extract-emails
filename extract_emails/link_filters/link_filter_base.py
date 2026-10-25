@@ -1,9 +1,12 @@
 import re
 from abc import ABC, abstractmethod
-from typing import Iterable
+from typing import Iterable, cast
 from urllib.parse import urlparse
 
-RE_LINKS = re.compile(r'<a\s+(?:[^>]*?\s+)?href=(["\'])(.*?)\1')
+from lxml import html
+from lxml.etree import ParserError
+
+_XML_DECLARATION = re.compile(r"\A(\ufeff?[ \t\r\n]*)<\?xml[ \t\r\n]+.*?\?>", re.DOTALL)
 
 
 class LinkFilterBase(ABC):
@@ -81,9 +84,15 @@ class LinkFilterBase(ABC):
         :param str page_source: HTML page source
         :return: List of URLs
         """
-        links = RE_LINKS.findall(page_source)
-        links = [x[1] for x in links]
-        return links
+        if not page_source:
+            return []
+
+        try:
+            normalized_source = _XML_DECLARATION.sub(r"\1", page_source, count=1)
+            document = html.fromstring(normalized_source)
+        except (ParserError, ValueError):
+            return []
+        return cast(list[str], document.xpath("//a[@href]/@href"))
 
     @abstractmethod
     def filter(self, urls: Iterable[str]) -> list[str]:
