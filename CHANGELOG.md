@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 6.2.0
 
 ### Fixed
 - CSV exports preserve values by raw label across pages, retain multiple values, and use first-seen union headers with independently padded value columns. Metadata-name collisions are escaped with stable `data.` prefixes, and appends require an identical mapped schema before mutation; model CSV metadata remains `website,page_url`, while `CsvSaver` uses `website,page`. Empty input remains unchanged.
