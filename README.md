@@ -15,47 +15,58 @@ Extract emails and linkedins profiles from a given website
 ## Installation
 
 ```bash
-pip install extract_emails[all]
-# or
-pip install extract_emails[httpx]
-# or
-pip install extract_emails[playwright]
+# Install the backend you need; HTTPX and Playwright are independent extras.
+pip install "extract-emails[httpx]"
+# Or, for Chromium:
+pip install "extract-emails[playwright]"
 playwright install chromium --with-deps
+# Install both optional backends only if you need both:
+pip install "extract-emails[all]"
 ```
 
 ## Quick Usage
-### As library
+
+### As a library
+
+The HTTPX backend supports synchronous and asynchronous extraction. Substitute a
+URL for a site you are authorized to crawl (a local test server is suitable).
+Each function owns and closes its browser; call the function you need.
 
 ```python
 from pathlib import Path
 
 from extract_emails import DefaultWorker
-from extract_emails.browsers import ChromiumBrowser, HttpxBrowser
+from extract_emails.browsers import HttpxBrowser
 from extract_emails.models import PageData
 
-def main():
-    with ChromiumBrowser() as browser:
-        worker = DefaultWorker("https://example.com, browser)
-        data = worker.get_data()
-        PageData.to_csv(data, Path("output.csv"))
 
+def run_sync(url: str) -> None:
     with HttpxBrowser() as browser:
-        worker = DefaultWorker("https://example.com, browser)
+        worker = DefaultWorker(url, browser)
         data = worker.get_data()
-        PageData.to_csv(data, Path("output.csv"))
+    PageData.to_csv(data, Path("output-sync.csv"))
 
-async def main():
-    async with ChromiumBrowser() as browser:
-        worker = DefaultWorker("https://example.com, browser)
-        data = await worker.aget_data()
-        await PageData.to_csv(data, Path("output.csv"))
 
+async def run_async(url: str) -> None:
     async with HttpxBrowser() as browser:
-        worker = DefaultWorker("https://example.com, browser)
+        worker = DefaultWorker(url, browser)
         data = await worker.aget_data()
-        await PageData.to_csv(data, Path("output.csv"))
+    await PageData.ato_csv(data, Path("output-async.csv"))
 
+
+# Call one from your application, for example:
+# run_sync("http://127.0.0.1:8000/")
+# In an async function: await run_async("http://127.0.0.1:8000/")
 ```
+
+Install only the browser backend you use: `pip install "extract-emails[httpx]"`
+for HTTPX, or `pip install "extract-emails[playwright]"` followed by
+`playwright install chromium --with-deps` for Chromium. The extras are
+independent; installing one does not install the other. For Chromium, replace
+`HttpxBrowser` with `ChromiumBrowser` in the corresponding sync or async
+context manager and install the Playwright extra. Install both extras only if
+you need both backends. `pip install "extract-emails[all]"` installs all extras.
+
 ### As CLI tool
 ```bash
 $ extract-emails --help

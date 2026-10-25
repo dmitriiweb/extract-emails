@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+- Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
+- Browser lifecycle cleanup handles partial startup and repeated stop calls; HTTPX status errors return an empty result while programming and lifecycle errors propagate. Chromium retains its existing `networkidle` wait.
+
 ## 6.1.0
 
 ### Added
