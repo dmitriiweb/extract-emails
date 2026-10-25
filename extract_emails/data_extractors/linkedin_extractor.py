@@ -7,7 +7,7 @@ from extract_emails.data_extractors import DataExtractor
 class LinkedinExtractor(DataExtractor):
     def __init__(self):
         self.regexp = re.compile(
-            r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+            r"""(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>\\'"]+|\(([^\s()<>\\'"]+|(\([^\s()<>\\'"]+\)))*\))+(?:\(([^\s()<>\\'"]+|(\([^\s()<>\\'"]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’\\]))"""
         )
 
     @property
@@ -23,10 +23,17 @@ class LinkedinExtractor(DataExtractor):
         Returns:
             Set of urls, e.g. {'https://www.linkedin.com/in/venjamin-brant-73381ujy3u'}
         """
+        # Replace only complete delimiter entities; semicolonless query params stay intact.
+        page_source = re.sub(
+            r"&(?:quot|apos|lt|gt|#0*(?:34|39|60|62)|#x0*(?:22|27|3c|3e));",
+            " ",
+            page_source,
+            flags=re.IGNORECASE,
+        )
         all_urls = self.regexp.findall(page_source)
         linkedin_urls = set()
         for match in all_urls:
-            url = match[0]
+            url = re.sub(r"&amp;", "&", match[0], flags=re.IGNORECASE)
             try:
                 parsed = urlsplit(url if "://" in url else f"https://{url}")
                 hostname = (parsed.hostname or "").lower()

@@ -7,6 +7,7 @@
 - Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
 - Crawling now observes link distance from the seed page, deduplicates scheduled URLs, and validates negative depth and per-page link limits; zero outgoing-link limit remains unlimited and workers remain single-use.
 - Link and contact extraction handles ordinary anchor attributes, resolves relative links against the requested page, strips fragments, and rejects non-HTTP(S) targets. Email matching preserves quoted-address boundaries and mixed-case casing, LinkedIn matching validates hosts without dropping pages for malformed candidates, and decoded XHTML links survive leading XML declarations.
+- Escaped HTML and JSON delimiters no longer contaminate extracted LinkedIn profile URLs.
 - Advanced extraction no longer requires `cssselect`; empty or malformed page-controlled Cloudflare attributes are handled locally without discarding other candidates.
 - TLD membership comparisons normalize case and canonicalize malformed snapshot entries while preserving the existing reserved-domain policy.
 - The CLI declares its runtime dependency, validates comma-separated data types and browser choices before startup, defaults to email extraction, and closes browsers through context management.
