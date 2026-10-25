@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Fixed
+- CSV exports preserve values by raw label across pages, retain multiple values, and use first-seen union headers with independently padded value columns. Metadata-name collisions are escaped with stable `data.` prefixes, and appends require an identical mapped schema before mutation; model CSV metadata remains `website,page_url`, while `CsvSaver` uses `website,page`. Empty input remains unchanged.
 - Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
 - Crawling now observes link distance from the seed page, deduplicates scheduled URLs, and validates negative depth and per-page link limits; zero outgoing-link limit remains unlimited and workers remain single-use.
 - Link and contact extraction handles ordinary anchor attributes, resolves relative links against the requested page, strips fragments, and rejects non-HTTP(S) targets. Email matching preserves quoted-address boundaries and mixed-case casing, LinkedIn matching validates hosts without dropping pages for malformed candidates, and decoded XHTML links survive leading XML declarations.
