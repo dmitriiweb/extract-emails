@@ -1,0 +1,96 @@
+name: Checks
+
+on:
+  workflow_call:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  fast:
+    name: Fast tests and lint (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install development and all-backend dependencies
+        run: uv sync --python ${{ matrix.python-version }} --extra dev --extra all
+      - name: Run offline tests
+        run: uv run --python ${{ matrix.python-version }} pytest -m 'not slow' tests/
+      - name: Lint and type-check
+        run: uv run --python ${{ matrix.python-version }} make lint
+
+  browsers:
+    name: All-backend browser tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install development and all-backend dependencies
+        run: uv sync --python 3.12 --extra dev --extra all
+      - name: Install Chromium
+        run: uv run playwright install chromium --with-deps
+      - name: Run browser tests against local fixtures
+        run: uv run pytest -vv tests/browsers/
+
+  wheel:
+    name: Build wheel for isolated extras checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build wheel
+        run: uv build --wheel
+      - name: Upload wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-wheel
+          path: dist/*.whl
+          if-no-files-found: error
+          retention-days: 1
+
+  installed-extras:
+    name: Installed wheel (${{ matrix.extra }})
+    needs: wheel
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        extra: [base, httpx, playwright, all]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download built wheel
+        uses: actions/download-artifact@v4
+        with:
+          name: built-wheel
+          path: dist
+      - name: Check wheel in isolated environment
+        run: python scripts/check_wheel.py dist/*.whl --extra ${{ matrix.extra }}

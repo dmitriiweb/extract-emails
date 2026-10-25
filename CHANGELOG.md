@@ -1,5 +1,23 @@
 # Changelog
 
+## 6.2.0
+
+### Fixed
+- CSV exports preserve values by raw label across pages, retain multiple values, and use first-seen union headers with independently padded value columns. Metadata-name collisions are escaped with stable `data.` prefixes, and appends require an identical mapped schema before mutation; model CSV metadata remains `website,page_url`, while `CsvSaver` uses `website,page`. Empty input remains unchanged.
+- Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
+- Crawling now observes link distance from the seed page, deduplicates scheduled URLs, and validates negative depth and per-page link limits; zero outgoing-link limit remains unlimited and workers remain single-use.
+- Link and contact extraction handles ordinary anchor attributes, resolves relative links against the requested page, strips fragments, and rejects non-HTTP(S) targets. Email matching preserves quoted-address boundaries and mixed-case casing, LinkedIn matching validates hosts without dropping pages for malformed candidates, and decoded XHTML links survive leading XML declarations.
+- Escaped HTML and JSON delimiters no longer contaminate extracted LinkedIn profile URLs.
+- Advanced extraction no longer requires `cssselect`; empty or malformed page-controlled Cloudflare attributes are handled locally without discarding other candidates.
+- TLD membership comparisons normalize case and canonicalize malformed snapshot entries while preserving the existing reserved-domain policy.
+- The CLI declares its runtime dependency, validates comma-separated data types and browser choices before startup, defaults to email extraction, and closes browsers through context management.
+- Browser lifecycle cleanup handles partial startup and repeated stop calls; HTTPX status errors return an empty result while programming and lifecycle errors propagate. Chromium retains its existing `networkidle` wait.
+
+### Changed
+- Added deterministic coverage for CSV, worker, CLI, extractor, and browser failure boundaries; browser checks use local fixtures rather than external websites.
+- Added Python 3.10–3.14 CI checks and local Chromium browser coverage as a release gate, and consolidated contributor lint/format tooling around Ruff.
+- Updated onboarding examples and contributor instructions to use the current API, `uv`, and explicit offline/browser test commands.
+
 ## 6.1.0
 
 ### Added

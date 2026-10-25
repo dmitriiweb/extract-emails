@@ -19,6 +19,8 @@ def email_filter(emails: Iterable[str]) -> set[str]:
     Returns:
         List of filtered emails
     """
-    return set(
-        email for email in emails if "." + email.split(".")[-1] in TOP_LEVEL_DOMAINS
-    )
+    return {
+        email
+        for email in emails
+        if "." + email.split(".")[-1].lower() in TOP_LEVEL_DOMAINS
+    }

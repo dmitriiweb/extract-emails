@@ -1,5 +1,3 @@
-import pytest
-
 from extract_emails.link_filters import ContactInfoLinkFilter
 
 test_urls = [

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Minnesota Association of Community Health Centers",
+    "url": "https://www.mnachc.org/ourteam",
+    "reason": "Verified team directory publishes staff email links and LinkedIn /in/ profiles; strong expected coverage for both."
+  },
+  {
+    "name": "CREDA Massachusetts",
+    "url": "https://credama.org/contact-our-team/",
+    "reason": "Verified team contact page publishes staff emails and LinkedIn /in/ links; strong expected coverage for both."
+  },
+  {
+    "name": "PATCH Program",
+    "url": "https://www.patchprogram.org/our-team",
+    "reason": "Verified nonprofit team page includes multiple visible staff emails and LinkedIn /in/ profiles; strong expected coverage for both."
+  },
+  {
+    "name": "California Coverage & Health Initiatives",
+    "url": "https://cchi.org/ourteam",
+    "reason": "Verified nonprofit staff page publishes email links and several LinkedIn /in/ profiles; strong expected coverage for both, though some staff have no listed profile."
+  },
+  {
+    "name": "The Right Place",
+    "url": "https://www.rightplace.org/about-us/our-team",
+    "reason": "Verified economic-development organization directory publishes numerous staff emails and LinkedIn /in/ links; strong expected coverage for both."
+  },
+  {
+    "name": "Ames Watson",
+    "url": "https://www.ameswatson.com/ames-watson-team",
+    "reason": "Verified investment firm team page lists staff email links and LinkedIn /in/ profiles; strong expected coverage for both."
+  },
+  {
+    "name": "TWG Development",
+    "url": "https://www.twgdev.com/team",
+    "reason": "Verified real-estate development team page publishes email and LinkedIn /in/ links for several leadership profiles; good expected coverage for both."
+  },
+  {
+    "name": "The Inspired Community Project",
+    "url": "https://www.ticp.org/our-team",
+    "reason": "Search-discovered nonprofit team page reported to include staff LinkedIn links and a public general email; likely LinkedIn coverage, email coverage may be limited to the general contact."
+  },
+  {
+    "name": "Kentucky Out-of-School Alliance",
+    "url": "https://www.kyosa.org/ourteam",
+    "reason": "Search-discovered nonprofit team page reported to provide leadership email and LinkedIn contact options; expected coverage for both."
+  },
+  {
+    "name": "Global Health and Education Projects",
+    "url": "https://globalhealthprojects.org/our-team/",
+    "reason": "Search-discovered nonprofit team page reported to list team email addresses and LinkedIn profiles; expected coverage for both."
+  },
+  {
+    "name": "Legal Link",
+    "url": "https://legallink.org/our-team/",
+    "reason": "Search-discovered public team page reported to include staff email and LinkedIn information; likely coverage for both, with potentially few profiles."
+  },
+  {
+    "name": "CoreServe Foundation",
+    "url": "https://www.coreservefoundation.org/team",
+    "reason": "Search-discovered nonprofit team page reported to list public staff emails and LinkedIn links; expected coverage for both."
+  },
+  {
+    "name": "NDISU",
+    "url": "https://www.ndisu.org/our-team",
+    "reason": "Search-discovered public team page reported to provide LinkedIn references and a general contact section; likely LinkedIn coverage, email extraction may yield only a shared contact."
+  },
+  {
+    "name": "Main Street Hospitality Group",
+    "url": "https://mainstreethospitalitygroup.com/meet-team/",
+    "reason": "Search-discovered public team page; selected as a hospitality-sector contact-directory example. Email and LinkedIn coverage is uncertain from search evidence and may be sparse."
+  },
+  {
+    "name": "FloridaMakes",
+    "url": "https://www.floridamakes.com/webdev/about-us/our-team/staff",
+    "reason": "Search-discovered public staff directory page for a manufacturing-support organization; expected to have public organizational contacts, while staff LinkedIn coverage is uncertain."
+  }
+]

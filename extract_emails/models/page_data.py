@@ -1,10 +1,16 @@
 import csv
-from itertools import zip_longest
 from pathlib import Path
 
 import aiofiles
 from aiocsv import AsyncDictWriter
 from pydantic import BaseModel, Field
+
+from ._csv import (
+    avalidate_append_header,
+    csv_schema,
+    iter_csv_rows,
+    validate_append_header,
+)
 
 
 class PageData(BaseModel):
@@ -56,23 +62,17 @@ class PageData(BaseModel):
             data: list of `PageData`
             filepath: path to a CSV file
         """
-        base_headers: list[str] = list(cls.model_json_schema()["properties"].keys())
-        base_headers.remove("data")
-        data_headers = [i for i in data[0].data.keys()]
-        headers = base_headers + data_headers
-        is_file_exists = filepath.exists()
+        if not data:
+            return
 
+        schema = csv_schema(data, ("website", "page_url"))
+        validate_append_header(filepath, schema.headers)
+        write_header = not filepath.exists() or filepath.stat().st_size == 0
         with open(filepath, "a", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=headers)
-            if not is_file_exists:
+            writer = csv.DictWriter(f, fieldnames=schema.headers)
+            if write_header:
                 writer.writeheader()
-            for page in data:
-                for data_in_row in zip_longest(*page.data.values()):
-                    new_row = {"website": page.website, "page_url": page.page_url}
-                    for counter, column in enumerate(data_headers):
-                        new_row[column] = data_in_row[counter]
-
-                    writer.writerow(new_row)
+            writer.writerows(iter_csv_rows(data, ("website", "page_url"), schema))
 
     @classmethod
     async def ato_csv(cls, data: list["PageData"], filepath: Path) -> None:
@@ -82,20 +82,15 @@ class PageData(BaseModel):
             data: list of `PageData`
             filepath: path to a CSV file
         """
-        base_headers: list[str] = list(cls.model_json_schema()["properties"].keys())
-        base_headers.remove("data")
-        data_headers = [i for i in data[0].data.keys()]
-        headers = base_headers + data_headers
-        is_file_exists = filepath.exists()
+        if not data:
+            return
 
+        schema = csv_schema(data, ("website", "page_url"))
+        await avalidate_append_header(filepath, schema.headers)
+        write_header = not filepath.exists() or filepath.stat().st_size == 0
         async with aiofiles.open(filepath, "a", encoding="utf-8", newline="") as f:
-            writer = AsyncDictWriter(f, fieldnames=headers)
-            if not is_file_exists:
+            writer = AsyncDictWriter(f, fieldnames=schema.headers)
+            if write_header:
                 await writer.writeheader()
-            for page in data:
-                for data_in_row in zip_longest(*page.data.values()):
-                    new_row = {"website": page.website, "page_url": page.page_url}
-                    for counter, column in enumerate(data_headers):
-                        new_row[column] = data_in_row[counter]
-
-                    await writer.writerow(new_row)
+            for row in iter_csv_rows(data, ("website", "page_url"), schema):
+                await writer.writerow(row)
