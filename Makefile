@@ -14,13 +14,13 @@ test-browsers:
 
 .PHONY: format
 format:
-	uv run ruff check extract_emails tests --select I --fix
-	uv run ruff format extract_emails tests
+	uv run ruff check extract_emails tests scripts --select I --fix
+	uv run ruff format extract_emails tests scripts
 
 .PHONY: lint
 lint:
-	uv run ruff check extract_emails tests
-	uv run mypy extract_emails
+	uv run ruff check extract_emails tests scripts
+	uv run mypy extract_emails scripts
 
 .PHONY: docs-serve
 docs-serve:

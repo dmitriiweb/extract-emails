@@ -14,6 +14,7 @@
 
 ### Changed
 - Added deterministic coverage for CSV, worker, CLI, extractor, and browser failure boundaries; browser checks use local fixtures rather than external websites.
+- Added Python 3.10–3.14 CI checks and local Chromium browser coverage as a release gate, and consolidated contributor lint/format tooling around Ruff.
 - Updated onboarding examples and contributor instructions to use the current API, `uv`, and explicit offline/browser test commands.
 
 ## 6.1.0
