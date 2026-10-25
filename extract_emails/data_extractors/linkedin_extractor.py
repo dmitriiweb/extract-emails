@@ -1,4 +1,5 @@
 import re
+from urllib.parse import urlsplit
 
 from extract_emails.data_extractors import DataExtractor
 
@@ -23,6 +24,16 @@ class LinkedinExtractor(DataExtractor):
             Set of urls, e.g. {'https://www.linkedin.com/in/venjamin-brant-73381ujy3u'}
         """
         all_urls = self.regexp.findall(page_source)
-        url_filter = "linkedin.com/in/"
-        linkedin_urls = set([i[0] for i in all_urls if url_filter in i[0]])
+        linkedin_urls = set()
+        for match in all_urls:
+            url = match[0]
+            try:
+                parsed = urlsplit(url if "://" in url else f"https://{url}")
+                hostname = (parsed.hostname or "").lower()
+            except ValueError:
+                continue
+            if not (hostname == "linkedin.com" or hostname.endswith(".linkedin.com")):
+                continue
+            if parsed.path.startswith("/in/"):
+                linkedin_urls.add(url)
         return linkedin_urls

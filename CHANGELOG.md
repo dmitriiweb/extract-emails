@@ -4,6 +4,8 @@
 
 ### Fixed
 - Optional HTTPX and Playwright browser imports are independent, so a base or single-backend installation does not require the other backend.
+- Advanced extraction no longer requires `cssselect`; empty or malformed page-controlled Cloudflare attributes are handled locally without discarding other candidates.
+- TLD membership comparisons normalize case and canonicalize malformed snapshot entries while preserving the existing reserved-domain policy.
 - Browser lifecycle cleanup handles partial startup and repeated stop calls; HTTPX status errors return an empty result while programming and lifecycle errors propagate. Chromium retains its existing `networkidle` wait.
 
 ## 6.1.0

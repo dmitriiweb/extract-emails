@@ -1,6 +1,7 @@
 import re
+from typing import cast
 
-from lxml import html
+from lxml import etree, html
 
 from ..utils import email_filter
 from . import DataExtractor
@@ -109,13 +110,25 @@ class AdvancedEmailExtractor(DataExtractor):
                 emails.add(match.lower())
 
         # 2. Extract Cloudflare-obfuscated emails
-        doc = html.fromstring(page_source)
-        cf_elements = doc.cssselect("[data-cfemail]")
-        for elem in cf_elements:
-            encoded = elem.get("data-cfemail")
-            if encoded:
+        try:
+            doc = html.fromstring(page_source) if page_source else None
+        except (etree.ParserError, TypeError, ValueError):
+            doc = None
+
+        if doc is not None:
+            elements = cast(list[html.HtmlElement], doc.xpath("//*[@data-cfemail]"))
+            for elem in elements:
+                encoded = elem.get("data-cfemail", "")
+                if (
+                    not encoded
+                    or len(encoded) < 4
+                    or len(encoded) % 2
+                    or re.fullmatch(r"[0-9a-fA-F]+", encoded) is None
+                ):
+                    continue
+
                 decoded = self.cf_decode_email(encoded)
-                if not self.is_junk(decoded):
+                if self.email_pattern.fullmatch(decoded) and not self.is_junk(decoded):
                     emails.add(decoded.lower())
 
         return email_filter(emails)
